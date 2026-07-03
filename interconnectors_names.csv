@@ -1,0 +1,11 @@
+﻿,interconnectorId,interconnectorName,interconnectorBiddingZone,StartedOperations,
+0,INTELEC,Eleclink (INTELEC),FRANCE,25/05/2022,
+1,INTEW,Ireland(East-West),IRELAND,2012,
+2,INTFR,France(IFA),FRANCE,1986,"A fire in September 2021 caused the link to be removed from service. National Grid announced that half of its capacity would be restored on 20 October 2021, with full capacity being restored by October 2023"
+3,INTGRNL,Ireland (Greenlink),IRELAND,30/01/2025,
+4,INTIFA2,IFA2 (INTIFA2),FRANCE,23/01/2021,
+5,INTIRL,Northern Ireland(Moyle),IRELAND,2001,
+6,INTNED,Netherlands(BritNed),NETHERLANDS,2011,
+7,INTNEM,Belgium (Nemolink),BELGIUM,2019,
+8,INTNSL,North Sea Link (INTNSL),NORWAY2,01/10/2021,
+9,INTVKL,Denmark (Viking link),DENMARK1,30/12/2023,
