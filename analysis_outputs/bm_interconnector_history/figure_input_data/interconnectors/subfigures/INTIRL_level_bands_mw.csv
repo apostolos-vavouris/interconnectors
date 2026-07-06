@@ -1,0 +1,8 @@
+interconnectorId,interconnectorName,flow_band_mw,observations,duration_hours,duration_share_pct
+INTIRL,Northern Ireland(Moyle),export_500_1000_mw,9,4.5,0.010272330906019587
+INTIRL,Northern Ireland(Moyle),export_250_500_mw,46286,23143.0,52.829456479558054
+INTIRL,Northern Ireland(Moyle),export_50_250_mw,11401,5700.5,13.012760517725477
+INTIRL,Northern Ireland(Moyle),near_zero_abs_le_50_mw,11523,5761.5,13.152007670007077
+INTIRL,Northern Ireland(Moyle),import_50_250_mw,9619,4809.5,10.9788389983336
+INTIRL,Northern Ireland(Moyle),import_250_500_mw,8774,4387.0,10.014381263268428
+INTIRL,Northern Ireland(Moyle),import_500_1000_mw,2,1.0,0.002282740201337686

@@ -1,0 +1,11 @@
+interconnectorId,interconnectorName,flow_band_mw,observations,duration_hours,duration_share_pct
+INTVKL,Denmark (Viking link),export_1000_1500_mw,4643,2321.5,10.58354228402097
+INTVKL,Denmark (Viking link),export_500_1000_mw,4578,2289.0,10.435377250968772
+INTVKL,Denmark (Viking link),export_250_500_mw,2233,1116.5,5.090038750854798
+INTVKL,Denmark (Viking link),export_50_250_mw,1914,957.0,4.362890357875542
+INTVKL,Denmark (Viking link),near_zero_abs_le_50_mw,4149,2074.5,9.457488032824253
+INTVKL,Denmark (Viking link),import_50_250_mw,2099,1049.5,4.784590836562571
+INTVKL,Denmark (Viking link),import_250_500_mw,2569,1284.5,5.855937998632323
+INTVKL,Denmark (Viking link),import_500_1000_mw,12450,6225.0,28.379302484613632
+INTVKL,Denmark (Viking link),import_1000_1500_mw,9233,4616.5,21.046273079553227
+INTVKL,Denmark (Viking link),import_gt_1500_mw,2,1.0,0.0045589240939138366

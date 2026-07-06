@@ -215,6 +215,9 @@ def add_calendar_fields(df: pd.DataFrame, deadband_mw: float) -> pd.DataFrame:
     out["year"] = out["startTime"].dt.year
     out["month"] = out["startTime"].dt.month
     out["calendar_month"] = out["startTime"].dt.strftime("%Y-%m")
+    out["day_of_week"] = out["startTime"].dt.dayofweek
+    out["day_name"] = out["startTime"].dt.day_name()
+    out["day_of_year"] = out["startTime"].dt.dayofyear
     out["season"] = out["month"].map(SEASON_BY_MONTH)
     out["season_year"] = out["year"] + (out["month"] == 12).astype(int)
     out["week"] = out["startTime"].dt.isocalendar().week.astype(int)
@@ -426,6 +429,248 @@ def add_month_names(df: pd.DataFrame) -> pd.DataFrame:
     if "month" in out.columns:
         out["month_name"] = out["month"].astype(int).map(lambda month: calendar.month_abbr[month])
     return out
+
+
+def add_direction_regime_fields(df: pd.DataFrame) -> pd.DataFrame:
+    """Add explicit mostly-import/export labels to an aggregated direction table."""
+    out = df.copy()
+    required = {"import_share_pct", "export_share_pct", "near_zero_share_pct"}
+    if not required.issubset(out.columns):
+        return out
+
+    shares = out[["import_share_pct", "export_share_pct", "near_zero_share_pct"]].fillna(-math.inf)
+    primary_col = shares.idxmax(axis=1)
+    state_map = {
+        "import_share_pct": "import",
+        "export_share_pct": "export",
+        "near_zero_share_pct": "near_zero",
+    }
+    out["primary_state"] = primary_col.map(state_map)
+    out["primary_state_share_pct"] = shares.max(axis=1).replace(-math.inf, np.nan)
+    out["import_export_margin_pct"] = out["import_share_pct"] - out["export_share_pct"]
+    out["abs_import_export_margin_pct"] = out["import_export_margin_pct"].abs()
+    out["direction_bias"] = np.select(
+        [out["import_export_margin_pct"] > 0, out["import_export_margin_pct"] < 0],
+        ["import", "export"],
+        default="balanced",
+    )
+    out["mostly_direction"] = np.select(
+        [
+            (out["primary_state"] == "import") & (out["primary_state_share_pct"] >= 50.0),
+            (out["primary_state"] == "export") & (out["primary_state_share_pct"] >= 50.0),
+            (out["primary_state"] == "near_zero") & (out["primary_state_share_pct"] >= 50.0),
+        ],
+        ["mostly_import", "mostly_export", "mostly_near_zero"],
+        default="mixed",
+    )
+    return out
+
+
+def add_daily_timing_fields(daily: pd.DataFrame) -> pd.DataFrame:
+    out = add_direction_regime_fields(daily)
+    out["date"] = pd.to_datetime(out["date"], utc=True, errors="raise")
+    out["year"] = out["date"].dt.year
+    out["month"] = out["date"].dt.month
+    out["month_name"] = out["month"].astype(int).map(lambda month: calendar.month_abbr[month])
+    out["season"] = out["month"].map(SEASON_BY_MONTH)
+    out["day_of_week"] = out["date"].dt.dayofweek
+    out["day_name"] = out["date"].dt.day_name()
+    out["day_of_year"] = out["date"].dt.dayofyear
+    return out
+
+
+def top_direction_days(daily_regimes: pd.DataFrame, top_n: int = 10) -> pd.DataFrame:
+    """Pick the strongest actual-MW import/export dates for each interconnector."""
+    rows: list[dict[str, object]] = []
+    source = daily_regimes[daily_regimes["interconnectorId"] != "TOTAL_GB_INTERCONNECTORS"].copy()
+    for interconnector_id, group in source.groupby("interconnectorId", sort=True):
+        group = group.sort_values("date")
+        for direction, ascending in [("import", False), ("export", True)]:
+            candidates = group[group["direction_bias"] == direction].copy()
+            if candidates.empty:
+                candidates = group.copy()
+            ranked = candidates.sort_values("mean_signed_mw", ascending=ascending).head(top_n)
+            for rank, (_, row) in enumerate(ranked.iterrows(), start=1):
+                rows.append(
+                    {
+                        "interconnectorId": interconnector_id,
+                        "interconnectorName": row.get("interconnectorName"),
+                        "direction": direction,
+                        "rank": rank,
+                        "date": row["date"],
+                        "day_name": row.get("day_name"),
+                        "month": row.get("month"),
+                        "month_name": row.get("month_name"),
+                        "season": row.get("season"),
+                        "mean_signed_mw": row.get("mean_signed_mw"),
+                        "median_signed_mw": row.get("median_signed_mw"),
+                        "import_share_pct": row.get("import_share_pct"),
+                        "export_share_pct": row.get("export_share_pct"),
+                        "near_zero_share_pct": row.get("near_zero_share_pct"),
+                        "mostly_direction": row.get("mostly_direction"),
+                        "import_gwh": row.get("import_gwh"),
+                        "export_gwh": row.get("export_gwh"),
+                        "net_gwh": row.get("net_gwh"),
+                    }
+                )
+    return pd.DataFrame(rows)
+
+
+def direction_run_summary(daily_regimes: pd.DataFrame) -> pd.DataFrame:
+    """Summarise consecutive daily mostly-import/export/near-zero regimes."""
+    rows: list[dict[str, object]] = []
+    source = daily_regimes[daily_regimes["interconnectorId"] != "TOTAL_GB_INTERCONNECTORS"].copy()
+    for interconnector_id, group in source.groupby("interconnectorId", sort=True):
+        group = group.sort_values("date").copy()
+        run_key = group["mostly_direction"].ne(group["mostly_direction"].shift()).cumsum()
+        for _, run in group.groupby(run_key, sort=True):
+            first = run.iloc[0]
+            rows.append(
+                {
+                    "interconnectorId": interconnector_id,
+                    "interconnectorName": first.get("interconnectorName"),
+                    "mostly_direction": first.get("mostly_direction"),
+                    "start_date": run["date"].min(),
+                    "end_date": run["date"].max(),
+                    "days": len(run),
+                    "mean_signed_mw": run["mean_signed_mw"].mean(),
+                    "median_daily_mean_signed_mw": run["mean_signed_mw"].median(),
+                    "mean_import_share_pct": run["import_share_pct"].mean(),
+                    "mean_export_share_pct": run["export_share_pct"].mean(),
+                    "mean_near_zero_share_pct": run["near_zero_share_pct"].mean(),
+                    "net_gwh": run["net_gwh"].sum(),
+                    "import_gwh": run["import_gwh"].sum(),
+                    "export_gwh": run["export_gwh"].sum(),
+                }
+            )
+    out = pd.DataFrame(rows)
+    if out.empty:
+        return out
+    return out.sort_values(["interconnectorId", "start_date"], kind="mergesort").reset_index(drop=True)
+
+
+def direction_timing_story(
+    output_dir: Path,
+    season_regimes: pd.DataFrame,
+    month_regimes: pd.DataFrame,
+    weekday_regimes: pd.DataFrame,
+    top_days: pd.DataFrame,
+    runs: pd.DataFrame,
+) -> None:
+    """Write a compact narrative on when each link mostly imports/exports."""
+    lines: list[str] = [
+        "# Interconnector Import/Export Timing Patterns",
+        "",
+        "Positive MW means GB importing. Negative MW means GB exporting.",
+        "`mostly_import` / `mostly_export` means that direction is the largest state and covers at least 50% of the grouped half-hours.",
+        "",
+        "## Per-Interconnector Timing Readout",
+        "",
+    ]
+
+    ids = sorted(interconnector_id for interconnector_id in month_regimes["interconnectorId"].unique() if interconnector_id != "TOTAL_GB_INTERCONNECTORS")
+    for interconnector_id in ids:
+        m = month_regimes[month_regimes["interconnectorId"] == interconnector_id].copy()
+        s = season_regimes[season_regimes["interconnectorId"] == interconnector_id].copy()
+        w = weekday_regimes[weekday_regimes["interconnectorId"] == interconnector_id].copy()
+        d = top_days[top_days["interconnectorId"] == interconnector_id].copy()
+        r = runs[runs["interconnectorId"] == interconnector_id].copy()
+        name = m["interconnectorName"].dropna().iloc[0] if not m.empty else interconnector_id
+
+        import_months = m[m["mostly_direction"] == "mostly_import"].sort_values("mean_signed_mw", ascending=False)
+        export_months = m[m["mostly_direction"] == "mostly_export"].sort_values("mean_signed_mw", ascending=True)
+        strongest_import_month = import_months.iloc[0] if not import_months.empty else None
+        strongest_export_month = export_months.iloc[0] if not export_months.empty else None
+
+        season_order = ["Winter", "Spring", "Summer", "Autumn"]
+        s["season"] = pd.Categorical(s["season"], categories=season_order, ordered=True)
+        mostly_import_seasons = s[s["mostly_direction"] == "mostly_import"].sort_values("season")
+        mostly_export_seasons = s[s["mostly_direction"] == "mostly_export"].sort_values("season")
+
+        weekday_range = w["mean_signed_mw"].max() - w["mean_signed_mw"].min() if not w.empty else np.nan
+        weekday_import = w.sort_values("mean_signed_mw", ascending=False).iloc[0] if not w.empty else None
+        weekday_export = w.sort_values("mean_signed_mw", ascending=True).iloc[0] if not w.empty else None
+
+        top_import_day = d[d["direction"] == "import"].sort_values("rank").head(1)
+        top_export_day = d[d["direction"] == "export"].sort_values("rank").head(1)
+        longest_import_run = r[r["mostly_direction"] == "mostly_import"].sort_values("days", ascending=False).head(1)
+        longest_export_run = r[r["mostly_direction"] == "mostly_export"].sort_values("days", ascending=False).head(1)
+
+        lines.extend([f"### {interconnector_id} - {name}", ""])
+        if not mostly_import_seasons.empty:
+            lines.append(
+                "- Mostly importing seasons: "
+                + ", ".join(
+                    f"{row['season']} ({format_num(row['mean_signed_mw'])} MW, import share {format_pct(row['import_share_pct'])})"
+                    for _, row in mostly_import_seasons.iterrows()
+                )
+                + "."
+            )
+        if not mostly_export_seasons.empty:
+            lines.append(
+                "- Mostly exporting seasons: "
+                + ", ".join(
+                    f"{row['season']} ({format_num(row['mean_signed_mw'])} MW, export share {format_pct(row['export_share_pct'])})"
+                    for _, row in mostly_export_seasons.iterrows()
+                )
+                + "."
+            )
+        if strongest_import_month is not None:
+            lines.append(
+                f"- Strongest import month-of-year: {strongest_import_month['month_name']} "
+                f"at {format_num(strongest_import_month['mean_signed_mw'])} MW on average "
+                f"({format_pct(strongest_import_month['import_share_pct'])} import share)."
+            )
+        if strongest_export_month is not None:
+            lines.append(
+                f"- Strongest export month-of-year: {strongest_export_month['month_name']} "
+                f"at {format_num(strongest_export_month['mean_signed_mw'])} MW on average "
+                f"({format_pct(strongest_export_month['export_share_pct'])} export share)."
+            )
+        if weekday_import is not None and weekday_export is not None:
+            lines.append(
+                f"- Weekday spread is {format_num(weekday_range)} MW between "
+                f"{weekday_export['day_name']} ({format_num(weekday_export['mean_signed_mw'])} MW) and "
+                f"{weekday_import['day_name']} ({format_num(weekday_import['mean_signed_mw'])} MW)."
+            )
+        if not top_import_day.empty:
+            row = top_import_day.iloc[0]
+            lines.append(
+                f"- Highest import day: {pd.Timestamp(row['date']).date()} ({row['day_name']}) at {format_num(row['mean_signed_mw'])} MW daily average."
+            )
+        if not top_export_day.empty:
+            row = top_export_day.iloc[0]
+            lines.append(
+                f"- Highest export day: {pd.Timestamp(row['date']).date()} ({row['day_name']}) at {format_num(row['mean_signed_mw'])} MW daily average."
+            )
+        if not longest_import_run.empty:
+            row = longest_import_run.iloc[0]
+            lines.append(
+                f"- Longest mostly-importing daily run: {int(row['days'])} days "
+                f"({pd.Timestamp(row['start_date']).date()} to {pd.Timestamp(row['end_date']).date()})."
+            )
+        if not longest_export_run.empty:
+            row = longest_export_run.iloc[0]
+            lines.append(
+                f"- Longest mostly-exporting daily run: {int(row['days'])} days "
+                f"({pd.Timestamp(row['start_date']).date()} to {pd.Timestamp(row['end_date']).date()})."
+            )
+        lines.append("")
+
+    lines.extend(
+        [
+            "## Output Tables",
+            "",
+            "- `direction_timing_season.csv` - season-level mostly importing/exporting regimes.",
+            "- `direction_timing_month_of_year.csv` - collapsed month-of-year regimes.",
+            "- `direction_timing_weekday.csv` - weekday regimes.",
+            "- `direction_timing_daily.csv` - every interconnector/day with mostly-direction labels.",
+            "- `direction_timing_top_days.csv` - top import/export dates per interconnector.",
+            "- `direction_timing_runs.csv` - consecutive daily mostly-import/export/near-zero periods.",
+            "",
+        ]
+    )
+    (output_dir / "direction_timing_story.md").write_text("\n".join(lines), encoding="utf-8")
 
 
 def build_fleet_half_hourly(df: pd.DataFrame, start: pd.Timestamp, end: pd.Timestamp, metadata_cols: list[str]) -> pd.DataFrame:
@@ -650,6 +895,416 @@ def direction_alignment_outputs(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Data
 def write_csv(df: pd.DataFrame, path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(path, index=False)
+
+
+def existing_columns(df: pd.DataFrame, columns: list[str]) -> list[str]:
+    return [column for column in columns if column in df.columns]
+
+
+def without_capacity_pct_columns(df: pd.DataFrame) -> pd.DataFrame:
+    """Return chart-input fields excluding capacity-normalised percentages."""
+    excluded_tokens = ("pct_capacity", "abs_pct_capacity")
+    columns = [column for column in df.columns if not any(token in column for token in excluded_tokens)]
+    return df.loc[:, columns].copy()
+
+
+def write_figure_input_csv(
+    df: pd.DataFrame,
+    path: Path,
+    manifest_rows: list[dict[str, object]],
+    *,
+    output_dir: Path,
+    figure_basename: str,
+    source_table: str,
+    notes: str,
+) -> None:
+    write_csv(df, path)
+    manifest_rows.append(
+        {
+            "figure_basename": figure_basename,
+            "csv_path": path.relative_to(output_dir).as_posix(),
+            "source_table": source_table,
+            "rows": len(df),
+            "columns": len(df.columns),
+            "notes": notes,
+        }
+    )
+
+
+def figure_monthly_columns(df: pd.DataFrame, extra_cols: list[str] | None = None) -> list[str]:
+    base_cols = [
+        "interconnectorId",
+        "interconnectorName",
+        "calendar_month",
+        "month",
+        "month_name",
+        "season",
+        "season_year",
+        "observations",
+        "duration_hours",
+        "import_share_pct",
+        "export_share_pct",
+        "near_zero_share_pct",
+        "mean_signed_mw",
+        "median_signed_mw",
+        "p05_signed_mw",
+        "p25_signed_mw",
+        "p75_signed_mw",
+        "p95_signed_mw",
+        "mean_import_mw_when_importing",
+        "mean_export_mw_when_exporting",
+        "max_import_mw",
+        "max_export_mw",
+        "import_gwh",
+        "export_gwh",
+        "net_gwh",
+        "abs_flow_gwh",
+    ]
+    return existing_columns(df, (extra_cols or []) + base_cols)
+
+
+def figure_rolling_columns(df: pd.DataFrame) -> list[str]:
+    return existing_columns(
+        df,
+        [
+            "interconnectorId",
+            "interconnectorName",
+            "date",
+            "observations",
+            "mean_signed_mw",
+            "median_signed_mw",
+            "p10_signed_mw",
+            "p90_signed_mw",
+            "rolling_7d_mean_signed_mw",
+            "rolling_30d_mean_signed_mw",
+            "rolling_90d_mean_signed_mw",
+            "import_share_pct",
+            "export_share_pct",
+            "near_zero_share_pct",
+            "rolling_7d_import_share_pct",
+            "rolling_30d_import_share_pct",
+            "rolling_90d_import_share_pct",
+            "rolling_7d_export_share_pct",
+            "rolling_30d_export_share_pct",
+            "rolling_90d_export_share_pct",
+            "import_gwh",
+            "export_gwh",
+            "net_gwh",
+            "rolling_7d_import_gwh",
+            "rolling_30d_import_gwh",
+            "rolling_90d_import_gwh",
+            "rolling_7d_export_gwh",
+            "rolling_30d_export_gwh",
+            "rolling_90d_export_gwh",
+            "rolling_7d_net_gwh",
+            "rolling_30d_net_gwh",
+            "rolling_90d_net_gwh",
+        ],
+    )
+
+
+def figure_envelope_columns(df: pd.DataFrame) -> list[str]:
+    return existing_columns(
+        df,
+        [
+            "interconnectorId",
+            "interconnectorName",
+            "week",
+            "samples",
+            "mean_signed_mw",
+            "p10_signed_mw",
+            "p25_signed_mw",
+            "median_signed_mw",
+            "p75_signed_mw",
+            "p90_signed_mw",
+            "mean_import_share_pct",
+            "mean_export_share_pct",
+        ],
+    )
+
+
+def figure_diurnal_columns(df: pd.DataFrame) -> list[str]:
+    return existing_columns(
+        df,
+        [
+            "interconnectorId",
+            "interconnectorName",
+            "season",
+            "settlementPeriod",
+            "hour_utc",
+            "observations",
+            "mean_signed_mw",
+            "p10_signed_mw",
+            "median_signed_mw",
+            "p90_signed_mw",
+            "import_share_pct",
+            "export_share_pct",
+        ],
+    )
+
+
+def export_figure_input_data(
+    output_dir: Path,
+    summary: pd.DataFrame,
+    monthly: pd.DataFrame,
+    month_of_year: pd.DataFrame,
+    season_overall: pd.DataFrame,
+    rolling: pd.DataFrame,
+    envelope: pd.DataFrame,
+    diurnal: pd.DataFrame,
+    bucket_summary: pd.DataFrame,
+    flow_corr_matrix: pd.DataFrame,
+    direction_pairwise: pd.DataFrame,
+    conditional_direction: pd.DataFrame,
+) -> None:
+    """Write presentation-friendly CSV inputs for the figures and subfigures."""
+    figure_data_dir = output_dir / "figure_input_data"
+    subfigure_data_dir = figure_data_dir / "interconnectors" / "subfigures"
+    manifest_rows: list[dict[str, object]] = []
+
+    direction_cols = existing_columns(
+        summary,
+        [
+            "interconnectorId",
+            "interconnectorName",
+            "import_share_pct",
+            "export_share_pct",
+            "near_zero_share_pct",
+            "dominant_direction",
+            "mean_signed_mw",
+            "median_signed_mw",
+            "import_gwh",
+            "export_gwh",
+            "net_gwh",
+        ],
+    )
+    write_figure_input_csv(
+        summary[direction_cols].copy(),
+        figure_data_dir / "direction_share_by_interconnector.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="direction_share_by_interconnector",
+        source_table="interconnector_summary.csv",
+        notes="Direction shares plus actual MW/GWh context; no capacity-normalised percentage fields.",
+    )
+
+    energy_cols = existing_columns(
+        summary,
+        ["interconnectorId", "interconnectorName", "import_gwh", "export_gwh", "net_gwh", "abs_flow_gwh", "mean_signed_mw"],
+    )
+    write_figure_input_csv(
+        summary[energy_cols].copy(),
+        figure_data_dir / "net_energy_by_interconnector.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="net_energy_by_interconnector",
+        source_table="interconnector_summary.csv",
+        notes="Net energy chart input with import-positive GWh and mean signed MW.",
+    )
+
+    monthly_mw = without_capacity_pct_columns(monthly[figure_monthly_columns(monthly)])
+    write_figure_input_csv(
+        monthly_mw,
+        figure_data_dir / "monthly_mean_signed_mw_heatmap.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="monthly_mean_signed_mw_heatmap",
+        source_table="monthly_summary.csv",
+        notes="Calendar-month actual MW summary used for the monthly heatmap.",
+    )
+    write_figure_input_csv(
+        monthly_mw[monthly_mw["interconnectorId"] == "TOTAL_GB_INTERCONNECTORS"].copy(),
+        figure_data_dir / "fleet_monthly_history_mw.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="fleet_monthly_history_mw",
+        source_table="monthly_summary.csv",
+        notes="Aggregate GB interconnector fleet monthly actual MW summary.",
+    )
+
+    month_of_year_mw = without_capacity_pct_columns(month_of_year[figure_monthly_columns(month_of_year)])
+    write_figure_input_csv(
+        month_of_year_mw,
+        figure_data_dir / "month_of_year_mean_heatmap.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="month_of_year_mean_heatmap",
+        source_table="month_of_year_summary.csv",
+        notes="Collapsed month-of-year actual MW averages across the analysis years.",
+    )
+    write_figure_input_csv(
+        month_of_year_mw[month_of_year_mw["interconnectorId"] == "TOTAL_GB_INTERCONNECTORS"].copy(),
+        figure_data_dir / "fleet_month_of_year_profile_mw.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="fleet_month_of_year_profile",
+        source_table="month_of_year_summary.csv",
+        notes="Aggregate GB interconnector fleet collapsed month-of-year actual MW profile.",
+    )
+
+    season_mw = without_capacity_pct_columns(season_overall[figure_monthly_columns(season_overall)])
+    write_figure_input_csv(
+        season_mw,
+        figure_data_dir / "season_mean_signed_mw.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="season_mean_signed_mw",
+        source_table="season_overall_summary.csv",
+        notes="Collapsed seasonal actual MW means; MW equivalent of the seasonal % capacity heatmap.",
+    )
+    write_figure_input_csv(
+        season_mw,
+        figure_data_dir / "season_direction_share_by_interconnector.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="season_direction_share_by_interconnector",
+        source_table="season_overall_summary.csv",
+        notes="Seasonal import/export/near-zero shares with actual MW context.",
+    )
+
+    fleet_rolling = rolling[rolling["interconnectorId"] == "TOTAL_GB_INTERCONNECTORS"].sort_values("date")
+    write_figure_input_csv(
+        without_capacity_pct_columns(fleet_rolling[figure_rolling_columns(fleet_rolling)]),
+        figure_data_dir / "fleet_rolling_net_mw.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="fleet_rolling_net_mw",
+        source_table="rolling_windows.csv",
+        notes="Aggregate fleet daily and rolling actual MW/GWh values.",
+    )
+
+    fleet_envelope = envelope[envelope["interconnectorId"] == "TOTAL_GB_INTERCONNECTORS"].sort_values("week")
+    write_figure_input_csv(
+        without_capacity_pct_columns(fleet_envelope[figure_envelope_columns(fleet_envelope)]),
+        figure_data_dir / "fleet_weekly_seasonal_envelope.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="fleet_weekly_seasonal_envelope",
+        source_table="weekly_seasonal_envelope.csv",
+        notes="Aggregate fleet weekly seasonal envelope in actual MW.",
+    )
+
+    fleet_diurnal = diurnal[diurnal["interconnectorId"] == "TOTAL_GB_INTERCONNECTORS"].sort_values(["season", "hour_utc"])
+    write_figure_input_csv(
+        without_capacity_pct_columns(fleet_diurnal[figure_diurnal_columns(fleet_diurnal)]),
+        figure_data_dir / "fleet_diurnal_by_season.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="fleet_diurnal_by_season",
+        source_table="diurnal_profile_by_season.csv",
+        notes="Aggregate fleet diurnal-by-season profile in actual MW.",
+    )
+
+    write_figure_input_csv(
+        bucket_summary[bucket_summary["interconnectorId"] != "TOTAL_GB_INTERCONNECTORS"].copy(),
+        figure_data_dir / "level_bands_by_interconnector_mw.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="level_bands_by_interconnector",
+        source_table="level_bucket_summary.csv",
+        notes="MW flow-band duration shares by interconnector.",
+    )
+    write_figure_input_csv(
+        flow_corr_matrix.copy(),
+        figure_data_dir / "flow_correlation_heatmap.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="flow_correlation_heatmap",
+        source_table="interconnector_flow_correlation_matrix.csv",
+        notes="Pairwise signed MW correlation matrix.",
+    )
+    write_figure_input_csv(
+        direction_pairwise.copy(),
+        figure_data_dir / "direction_alignment_pairwise.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="direction_alignment_and_opposition_heatmaps",
+        source_table="interconnector_direction_alignment_pairwise.csv",
+        notes="Pairwise direction alignment/opposition shares.",
+    )
+    write_figure_input_csv(
+        conditional_direction.copy(),
+        figure_data_dir / "conditional_direction_shares.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="conditional_import_export_alignment_heatmaps",
+        source_table="interconnector_conditional_direction_shares.csv",
+        notes="Conditional direction shares for import/export alignment heatmaps.",
+    )
+
+    for _, summary_row in summary.sort_values("interconnectorId").iterrows():
+        interconnector_id = summary_row["interconnectorId"]
+        prefix = safe_filename(interconnector_id)
+
+        r = rolling[rolling["interconnectorId"] == interconnector_id].sort_values("date")
+        m = monthly[monthly["interconnectorId"] == interconnector_id].sort_values("calendar_month")
+        moy = month_of_year[month_of_year["interconnectorId"] == interconnector_id].sort_values("month")
+        season = season_overall[season_overall["interconnectorId"] == interconnector_id].copy()
+        season["season"] = pd.Categorical(season["season"], categories=["Winter", "Spring", "Summer", "Autumn"], ordered=True)
+        season = season.sort_values("season")
+        e = envelope[envelope["interconnectorId"] == interconnector_id].sort_values("week")
+        b = bucket_summary[
+            (bucket_summary["interconnectorId"] == interconnector_id) & (bucket_summary["observations"] > 0)
+        ].copy()
+        b["flow_band_mw"] = pd.Categorical(b["flow_band_mw"], categories=LEVEL_LABELS, ordered=True)
+        b = b.sort_values("flow_band_mw")
+
+        write_figure_input_csv(
+            without_capacity_pct_columns(r[figure_rolling_columns(r)]),
+            subfigure_data_dir / f"{prefix}_daily_rolling.csv",
+            manifest_rows,
+            output_dir=output_dir,
+            figure_basename=f"{prefix}_daily_rolling",
+            source_table="rolling_windows.csv",
+            notes="Daily and rolling actual MW/GWh data for the interconnector subfigure.",
+        )
+        write_figure_input_csv(
+            without_capacity_pct_columns(m[figure_monthly_columns(m)]),
+            subfigure_data_dir / f"{prefix}_monthly_history.csv",
+            manifest_rows,
+            output_dir=output_dir,
+            figure_basename=f"{prefix}_monthly_history",
+            source_table="monthly_summary.csv",
+            notes="Calendar-month actual MW data for the interconnector monthly subfigure.",
+        )
+        write_figure_input_csv(
+            without_capacity_pct_columns(moy[figure_monthly_columns(moy)]),
+            subfigure_data_dir / f"{prefix}_month_of_year_mw.csv",
+            manifest_rows,
+            output_dir=output_dir,
+            figure_basename=f"{prefix}_month_of_year_mw",
+            source_table="month_of_year_summary.csv",
+            notes="Actual MW version of the collapsed month-of-year view.",
+        )
+        write_figure_input_csv(
+            without_capacity_pct_columns(season[figure_monthly_columns(season)]),
+            subfigure_data_dir / f"{prefix}_seasonal_direction_share.csv",
+            manifest_rows,
+            output_dir=output_dir,
+            figure_basename=f"{prefix}_seasonal_direction_share",
+            source_table="season_overall_summary.csv",
+            notes="Seasonal direction shares with actual MW/GWh context.",
+        )
+        write_figure_input_csv(
+            without_capacity_pct_columns(e[figure_envelope_columns(e)]),
+            subfigure_data_dir / f"{prefix}_weekly_seasonal_envelope.csv",
+            manifest_rows,
+            output_dir=output_dir,
+            figure_basename=f"{prefix}_weekly_seasonal_envelope",
+            source_table="weekly_seasonal_envelope.csv",
+            notes="Weekly seasonal envelope in actual MW.",
+        )
+        write_figure_input_csv(
+            b.copy(),
+            subfigure_data_dir / f"{prefix}_level_bands_mw.csv",
+            manifest_rows,
+            output_dir=output_dir,
+            figure_basename=f"{prefix}_level_bands_mw",
+            source_table="level_bucket_summary.csv",
+            notes="MW flow-band duration shares for the interconnector.",
+        )
+
+    write_csv(pd.DataFrame(manifest_rows), figure_data_dir / "_manifest.csv")
 
 
 def format_num(value: float, decimals: int = 0) -> str:
@@ -2402,12 +3057,18 @@ def main() -> None:
     summary = summarise_by_interconnector(data, args.deadband_mw)
     fleet_summary = summarise_by_interconnector(fleet, args.deadband_mw).iloc[0]
 
-    monthly = summarise_periods(combined, ["interconnectorId", "calendar_month"], args.deadband_mw)
-    seasonal = summarise_periods(combined, ["interconnectorId", "season_year", "season"], args.deadband_mw)
-    season_overall = summarise_periods(combined, ["interconnectorId", "season"], args.deadband_mw)
-    month_of_year = add_month_names(summarise_periods(combined, ["interconnectorId", "month"], args.deadband_mw))
+    monthly = add_direction_regime_fields(summarise_periods(combined, ["interconnectorId", "calendar_month"], args.deadband_mw))
+    seasonal = add_direction_regime_fields(summarise_periods(combined, ["interconnectorId", "season_year", "season"], args.deadband_mw))
+    season_overall = add_direction_regime_fields(summarise_periods(combined, ["interconnectorId", "season"], args.deadband_mw))
+    month_of_year = add_direction_regime_fields(add_month_names(summarise_periods(combined, ["interconnectorId", "month"], args.deadband_mw)))
     season_month = add_month_names(summarise_periods(combined, ["interconnectorId", "season", "month"], args.deadband_mw))
+    weekday = add_direction_regime_fields(summarise_periods(combined, ["interconnectorId", "day_of_week"], args.deadband_mw))
+    weekday["day_name"] = weekday["day_of_week"].astype(int).map(lambda day: calendar.day_name[day])
+    weekday = weekday.sort_values(["interconnectorId", "day_of_week"], kind="mergesort").reset_index(drop=True)
     daily = daily_stats(combined)
+    daily_regimes = add_daily_timing_fields(daily)
+    timing_top_days = top_direction_days(daily_regimes)
+    timing_runs = direction_run_summary(daily_regimes)
     rolling = add_rolling_windows(daily, windows=[7, 30, 90])
     envelope = seasonal_weekly_envelope(daily)
     diurnal = diurnal_profile(combined)
@@ -2425,6 +3086,13 @@ def main() -> None:
     write_csv(month_of_year, args.output_dir / "month_of_year_summary.csv")
     write_csv(season_month, args.output_dir / "season_month_summary.csv")
     write_csv(daily, args.output_dir / "daily_timeseries.csv")
+    write_csv(monthly, args.output_dir / "direction_timing_calendar_month.csv")
+    write_csv(season_overall, args.output_dir / "direction_timing_season.csv")
+    write_csv(month_of_year, args.output_dir / "direction_timing_month_of_year.csv")
+    write_csv(weekday, args.output_dir / "direction_timing_weekday.csv")
+    write_csv(daily_regimes, args.output_dir / "direction_timing_daily.csv")
+    write_csv(timing_top_days, args.output_dir / "direction_timing_top_days.csv")
+    write_csv(timing_runs, args.output_dir / "direction_timing_runs.csv")
     write_csv(rolling, args.output_dir / "rolling_windows.csv")
     write_csv(envelope, args.output_dir / "weekly_seasonal_envelope.csv")
     write_csv(diurnal, args.output_dir / "diurnal_profile_by_season.csv")
@@ -2455,6 +3123,20 @@ def main() -> None:
         ],
         args.output_dir / "fleet_half_hourly_timeseries.csv",
     )
+    export_figure_input_data(
+        args.output_dir,
+        summary,
+        monthly,
+        month_of_year,
+        season_overall,
+        rolling,
+        envelope,
+        diurnal,
+        buckets,
+        flow_corr_matrix,
+        direction_pairwise,
+        conditional_direction,
+    )
 
     build_story(
         args.output_dir,
@@ -2469,6 +3151,14 @@ def main() -> None:
         analysis_end,
         args.positive_direction,
         args.deadband_mw,
+    )
+    direction_timing_story(
+        args.output_dir,
+        season_overall,
+        month_of_year,
+        weekday,
+        timing_top_days,
+        timing_runs,
     )
     build_presentation_outline(
         args.output_dir,

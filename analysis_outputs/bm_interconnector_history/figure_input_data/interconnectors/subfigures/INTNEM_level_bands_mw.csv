@@ -1,0 +1,10 @@
+interconnectorId,interconnectorName,flow_band_mw,observations,duration_hours,duration_share_pct
+INTNEM,Belgium (Nemolink),export_1000_1500_mw,4409,2204.5,5.032300773848928
+INTNEM,Belgium (Nemolink),export_500_1000_mw,9391,4695.5,10.718606615381104
+INTNEM,Belgium (Nemolink),export_250_500_mw,5311,2655.5,6.061816604652225
+INTNEM,Belgium (Nemolink),export_50_250_mw,4976,2488.0,5.6794576209281615
+INTNEM,Belgium (Nemolink),near_zero_abs_le_50_mw,4751,2375.5,5.422649348277672
+INTNEM,Belgium (Nemolink),import_50_250_mw,6149,3074.5,7.018284749012715
+INTNEM,Belgium (Nemolink),import_250_500_mw,8261,4130.5,9.42885840162531
+INTNEM,Belgium (Nemolink),import_500_1000_mw,38269,19134.5,43.67909238249595
+INTNEM,Belgium (Nemolink),import_1000_1500_mw,6097,3048.5,6.958933503777935

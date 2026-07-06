@@ -1,0 +1,8 @@
+interconnectorId,interconnectorName,flow_band_mw,observations,duration_hours,duration_share_pct
+INTEW,Ireland(East-West),export_500_1000_mw,19792,9896.0,22.58999703243774
+INTEW,Ireland(East-West),export_250_500_mw,11553,5776.5,13.186248773027142
+INTEW,Ireland(East-West),export_50_250_mw,10344,5172.0,11.80633232131851
+INTEW,Ireland(East-West),near_zero_abs_le_50_mw,34045,17022.5,38.857945077270756
+INTEW,Ireland(East-West),import_50_250_mw,5826,2913.0,6.649622206496679
+INTEW,Ireland(East-West),import_250_500_mw,3928,1964.0,4.483301755427214
+INTEW,Ireland(East-West),import_500_1000_mw,2126,1063.0,2.42655283402196

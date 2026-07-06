@@ -1,0 +1,10 @@
+interconnectorId,interconnectorName,flow_band_mw,observations,duration_hours,duration_share_pct
+INTNED,Netherlands(BritNed),export_1000_1500_mw,6888,3444.0,7.8617572534069895
+INTNED,Netherlands(BritNed),export_500_1000_mw,11060,5530.0,12.623553313397402
+INTNED,Netherlands(BritNed),export_250_500_mw,5283,2641.5,6.029858241833496
+INTNED,Netherlands(BritNed),export_50_250_mw,4243,2121.5,4.8428333371379
+INTNED,Netherlands(BritNed),near_zero_abs_le_50_mw,9027,4513.5,10.303147898737643
+INTNED,Netherlands(BritNed),import_50_250_mw,5083,2541.5,5.801584221699729
+INTNED,Netherlands(BritNed),import_250_500_mw,7056,3528.0,8.053507430319355
+INTNED,Netherlands(BritNed),import_500_1000_mw,20239,10119.5,23.10018946743671
+INTNED,Netherlands(BritNed),import_1000_1500_mw,18735,9367.5,21.383568836030772

@@ -1,0 +1,201 @@
+interconnectorId,interconnectorName,direction,rank,date,day_name,month,month_name,season,mean_signed_mw,median_signed_mw,import_share_pct,export_share_pct,near_zero_share_pct,mostly_direction,import_gwh,export_gwh,net_gwh
+INTELEC,Eleclink (INTELEC),import,1,2025-11-15 00:00:00+00:00,Saturday,11,Nov,Autumn,999.5,1000.0,100.0,0.0,0.0,mostly_import,23.988,0.0,23.988
+INTELEC,Eleclink (INTELEC),import,2,2024-07-28 00:00:00+00:00,Sunday,7,Jul,Summer,999.2916666666666,1000.0,100.0,0.0,0.0,mostly_import,23.983,0.0,23.983
+INTELEC,Eleclink (INTELEC),import,3,2026-04-20 00:00:00+00:00,Monday,4,Apr,Spring,999.2916666666666,1000.0,100.0,0.0,0.0,mostly_import,23.983,0.0,23.983
+INTELEC,Eleclink (INTELEC),import,4,2025-11-14 00:00:00+00:00,Friday,11,Nov,Autumn,999.125,1000.0,100.0,0.0,0.0,mostly_import,23.979,0.0,23.979
+INTELEC,Eleclink (INTELEC),import,5,2025-11-08 00:00:00+00:00,Saturday,11,Nov,Autumn,999.0,999.0,100.0,0.0,0.0,mostly_import,23.976,0.0,23.976
+INTELEC,Eleclink (INTELEC),import,6,2025-11-16 00:00:00+00:00,Sunday,11,Nov,Autumn,998.9583333333334,998.0,100.0,0.0,0.0,mostly_import,23.975,0.0,23.975
+INTELEC,Eleclink (INTELEC),import,7,2026-04-21 00:00:00+00:00,Tuesday,4,Apr,Spring,998.9166666666666,998.0,100.0,0.0,0.0,mostly_import,23.974,0.0,23.974
+INTELEC,Eleclink (INTELEC),import,8,2025-11-09 00:00:00+00:00,Sunday,11,Nov,Autumn,998.7916666666666,998.0,100.0,0.0,0.0,mostly_import,23.971,0.0,23.971
+INTELEC,Eleclink (INTELEC),import,9,2025-11-25 00:00:00+00:00,Tuesday,11,Nov,Autumn,998.75,998.0,100.0,0.0,0.0,mostly_import,23.97,0.0,23.97
+INTELEC,Eleclink (INTELEC),import,10,2025-09-28 00:00:00+00:00,Sunday,9,Sep,Autumn,998.75,998.0,100.0,0.0,0.0,mostly_import,23.97,0.0,23.97
+INTELEC,Eleclink (INTELEC),export,1,2022-07-16 00:00:00+00:00,Saturday,7,Jul,Summer,-1024.875,-1024.0,0.0,100.0,0.0,mostly_export,0.0,24.597,-24.597
+INTELEC,Eleclink (INTELEC),export,2,2022-07-15 00:00:00+00:00,Friday,7,Jul,Summer,-1024.7083333333333,-1024.0,0.0,100.0,0.0,mostly_export,0.0,24.593,-24.593
+INTELEC,Eleclink (INTELEC),export,3,2022-07-13 00:00:00+00:00,Wednesday,7,Jul,Summer,-1023.7083333333334,-1024.0,0.0,100.0,0.0,mostly_export,0.0,24.569,-24.569
+INTELEC,Eleclink (INTELEC),export,4,2022-09-06 00:00:00+00:00,Tuesday,9,Sep,Autumn,-1023.6666666666666,-1024.0,0.0,100.0,0.0,mostly_export,0.0,24.568,-24.568
+INTELEC,Eleclink (INTELEC),export,5,2022-09-05 00:00:00+00:00,Monday,9,Sep,Autumn,-1023.5833333333334,-1024.0,0.0,100.0,0.0,mostly_export,0.0,24.566,-24.566
+INTELEC,Eleclink (INTELEC),export,6,2022-07-21 00:00:00+00:00,Thursday,7,Jul,Summer,-1023.2916666666666,-1024.0,0.0,100.0,0.0,mostly_export,0.0,24.559,-24.559
+INTELEC,Eleclink (INTELEC),export,7,2022-08-31 00:00:00+00:00,Wednesday,8,Aug,Summer,-1023.2083333333334,-1024.0,0.0,100.0,0.0,mostly_export,0.0,24.557000000000002,-24.557000000000002
+INTELEC,Eleclink (INTELEC),export,8,2022-10-12 00:00:00+00:00,Wednesday,10,Oct,Autumn,-1023.125,-1024.0,0.0,100.0,0.0,mostly_export,0.0,24.555,-24.555
+INTELEC,Eleclink (INTELEC),export,9,2022-09-03 00:00:00+00:00,Saturday,9,Sep,Autumn,-1023.0833333333334,-1024.0,0.0,100.0,0.0,mostly_export,0.0,24.554000000000002,-24.554000000000002
+INTELEC,Eleclink (INTELEC),export,10,2022-09-02 00:00:00+00:00,Friday,9,Sep,Autumn,-1023.0833333333334,-1024.0,0.0,100.0,0.0,mostly_export,0.0,24.554000000000002,-24.554000000000002
+INTEW,Ireland(East-West),import,1,2022-02-20 00:00:00+00:00,Sunday,2,Feb,Winter,494.6666666666667,504.0,100.0,0.0,0.0,mostly_import,11.872,0.0,11.872
+INTEW,Ireland(East-West),import,2,2022-08-16 00:00:00+00:00,Tuesday,8,Aug,Summer,457.5833333333333,504.0,100.0,0.0,0.0,mostly_import,10.982,0.0,10.982
+INTEW,Ireland(East-West),import,3,2022-02-05 00:00:00+00:00,Saturday,2,Feb,Winter,449.375,504.0,97.91666666666666,0.0,2.083333333333333,mostly_import,10.785,0.0,10.785
+INTEW,Ireland(East-West),import,4,2022-11-30 00:00:00+00:00,Wednesday,11,Nov,Autumn,447.0,495.0,100.0,0.0,0.0,mostly_import,10.728,0.0,10.728
+INTEW,Ireland(East-West),import,5,2022-08-19 00:00:00+00:00,Friday,8,Aug,Summer,440.25,504.0,100.0,0.0,0.0,mostly_import,10.566,0.0,10.566
+INTEW,Ireland(East-West),import,6,2022-02-26 00:00:00+00:00,Saturday,2,Feb,Winter,434.375,504.0,100.0,0.0,0.0,mostly_import,10.425,0.0,10.425
+INTEW,Ireland(East-West),import,7,2022-07-11 00:00:00+00:00,Monday,7,Jul,Summer,424.125,504.0,97.91666666666666,0.0,2.083333333333333,mostly_import,10.179,0.0,10.179
+INTEW,Ireland(East-West),import,8,2022-10-30 00:00:00+00:00,Sunday,10,Oct,Autumn,409.1666666666667,456.0,100.0,0.0,0.0,mostly_import,9.82,0.0,9.82
+INTEW,Ireland(East-West),import,9,2022-10-21 00:00:00+00:00,Friday,10,Oct,Autumn,409.1666666666667,487.0,100.0,0.0,0.0,mostly_import,9.82,0.0,9.82
+INTEW,Ireland(East-West),import,10,2022-07-01 00:00:00+00:00,Friday,7,Jul,Summer,408.0,504.0,100.0,0.0,0.0,mostly_import,9.792,0.0,9.792
+INTEW,Ireland(East-West),export,1,2025-12-15 00:00:00+00:00,Monday,12,Dec,Winter,-532.0,-532.0,0.0,100.0,0.0,mostly_export,0.0,12.768,-12.768
+INTEW,Ireland(East-West),export,2,2024-04-12 00:00:00+00:00,Friday,4,Apr,Spring,-531.9583333333334,-532.0,0.0,100.0,0.0,mostly_export,0.0,12.767000000000001,-12.767000000000001
+INTEW,Ireland(East-West),export,3,2024-11-26 00:00:00+00:00,Tuesday,11,Nov,Autumn,-531.3333333333334,-532.0,0.0,100.0,0.0,mostly_export,0.0,12.752,-12.752
+INTEW,Ireland(East-West),export,4,2026-01-01 00:00:00+00:00,Thursday,1,Jan,Winter,-530.0833333333334,-532.0,0.0,100.0,0.0,mostly_export,0.0,12.722000000000001,-12.722000000000001
+INTEW,Ireland(East-West),export,5,2024-12-09 00:00:00+00:00,Monday,12,Dec,Winter,-530.0416666666666,-530.0,0.0,100.0,0.0,mostly_export,0.0,12.721,-12.721
+INTEW,Ireland(East-West),export,6,2024-04-27 00:00:00+00:00,Saturday,4,Apr,Spring,-529.25,-530.0,0.0,100.0,0.0,mostly_export,0.0,12.702,-12.702
+INTEW,Ireland(East-West),export,7,2024-06-05 00:00:00+00:00,Wednesday,6,Jun,Summer,-529.0833333333334,-530.0,0.0,100.0,0.0,mostly_export,0.0,12.698,-12.698
+INTEW,Ireland(East-West),export,8,2025-11-05 00:00:00+00:00,Wednesday,11,Nov,Autumn,-528.7916666666666,-532.0,0.0,100.0,0.0,mostly_export,0.0,12.691,-12.691
+INTEW,Ireland(East-West),export,9,2021-07-16 00:00:00+00:00,Friday,7,Jul,Summer,-528.5416666666666,-536.0,0.0,100.0,0.0,mostly_export,0.0,12.685,-12.685
+INTEW,Ireland(East-West),export,10,2025-08-21 00:00:00+00:00,Thursday,8,Aug,Summer,-528.125,-528.0,0.0,100.0,0.0,mostly_export,0.0,12.675,-12.675
+INTFR,France(IFA),import,1,2024-06-14 00:00:00+00:00,Friday,6,Jun,Summer,2008.0416666666667,2008.0,100.0,0.0,0.0,mostly_import,48.193,0.0,48.193
+INTFR,France(IFA),import,2,2025-08-29 00:00:00+00:00,Friday,8,Aug,Summer,2007.625,2008.0,100.0,0.0,0.0,mostly_import,48.183,0.0,48.183
+INTFR,France(IFA),import,3,2025-07-26 00:00:00+00:00,Saturday,7,Jul,Summer,2006.8333333333333,2006.0,100.0,0.0,0.0,mostly_import,48.164,0.0,48.164
+INTFR,France(IFA),import,4,2025-07-27 00:00:00+00:00,Sunday,7,Jul,Summer,2006.0833333333333,2006.0,100.0,0.0,0.0,mostly_import,48.146,0.0,48.146
+INTFR,France(IFA),import,5,2026-03-20 00:00:00+00:00,Friday,3,Mar,Spring,2005.4166666666667,2006.0,100.0,0.0,0.0,mostly_import,48.13,0.0,48.13
+INTFR,France(IFA),import,6,2026-03-19 00:00:00+00:00,Thursday,3,Mar,Spring,2003.9166666666667,2004.0,100.0,0.0,0.0,mostly_import,48.094,0.0,48.094
+INTFR,France(IFA),import,7,2025-03-08 00:00:00+00:00,Saturday,3,Mar,Spring,2003.1666666666667,2004.0,100.0,0.0,0.0,mostly_import,48.076,0.0,48.076
+INTFR,France(IFA),import,8,2024-10-25 00:00:00+00:00,Friday,10,Oct,Autumn,2002.5,2004.0,100.0,0.0,0.0,mostly_import,48.06,0.0,48.06
+INTFR,France(IFA),import,9,2025-07-12 00:00:00+00:00,Saturday,7,Jul,Summer,2001.7083333333333,2004.0,100.0,0.0,0.0,mostly_import,48.041000000000004,0.0,48.041000000000004
+INTFR,France(IFA),import,10,2026-03-18 00:00:00+00:00,Wednesday,3,Mar,Spring,2001.625,2002.0,100.0,0.0,0.0,mostly_import,48.039,0.0,48.039
+INTFR,France(IFA),export,1,2024-01-09 00:00:00+00:00,Tuesday,1,Jan,Winter,-1548.5416666666667,-1587.0,0.0,100.0,0.0,mostly_export,0.0,37.165,-37.165
+INTFR,France(IFA),export,2,2023-01-31 00:00:00+00:00,Tuesday,1,Jan,Winter,-1516.0833333333333,-1642.0,0.0,100.0,0.0,mostly_export,0.0,36.386,-36.386
+INTFR,France(IFA),export,3,2023-03-06 00:00:00+00:00,Monday,3,Mar,Spring,-1218.2083333333333,-1039.0,0.0,100.0,0.0,mostly_export,0.0,29.237000000000002,-29.237000000000002
+INTFR,France(IFA),export,4,2024-01-10 00:00:00+00:00,Wednesday,1,Jan,Winter,-1147.75,-1314.0,4.166666666666666,95.83333333333334,0.0,mostly_export,0.011,27.557,-27.546
+INTFR,France(IFA),export,5,2023-07-16 00:00:00+00:00,Sunday,7,Jul,Summer,-1113.4166666666667,-1215.0,6.25,93.75,0.0,mostly_export,0.683,27.405,-26.722
+INTFR,France(IFA),export,6,2024-12-30 00:00:00+00:00,Monday,12,Dec,Winter,-1111.5416666666667,-1021.0,0.0,100.0,0.0,mostly_export,0.0,26.677,-26.677
+INTFR,France(IFA),export,7,2022-07-21 00:00:00+00:00,Thursday,7,Jul,Summer,-1031.8333333333333,-1032.0,0.0,100.0,0.0,mostly_export,0.0,24.764,-24.764
+INTFR,France(IFA),export,8,2022-08-31 00:00:00+00:00,Wednesday,8,Aug,Summer,-1031.6666666666667,-1032.0,0.0,100.0,0.0,mostly_export,0.0,24.76,-24.76
+INTFR,France(IFA),export,9,2022-05-26 00:00:00+00:00,Thursday,5,May,Spring,-1031.4583333333333,-1032.0,0.0,100.0,0.0,mostly_export,0.0,24.755,-24.755
+INTFR,France(IFA),export,10,2022-07-22 00:00:00+00:00,Friday,7,Jul,Summer,-1031.4166666666667,-1032.0,0.0,100.0,0.0,mostly_export,0.0,24.754,-24.754
+INTGRNL,Ireland (Greenlink),import,1,2025-02-03 00:00:00+00:00,Monday,2,Feb,Winter,472.0,499.0,100.0,0.0,0.0,mostly_import,11.328,0.0,11.328
+INTGRNL,Ireland (Greenlink),import,2,2025-02-13 00:00:00+00:00,Thursday,2,Feb,Winter,332.625,488.0,83.33333333333334,16.666666666666664,0.0,mostly_import,8.626,0.643,7.9830000000000005
+INTGRNL,Ireland (Greenlink),import,3,2025-02-23 00:00:00+00:00,Sunday,2,Feb,Winter,321.4583333333333,367.0,93.75,6.25,0.0,mostly_import,7.807,0.092,7.715
+INTGRNL,Ireland (Greenlink),import,4,2025-10-04 00:00:00+00:00,Saturday,10,Oct,Autumn,301.625,376.0,91.66666666666666,8.333333333333332,0.0,mostly_import,7.541,0.302,7.239
+INTGRNL,Ireland (Greenlink),import,5,2025-09-26 00:00:00+00:00,Friday,9,Sep,Autumn,200.58333333333334,226.0,75.0,22.916666666666664,2.083333333333333,mostly_import,6.14,1.326,4.814
+INTGRNL,Ireland (Greenlink),import,6,2025-02-17 00:00:00+00:00,Monday,2,Feb,Winter,193.625,438.0,70.83333333333334,29.166666666666668,0.0,mostly_import,7.2780000000000005,2.6310000000000002,4.647
+INTGRNL,Ireland (Greenlink),import,7,2026-01-11 00:00:00+00:00,Sunday,1,Jan,Winter,189.625,181.0,100.0,0.0,0.0,mostly_import,4.551,0.0,4.551
+INTGRNL,Ireland (Greenlink),import,8,2025-08-04 00:00:00+00:00,Monday,8,Aug,Summer,186.20833333333334,217.0,66.66666666666666,33.33333333333333,0.0,mostly_import,5.662,1.193,4.469
+INTGRNL,Ireland (Greenlink),import,9,2025-02-20 00:00:00+00:00,Thursday,2,Feb,Winter,156.70833333333334,233.0,70.83333333333334,29.166666666666668,0.0,mostly_import,5.616,1.855,3.761
+INTGRNL,Ireland (Greenlink),import,10,2025-10-30 00:00:00+00:00,Thursday,10,Oct,Autumn,121.41666666666667,266.0,72.91666666666666,27.083333333333332,0.0,mostly_import,5.6000000000000005,2.686,2.914
+INTGRNL,Ireland (Greenlink),export,1,2025-10-11 00:00:00+00:00,Saturday,10,Oct,Autumn,-514.0416666666666,-514.0,0.0,100.0,0.0,mostly_export,0.0,12.337,-12.337
+INTGRNL,Ireland (Greenlink),export,2,2026-05-02 00:00:00+00:00,Saturday,5,May,Spring,-514.0,-514.0,0.0,100.0,0.0,mostly_export,0.0,12.336,-12.336
+INTGRNL,Ireland (Greenlink),export,3,2025-11-29 00:00:00+00:00,Saturday,11,Nov,Autumn,-514.0,-514.0,0.0,100.0,0.0,mostly_export,0.0,12.336,-12.336
+INTGRNL,Ireland (Greenlink),export,4,2026-05-03 00:00:00+00:00,Sunday,5,May,Spring,-514.0,-514.0,0.0,100.0,0.0,mostly_export,0.0,12.336,-12.336
+INTGRNL,Ireland (Greenlink),export,5,2025-05-08 00:00:00+00:00,Thursday,5,May,Spring,-514.0,-514.0,0.0,100.0,0.0,mostly_export,0.0,12.336,-12.336
+INTGRNL,Ireland (Greenlink),export,6,2025-05-07 00:00:00+00:00,Wednesday,5,May,Spring,-514.0,-514.0,0.0,100.0,0.0,mostly_export,0.0,12.336,-12.336
+INTGRNL,Ireland (Greenlink),export,7,2025-05-06 00:00:00+00:00,Tuesday,5,May,Spring,-514.0,-514.0,0.0,100.0,0.0,mostly_export,0.0,12.336,-12.336
+INTGRNL,Ireland (Greenlink),export,8,2025-11-04 00:00:00+00:00,Tuesday,11,Nov,Autumn,-514.0,-514.0,0.0,100.0,0.0,mostly_export,0.0,12.336,-12.336
+INTGRNL,Ireland (Greenlink),export,9,2026-04-26 00:00:00+00:00,Sunday,4,Apr,Spring,-514.0,-514.0,0.0,100.0,0.0,mostly_export,0.0,12.336,-12.336
+INTGRNL,Ireland (Greenlink),export,10,2025-05-04 00:00:00+00:00,Sunday,5,May,Spring,-514.0,-514.0,0.0,100.0,0.0,mostly_export,0.0,12.336,-12.336
+INTIFA2,IFA2 (INTIFA2),import,1,2025-04-12 00:00:00+00:00,Saturday,4,Apr,Spring,993.6666666666666,994.0,100.0,0.0,0.0,mostly_import,23.848,0.0,23.848
+INTIFA2,IFA2 (INTIFA2),import,2,2025-04-15 00:00:00+00:00,Tuesday,4,Apr,Spring,993.0,993.0,100.0,0.0,0.0,mostly_import,23.832,0.0,23.832
+INTIFA2,IFA2 (INTIFA2),import,3,2025-04-14 00:00:00+00:00,Monday,4,Apr,Spring,992.8333333333334,992.0,100.0,0.0,0.0,mostly_import,23.828,0.0,23.828
+INTIFA2,IFA2 (INTIFA2),import,4,2025-05-08 00:00:00+00:00,Thursday,5,May,Spring,992.25,992.0,100.0,0.0,0.0,mostly_import,23.814,0.0,23.814
+INTIFA2,IFA2 (INTIFA2),import,5,2025-05-09 00:00:00+00:00,Friday,5,May,Spring,992.2083333333334,992.0,100.0,0.0,0.0,mostly_import,23.813,0.0,23.813
+INTIFA2,IFA2 (INTIFA2),import,6,2025-04-09 00:00:00+00:00,Wednesday,4,Apr,Spring,992.0416666666666,992.0,100.0,0.0,0.0,mostly_import,23.809,0.0,23.809
+INTIFA2,IFA2 (INTIFA2),import,7,2025-05-19 00:00:00+00:00,Monday,5,May,Spring,992.0416666666666,992.0,100.0,0.0,0.0,mostly_import,23.809,0.0,23.809
+INTIFA2,IFA2 (INTIFA2),import,8,2026-05-14 00:00:00+00:00,Thursday,5,May,Spring,992.0,992.0,100.0,0.0,0.0,mostly_import,23.808,0.0,23.808
+INTIFA2,IFA2 (INTIFA2),import,9,2026-06-20 00:00:00+00:00,Saturday,6,Jun,Summer,992.0,992.0,100.0,0.0,0.0,mostly_import,23.808,0.0,23.808
+INTIFA2,IFA2 (INTIFA2),import,10,2026-05-21 00:00:00+00:00,Thursday,5,May,Spring,992.0,992.0,100.0,0.0,0.0,mostly_import,23.808,0.0,23.808
+INTIFA2,IFA2 (INTIFA2),export,1,2022-10-06 00:00:00+00:00,Thursday,10,Oct,Autumn,-1030.0,-1030.0,0.0,100.0,0.0,mostly_export,0.0,24.72,-24.72
+INTIFA2,IFA2 (INTIFA2),export,2,2022-09-07 00:00:00+00:00,Wednesday,9,Sep,Autumn,-1029.875,-1030.0,0.0,100.0,0.0,mostly_export,0.0,24.717000000000002,-24.717000000000002
+INTIFA2,IFA2 (INTIFA2),export,3,2022-07-16 00:00:00+00:00,Saturday,7,Jul,Summer,-1029.4583333333333,-1030.0,0.0,100.0,0.0,mostly_export,0.0,24.707,-24.707
+INTIFA2,IFA2 (INTIFA2),export,4,2022-08-31 00:00:00+00:00,Wednesday,8,Aug,Summer,-1029.4166666666667,-1030.0,0.0,100.0,0.0,mostly_export,0.0,24.706,-24.706
+INTIFA2,IFA2 (INTIFA2),export,5,2022-07-06 00:00:00+00:00,Wednesday,7,Jul,Summer,-1029.4166666666667,-1030.0,0.0,100.0,0.0,mostly_export,0.0,24.706,-24.706
+INTIFA2,IFA2 (INTIFA2),export,6,2022-07-08 00:00:00+00:00,Friday,7,Jul,Summer,-1029.2916666666667,-1030.0,0.0,100.0,0.0,mostly_export,0.0,24.703,-24.703
+INTIFA2,IFA2 (INTIFA2),export,7,2022-06-24 00:00:00+00:00,Friday,6,Jun,Summer,-1029.25,-1030.0,0.0,100.0,0.0,mostly_export,0.0,24.702,-24.702
+INTIFA2,IFA2 (INTIFA2),export,8,2022-08-04 00:00:00+00:00,Thursday,8,Aug,Summer,-1029.125,-1030.0,0.0,100.0,0.0,mostly_export,0.0,24.699,-24.699
+INTIFA2,IFA2 (INTIFA2),export,9,2022-07-07 00:00:00+00:00,Thursday,7,Jul,Summer,-1029.0416666666667,-1030.0,0.0,100.0,0.0,mostly_export,0.0,24.697,-24.697
+INTIFA2,IFA2 (INTIFA2),export,10,2022-07-15 00:00:00+00:00,Friday,7,Jul,Summer,-1028.9166666666667,-1028.0,0.0,100.0,0.0,mostly_export,0.0,24.694,-24.694
+INTIRL,Northern Ireland(Moyle),import,1,2022-10-29 00:00:00+00:00,Saturday,10,Oct,Autumn,394.8333333333333,400.0,100.0,0.0,0.0,mostly_import,9.476,0.0,9.476
+INTIRL,Northern Ireland(Moyle),import,2,2022-10-21 00:00:00+00:00,Friday,10,Oct,Autumn,393.375,400.0,100.0,0.0,0.0,mostly_import,9.441,0.0,9.441
+INTIRL,Northern Ireland(Moyle),import,3,2022-10-30 00:00:00+00:00,Sunday,10,Oct,Autumn,390.4583333333333,400.0,100.0,0.0,0.0,mostly_import,9.371,0.0,9.371
+INTIRL,Northern Ireland(Moyle),import,4,2022-12-18 00:00:00+00:00,Sunday,12,Dec,Winter,384.0416666666667,400.0,100.0,0.0,0.0,mostly_import,9.217,0.0,9.217
+INTIRL,Northern Ireland(Moyle),import,5,2022-11-30 00:00:00+00:00,Wednesday,11,Nov,Autumn,379.9166666666667,400.0,100.0,0.0,0.0,mostly_import,9.118,0.0,9.118
+INTIRL,Northern Ireland(Moyle),import,6,2022-11-26 00:00:00+00:00,Saturday,11,Nov,Autumn,379.875,400.0,100.0,0.0,0.0,mostly_import,9.117,0.0,9.117
+INTIRL,Northern Ireland(Moyle),import,7,2022-11-27 00:00:00+00:00,Sunday,11,Nov,Autumn,376.7916666666667,400.0,100.0,0.0,0.0,mostly_import,9.043000000000001,0.0,9.043000000000001
+INTIRL,Northern Ireland(Moyle),import,8,2022-04-10 00:00:00+00:00,Sunday,4,Apr,Spring,373.4583333333333,402.0,100.0,0.0,0.0,mostly_import,8.963000000000001,0.0,8.963000000000001
+INTIRL,Northern Ireland(Moyle),import,9,2022-10-26 00:00:00+00:00,Wednesday,10,Oct,Autumn,370.4583333333333,400.0,100.0,0.0,0.0,mostly_import,8.891,0.0,8.891
+INTIRL,Northern Ireland(Moyle),import,10,2023-02-14 00:00:00+00:00,Tuesday,2,Feb,Winter,367.8333333333333,400.0,100.0,0.0,0.0,mostly_import,8.828000000000001,0.0,8.828000000000001
+INTIRL,Northern Ireland(Moyle),export,1,2023-05-29 00:00:00+00:00,Monday,5,May,Spring,-453.9583333333333,-454.0,0.0,100.0,0.0,mostly_export,0.0,10.895,-10.895
+INTIRL,Northern Ireland(Moyle),export,2,2021-07-20 00:00:00+00:00,Tuesday,7,Jul,Summer,-453.625,-454.0,0.0,100.0,0.0,mostly_export,0.0,10.887,-10.887
+INTIRL,Northern Ireland(Moyle),export,3,2021-07-21 00:00:00+00:00,Wednesday,7,Jul,Summer,-452.8333333333333,-454.0,0.0,100.0,0.0,mostly_export,0.0,10.868,-10.868
+INTIRL,Northern Ireland(Moyle),export,4,2024-04-27 00:00:00+00:00,Saturday,4,Apr,Spring,-452.0,-452.0,0.0,100.0,0.0,mostly_export,0.0,10.848,-10.848
+INTIRL,Northern Ireland(Moyle),export,5,2024-04-28 00:00:00+00:00,Sunday,4,Apr,Spring,-452.0,-452.0,0.0,100.0,0.0,mostly_export,0.0,10.848,-10.848
+INTIRL,Northern Ireland(Moyle),export,6,2023-04-23 00:00:00+00:00,Sunday,4,Apr,Spring,-452.0,-452.0,0.0,100.0,0.0,mostly_export,0.0,10.848,-10.848
+INTIRL,Northern Ireland(Moyle),export,7,2024-12-11 00:00:00+00:00,Wednesday,12,Dec,Winter,-452.0,-452.0,0.0,100.0,0.0,mostly_export,0.0,10.848,-10.848
+INTIRL,Northern Ireland(Moyle),export,8,2025-03-15 00:00:00+00:00,Saturday,3,Mar,Spring,-452.0,-452.0,0.0,100.0,0.0,mostly_export,0.0,10.848,-10.848
+INTIRL,Northern Ireland(Moyle),export,9,2026-05-01 00:00:00+00:00,Friday,5,May,Spring,-452.0,-452.0,0.0,100.0,0.0,mostly_export,0.0,10.848,-10.848
+INTIRL,Northern Ireland(Moyle),export,10,2026-05-06 00:00:00+00:00,Wednesday,5,May,Spring,-452.0,-452.0,0.0,100.0,0.0,mostly_export,0.0,10.848,-10.848
+INTNED,Netherlands(BritNed),import,1,2021-12-28 00:00:00+00:00,Tuesday,12,Dec,Winter,1048.125,1052.0,100.0,0.0,0.0,mostly_import,25.155,0.0,25.155
+INTNED,Netherlands(BritNed),import,2,2021-11-21 00:00:00+00:00,Sunday,11,Nov,Autumn,1047.8333333333333,1048.0,100.0,0.0,0.0,mostly_import,25.148,0.0,25.148
+INTNED,Netherlands(BritNed),import,3,2023-02-25 00:00:00+00:00,Saturday,2,Feb,Winter,1039.625,1052.0,100.0,0.0,0.0,mostly_import,24.951,0.0,24.951
+INTNED,Netherlands(BritNed),import,4,2021-11-28 00:00:00+00:00,Sunday,11,Nov,Autumn,1034.125,1048.0,100.0,0.0,0.0,mostly_import,24.819000000000003,0.0,24.819000000000003
+INTNED,Netherlands(BritNed),import,5,2022-02-02 00:00:00+00:00,Wednesday,2,Feb,Winter,1027.4583333333333,1054.0,100.0,0.0,0.0,mostly_import,24.659000000000002,0.0,24.659000000000002
+INTNED,Netherlands(BritNed),import,6,2023-03-05 00:00:00+00:00,Sunday,3,Mar,Spring,1020.7083333333334,1050.0,100.0,0.0,0.0,mostly_import,24.497,0.0,24.497
+INTNED,Netherlands(BritNed),import,7,2023-02-20 00:00:00+00:00,Monday,2,Feb,Winter,1018.25,1052.0,100.0,0.0,0.0,mostly_import,24.438000000000002,0.0,24.438000000000002
+INTNED,Netherlands(BritNed),import,8,2025-03-15 00:00:00+00:00,Saturday,3,Mar,Spring,1015.0,1050.0,100.0,0.0,0.0,mostly_import,24.36,0.0,24.36
+INTNED,Netherlands(BritNed),import,9,2026-03-08 00:00:00+00:00,Sunday,3,Mar,Spring,1014.7916666666666,1066.0,100.0,0.0,0.0,mostly_import,24.355,0.0,24.355
+INTNED,Netherlands(BritNed),import,10,2021-11-20 00:00:00+00:00,Saturday,11,Nov,Autumn,1014.1666666666666,1046.0,100.0,0.0,0.0,mostly_import,24.34,0.0,24.34
+INTNED,Netherlands(BritNed),export,1,2022-05-06 00:00:00+00:00,Friday,5,May,Spring,-1038.5,-1050.0,0.0,100.0,0.0,mostly_export,0.0,24.924,-24.924
+INTNED,Netherlands(BritNed),export,2,2022-10-19 00:00:00+00:00,Wednesday,10,Oct,Autumn,-1010.9583333333334,-1048.0,0.0,100.0,0.0,mostly_export,0.0,24.263,-24.263
+INTNED,Netherlands(BritNed),export,3,2022-11-20 00:00:00+00:00,Sunday,11,Nov,Autumn,-996.4166666666666,-1052.0,0.0,100.0,0.0,mostly_export,0.0,23.914,-23.914
+INTNED,Netherlands(BritNed),export,4,2022-11-26 00:00:00+00:00,Saturday,11,Nov,Autumn,-995.2916666666666,-1052.0,0.0,100.0,0.0,mostly_export,0.0,23.887,-23.887
+INTNED,Netherlands(BritNed),export,5,2025-12-03 00:00:00+00:00,Wednesday,12,Dec,Winter,-985.0,-1056.0,0.0,100.0,0.0,mostly_export,0.0,23.64,-23.64
+INTNED,Netherlands(BritNed),export,6,2025-09-09 00:00:00+00:00,Tuesday,9,Sep,Autumn,-981.625,-1036.0,0.0,100.0,0.0,mostly_export,0.0,23.559,-23.559
+INTNED,Netherlands(BritNed),export,7,2022-04-30 00:00:00+00:00,Saturday,4,Apr,Spring,-975.9574468085107,-1050.0,0.0,100.0,0.0,mostly_export,0.0,22.935000000000002,-22.935000000000002
+INTNED,Netherlands(BritNed),export,8,2022-05-09 00:00:00+00:00,Monday,5,May,Spring,-945.9166666666666,-1050.0,0.0,100.0,0.0,mostly_export,0.0,22.702,-22.702
+INTNED,Netherlands(BritNed),export,9,2022-09-24 00:00:00+00:00,Saturday,9,Sep,Autumn,-936.4583333333334,-1014.0,0.0,100.0,0.0,mostly_export,0.0,22.475,-22.475
+INTNED,Netherlands(BritNed),export,10,2022-11-12 00:00:00+00:00,Saturday,11,Nov,Autumn,-921.5,-1052.0,0.0,100.0,0.0,mostly_export,0.0,22.116,-22.116
+INTNEM,Belgium (Nemolink),import,1,2023-11-04 00:00:00+00:00,Saturday,11,Nov,Autumn,1004.1666666666666,1000.0,100.0,0.0,0.0,mostly_import,24.1,0.0,24.1
+INTNEM,Belgium (Nemolink),import,2,2024-10-08 00:00:00+00:00,Tuesday,10,Oct,Autumn,1004.0833333333334,1000.0,100.0,0.0,0.0,mostly_import,24.098,0.0,24.098
+INTNEM,Belgium (Nemolink),import,3,2024-07-28 00:00:00+00:00,Sunday,7,Jul,Summer,1004.0833333333334,1000.0,100.0,0.0,0.0,mostly_import,24.098,0.0,24.098
+INTNEM,Belgium (Nemolink),import,4,2026-03-22 00:00:00+00:00,Sunday,3,Mar,Spring,1001.5833333333334,998.0,100.0,0.0,0.0,mostly_import,24.038,0.0,24.038
+INTNEM,Belgium (Nemolink),import,5,2022-02-13 00:00:00+00:00,Sunday,2,Feb,Winter,1001.125,1000.0,100.0,0.0,0.0,mostly_import,24.027,0.0,24.027
+INTNEM,Belgium (Nemolink),import,6,2022-04-02 00:00:00+00:00,Saturday,4,Apr,Spring,1001.0,1000.0,100.0,0.0,0.0,mostly_import,24.024,0.0,24.024
+INTNEM,Belgium (Nemolink),import,7,2026-04-23 00:00:00+00:00,Thursday,4,Apr,Spring,1000.8333333333334,998.0,100.0,0.0,0.0,mostly_import,24.02,0.0,24.02
+INTNEM,Belgium (Nemolink),import,8,2021-12-28 00:00:00+00:00,Tuesday,12,Dec,Winter,1000.5416666666666,1000.0,100.0,0.0,0.0,mostly_import,24.013,0.0,24.013
+INTNEM,Belgium (Nemolink),import,9,2025-01-07 00:00:00+00:00,Tuesday,1,Jan,Winter,1000.375,1000.0,100.0,0.0,0.0,mostly_import,24.009,0.0,24.009
+INTNEM,Belgium (Nemolink),import,10,2026-02-27 00:00:00+00:00,Friday,2,Feb,Winter,999.5416666666666,998.0,100.0,0.0,0.0,mostly_import,23.989,0.0,23.989
+INTNEM,Belgium (Nemolink),export,1,2022-11-26 00:00:00+00:00,Saturday,11,Nov,Autumn,-998.3333333333334,-1022.0,0.0,100.0,0.0,mostly_export,0.0,23.96,-23.96
+INTNEM,Belgium (Nemolink),export,2,2022-06-25 00:00:00+00:00,Saturday,6,Jun,Summer,-980.4583333333334,-1022.0,0.0,100.0,0.0,mostly_export,0.0,23.531,-23.531
+INTNEM,Belgium (Nemolink),export,3,2022-05-12 00:00:00+00:00,Thursday,5,May,Spring,-971.9583333333334,-1020.0,0.0,100.0,0.0,mostly_export,0.0,23.327,-23.327
+INTNEM,Belgium (Nemolink),export,4,2022-04-30 00:00:00+00:00,Saturday,4,Apr,Spring,-965.0212765957447,-1022.0,0.0,100.0,0.0,mostly_export,0.0,22.678,-22.678
+INTNEM,Belgium (Nemolink),export,5,2022-05-17 00:00:00+00:00,Tuesday,5,May,Spring,-957.9583333333334,-1020.0,0.0,100.0,0.0,mostly_export,0.0,22.991,-22.991
+INTNEM,Belgium (Nemolink),export,6,2022-05-06 00:00:00+00:00,Friday,5,May,Spring,-954.5416666666666,-1020.0,0.0,100.0,0.0,mostly_export,0.0,22.909,-22.909
+INTNEM,Belgium (Nemolink),export,7,2022-05-18 00:00:00+00:00,Wednesday,5,May,Spring,-943.875,-1020.0,0.0,100.0,0.0,mostly_export,0.0,22.653000000000002,-22.653000000000002
+INTNEM,Belgium (Nemolink),export,8,2022-06-26 00:00:00+00:00,Sunday,6,Jun,Summer,-943.4166666666666,-1021.0,0.0,100.0,0.0,mostly_export,0.0,22.642,-22.642
+INTNEM,Belgium (Nemolink),export,9,2022-10-19 00:00:00+00:00,Wednesday,10,Oct,Autumn,-940.2083333333334,-1020.0,0.0,100.0,0.0,mostly_export,0.0,22.565,-22.565
+INTNEM,Belgium (Nemolink),export,10,2022-05-09 00:00:00+00:00,Monday,5,May,Spring,-936.7916666666666,-1020.0,0.0,100.0,0.0,mostly_export,0.0,22.483,-22.483
+INTNSL,North Sea Link (INTNSL),import,1,2023-08-16 00:00:00+00:00,Wednesday,8,Aug,Summer,1400.0,1400.0,100.0,0.0,0.0,mostly_import,33.6,0.0,33.6
+INTNSL,North Sea Link (INTNSL),import,2,2023-09-04 00:00:00+00:00,Monday,9,Sep,Autumn,1400.0,1400.0,100.0,0.0,0.0,mostly_import,33.6,0.0,33.6
+INTNSL,North Sea Link (INTNSL),import,3,2023-08-13 00:00:00+00:00,Sunday,8,Aug,Summer,1400.0,1400.0,100.0,0.0,0.0,mostly_import,33.6,0.0,33.6
+INTNSL,North Sea Link (INTNSL),import,4,2023-08-27 00:00:00+00:00,Sunday,8,Aug,Summer,1400.0,1400.0,100.0,0.0,0.0,mostly_import,33.6,0.0,33.6
+INTNSL,North Sea Link (INTNSL),import,5,2023-08-23 00:00:00+00:00,Wednesday,8,Aug,Summer,1400.0,1400.0,100.0,0.0,0.0,mostly_import,33.6,0.0,33.6
+INTNSL,North Sea Link (INTNSL),import,6,2023-09-02 00:00:00+00:00,Saturday,9,Sep,Autumn,1400.0,1400.0,100.0,0.0,0.0,mostly_import,33.6,0.0,33.6
+INTNSL,North Sea Link (INTNSL),import,7,2024-07-27 00:00:00+00:00,Saturday,7,Jul,Summer,1400.0,1400.0,100.0,0.0,0.0,mostly_import,33.6,0.0,33.6
+INTNSL,North Sea Link (INTNSL),import,8,2023-07-26 00:00:00+00:00,Wednesday,7,Jul,Summer,1400.0,1400.0,100.0,0.0,0.0,mostly_import,33.6,0.0,33.6
+INTNSL,North Sea Link (INTNSL),import,9,2023-07-25 00:00:00+00:00,Tuesday,7,Jul,Summer,1400.0,1400.0,100.0,0.0,0.0,mostly_import,33.6,0.0,33.6
+INTNSL,North Sea Link (INTNSL),import,10,2023-09-13 00:00:00+00:00,Wednesday,9,Sep,Autumn,1400.0,1400.0,100.0,0.0,0.0,mostly_import,33.6,0.0,33.6
+INTNSL,North Sea Link (INTNSL),export,1,2026-02-09 00:00:00+00:00,Monday,2,Feb,Winter,-1445.375,-1454.0,0.0,100.0,0.0,mostly_export,0.0,34.689,-34.689
+INTNSL,North Sea Link (INTNSL),export,2,2026-02-10 00:00:00+00:00,Tuesday,2,Feb,Winter,-1401.9583333333333,-1454.0,0.0,100.0,0.0,mostly_export,0.0,33.647,-33.647
+INTNSL,North Sea Link (INTNSL),export,3,2026-02-18 00:00:00+00:00,Wednesday,2,Feb,Winter,-1386.8333333333333,-1454.0,0.0,100.0,0.0,mostly_export,0.0,33.284,-33.284
+INTNSL,North Sea Link (INTNSL),export,4,2026-02-24 00:00:00+00:00,Tuesday,2,Feb,Winter,-1386.6666666666667,-1454.0,0.0,100.0,0.0,mostly_export,0.0,33.28,-33.28
+INTNSL,North Sea Link (INTNSL),export,5,2023-12-24 00:00:00+00:00,Sunday,12,Dec,Winter,-1380.9583333333333,-1454.0,0.0,100.0,0.0,mostly_export,0.0,33.143,-33.143
+INTNSL,North Sea Link (INTNSL),export,6,2026-04-15 00:00:00+00:00,Wednesday,4,Apr,Spring,-1331.75,-1427.0,0.0,100.0,0.0,mostly_export,0.0,31.962,-31.962
+INTNSL,North Sea Link (INTNSL),export,7,2026-02-11 00:00:00+00:00,Wednesday,2,Feb,Winter,-1305.7083333333333,-1454.0,0.0,100.0,0.0,mostly_export,0.0,31.337,-31.337
+INTNSL,North Sea Link (INTNSL),export,8,2026-04-11 00:00:00+00:00,Saturday,4,Apr,Spring,-1302.3333333333333,-1240.0,0.0,100.0,0.0,mostly_export,0.0,31.256,-31.256
+INTNSL,North Sea Link (INTNSL),export,9,2026-02-13 00:00:00+00:00,Friday,2,Feb,Winter,-1294.8333333333333,-1346.0,0.0,100.0,0.0,mostly_export,0.0,31.076,-31.076
+INTNSL,North Sea Link (INTNSL),export,10,2026-02-12 00:00:00+00:00,Thursday,2,Feb,Winter,-1293.9166666666667,-1454.0,0.0,100.0,0.0,mostly_export,0.0,31.054,-31.054
+INTVKL,Denmark (Viking link),import,1,2025-02-10 00:00:00+00:00,Monday,2,Feb,Winter,1422.9166666666667,1424.0,100.0,0.0,0.0,mostly_import,34.15,0.0,34.15
+INTVKL,Denmark (Viking link),import,2,2024-11-16 00:00:00+00:00,Saturday,11,Nov,Autumn,1422.5,1422.0,100.0,0.0,0.0,mostly_import,34.14,0.0,34.14
+INTVKL,Denmark (Viking link),import,3,2024-11-17 00:00:00+00:00,Sunday,11,Nov,Autumn,1422.0,1422.0,100.0,0.0,0.0,mostly_import,34.128,0.0,34.128
+INTVKL,Denmark (Viking link),import,4,2024-12-30 00:00:00+00:00,Monday,12,Dec,Winter,1421.75,1424.0,100.0,0.0,0.0,mostly_import,34.122,0.0,34.122
+INTVKL,Denmark (Viking link),import,5,2025-01-03 00:00:00+00:00,Friday,1,Jan,Winter,1421.7083333333333,1422.0,100.0,0.0,0.0,mostly_import,34.120999999999995,0.0,34.120999999999995
+INTVKL,Denmark (Viking link),import,6,2025-10-10 00:00:00+00:00,Friday,10,Oct,Autumn,1420.9166666666667,1426.0,100.0,0.0,0.0,mostly_import,34.102,0.0,34.102
+INTVKL,Denmark (Viking link),import,7,2026-02-01 00:00:00+00:00,Sunday,2,Feb,Winter,1419.625,1420.0,100.0,0.0,0.0,mostly_import,34.071,0.0,34.071
+INTVKL,Denmark (Viking link),import,8,2024-11-01 00:00:00+00:00,Friday,11,Nov,Autumn,1418.875,1424.0,100.0,0.0,0.0,mostly_import,34.053,0.0,34.053
+INTVKL,Denmark (Viking link),import,9,2024-12-20 00:00:00+00:00,Friday,12,Dec,Winter,1414.125,1422.0,100.0,0.0,0.0,mostly_import,33.939,0.0,33.939
+INTVKL,Denmark (Viking link),import,10,2026-01-31 00:00:00+00:00,Saturday,1,Jan,Winter,1412.25,1421.0,100.0,0.0,0.0,mostly_import,33.894,0.0,33.894
+INTVKL,Denmark (Viking link),export,1,2025-12-03 00:00:00+00:00,Wednesday,12,Dec,Winter,-1090.625,-1094.0,0.0,100.0,0.0,mostly_export,0.0,26.175,-26.175
+INTVKL,Denmark (Viking link),export,2,2025-09-01 00:00:00+00:00,Monday,9,Sep,Autumn,-1083.0416666666667,-1092.0,0.0,100.0,0.0,mostly_export,0.0,25.993000000000002,-25.993000000000002
+INTVKL,Denmark (Viking link),export,3,2025-11-08 00:00:00+00:00,Saturday,11,Nov,Autumn,-1083.0,-1094.0,0.0,100.0,0.0,mostly_export,0.0,25.992,-25.992
+INTVKL,Denmark (Viking link),export,4,2025-12-05 00:00:00+00:00,Friday,12,Dec,Winter,-1082.2083333333333,-1091.0,0.0,100.0,0.0,mostly_export,0.0,25.973000000000003,-25.973000000000003
+INTVKL,Denmark (Viking link),export,5,2025-09-10 00:00:00+00:00,Wednesday,9,Sep,Autumn,-1066.2083333333333,-1092.0,0.0,100.0,0.0,mostly_export,0.0,25.589000000000002,-25.589000000000002
+INTVKL,Denmark (Viking link),export,6,2026-02-10 00:00:00+00:00,Tuesday,2,Feb,Winter,-1063.125,-1090.0,0.0,100.0,0.0,mostly_export,0.0,25.515,-25.515
+INTVKL,Denmark (Viking link),export,7,2026-02-14 00:00:00+00:00,Saturday,2,Feb,Winter,-1056.3333333333333,-1092.0,0.0,100.0,0.0,mostly_export,0.0,25.352,-25.352
+INTVKL,Denmark (Viking link),export,8,2025-12-04 00:00:00+00:00,Thursday,12,Dec,Winter,-1049.5416666666667,-1094.0,0.0,97.91666666666666,2.083333333333333,mostly_export,0.0,25.189,-25.189
+INTVKL,Denmark (Viking link),export,9,2025-11-09 00:00:00+00:00,Sunday,11,Nov,Autumn,-1035.4583333333333,-1089.0,0.0,100.0,0.0,mostly_export,0.0,24.851000000000003,-24.851000000000003
+INTVKL,Denmark (Viking link),export,10,2025-08-28 00:00:00+00:00,Thursday,8,Aug,Summer,-1035.0,-1084.0,0.0,100.0,0.0,mostly_export,0.0,24.84,-24.84
