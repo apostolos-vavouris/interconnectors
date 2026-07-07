@@ -28,6 +28,27 @@ PowerPoint, run:
 python export_figures_to_png.py --overwrite
 ```
 
+To correlate aggregate GB wind BMU output with interconnector operation, run:
+
+```powershell
+..\elexon-iris\.venv\Scripts\python.exe .\analyse_wind_interconnector_correlation.py
+```
+
+This uses `..\elexon-iris\wind_bmu_best_settlement_timeseries`, treats
+`metered` as actual wind output, and treats `metered - BAV` as the
+pre-curtailment proxy used in the previous wind workflow. Outputs are written
+to:
+
+```text
+analysis_outputs/wind_interconnector_correlation/
+```
+
+To export those wind-correlation HTML figures to PNG, run:
+
+```powershell
+..\elexon-iris\.venv\Scripts\python.exe .\export_figures_to_png.py --figures-dir .\analysis_outputs\wind_interconnector_correlation\figures --overwrite
+```
+
 By default it uses the latest five-year window available in the CSVs and treats
 positive raw `generation` as GB import. If the source convention is confirmed to
 be the opposite, rerun with:
@@ -57,3 +78,15 @@ Key outputs:
   HTML files.
 - `figures/interconnectors/subfigures/` - separate modular charts for each
   interconnector, intended for one-slide-per-link presentation layouts.
+
+Wind/interconnector correlation outputs:
+
+- `story.md` - short narrative for the wind/interconnector relationship.
+- `correlation_summary.csv` - half-hourly, daily, and monthly correlations
+  against actual wind and pre-curtailment wind.
+- `correlation_by_season.csv` and `correlation_by_month_of_year.csv` -
+  seasonal and month-of-year correlation cuts.
+- `wind_level_bucket_summary.csv` - import/export levels and direction shares
+  across low-to-high wind quintiles.
+- `interconnector_wind_join_half_hourly_wide.csv` - joined wind and signed
+  interconnector MW series for further analysis.

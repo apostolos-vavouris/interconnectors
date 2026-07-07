@@ -1,0 +1,15 @@
+key,value
+requested_analysis_start,2021-07-01 00:00:00+00:00
+requested_analysis_end,2026-06-30 22:30:00+00:00
+overlap_start,2021-07-01 00:00:00+00:00
+overlap_end,2025-12-31 23:30:00+00:00
+wind_first_startTime,2021-07-01 00:00:00+00:00
+wind_last_startTime,2025-12-31 23:30:00+00:00
+positive_interconnector_direction,import
+deadband_mw,1.0
+wind_settlement_dir,..\elexon-iris\wind_bmu_best_settlement_timeseries
+interconnector_data_dir,HH_data
+wind_source_files,214
+wind_source_rows_in_requested_window,14677898
+joined_half_hour_rows,737646
+joined_timestamps,78544
