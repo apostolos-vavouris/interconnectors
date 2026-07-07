@@ -69,6 +69,20 @@ LEVEL_LABELS = [
     "import_gt_1500_mw",
 ]
 
+LEVEL_BAND_METADATA = {
+    "export_gt_1500_mw": ("export", ">1500 MW"),
+    "export_1000_1500_mw": ("export", "1000-1500 MW"),
+    "export_500_1000_mw": ("export", "500-1000 MW"),
+    "export_250_500_mw": ("export", "250-500 MW"),
+    "export_50_250_mw": ("export", "50-250 MW"),
+    "near_zero_abs_le_50_mw": ("near_zero", "<=50 MW"),
+    "import_50_250_mw": ("import", "50-250 MW"),
+    "import_250_500_mw": ("import", "250-500 MW"),
+    "import_500_1000_mw": ("import", "500-1000 MW"),
+    "import_1000_1500_mw": ("import", "1000-1500 MW"),
+    "import_gt_1500_mw": ("import", ">1500 MW"),
+}
+
 PCT_CAPACITY_BINS = [-math.inf, -75, -50, -25, -5, 5, 25, 50, 75, math.inf]
 PCT_CAPACITY_LABELS = [
     "export_gt_75pct_capacity",
@@ -357,6 +371,9 @@ def summarise_group(g: pd.DataFrame, deadband_mw: float) -> dict[str, object]:
         "missing_half_hours_between_first_last": max(expected - n, 0),
         "coverage_pct_between_first_last": pct(n, expected),
         "duration_hours": n * HH_HOURS,
+        "import_half_hours": int(import_mask.sum()),
+        "export_half_hours": int(export_mask.sum()),
+        "near_zero_half_hours": int(zero_mask.sum()),
         "import_share_pct": import_mask.mean() * 100.0,
         "export_share_pct": export_mask.mean() * 100.0,
         "near_zero_share_pct": zero_mask.mean() * 100.0,
@@ -371,6 +388,8 @@ def summarise_group(g: pd.DataFrame, deadband_mw: float) -> dict[str, object]:
         "p25_signed_mw": g["signed_mw"].quantile(0.25),
         "p75_signed_mw": g["signed_mw"].quantile(0.75),
         "p95_signed_mw": g["signed_mw"].quantile(0.95),
+        "mean_import_mw": g["import_mw"].mean(),
+        "mean_export_mw": g["export_mw"].mean(),
         "mean_import_mw_when_importing": g.loc[import_mask, "import_mw"].mean(),
         "mean_export_mw_when_exporting": g.loc[export_mask, "export_mw"].mean(),
         "max_import_mw": g["import_mw"].max(),
@@ -800,6 +819,51 @@ def level_bucket_summary(df: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
+def add_level_band_metadata(df: pd.DataFrame) -> pd.DataFrame:
+    out = df.copy()
+    out["flow_band_mw"] = out["flow_band_mw"].astype(str)
+    metadata = out["flow_band_mw"].map(LEVEL_BAND_METADATA)
+    out["flow_direction"] = metadata.map(lambda item: item[0] if isinstance(item, tuple) else pd.NA)
+    out["mw_band"] = metadata.map(lambda item: item[1] if isinstance(item, tuple) else pd.NA)
+    out["level_label"] = np.select(
+        [
+            out["flow_direction"].eq("export"),
+            out["flow_direction"].eq("import"),
+            out["flow_direction"].eq("near_zero"),
+        ],
+        [
+            "Export " + out["mw_band"].astype(str),
+            "Import " + out["mw_band"].astype(str),
+            "Near zero " + out["mw_band"].astype(str),
+        ],
+        default=out["flow_band_mw"],
+    )
+    out["flow_band_mw"] = pd.Categorical(out["flow_band_mw"], categories=LEVEL_LABELS, ordered=True)
+    return out.sort_values(["interconnectorId", "flow_band_mw"]).reset_index(drop=True)
+
+
+def build_fleet_level_bucket_summary(bucket_summary: pd.DataFrame) -> pd.DataFrame:
+    out = bucket_summary[bucket_summary["interconnectorId"] == "TOTAL_GB_INTERCONNECTORS"].copy()
+    out = add_level_band_metadata(out)
+    out.insert(0, "aggregation_level", "fleet_total")
+    columns = existing_columns(
+        out,
+        [
+            "aggregation_level",
+            "interconnectorId",
+            "interconnectorName",
+            "flow_direction",
+            "mw_band",
+            "level_label",
+            "flow_band_mw",
+            "observations",
+            "duration_hours",
+            "duration_share_pct",
+        ],
+    )
+    return out[columns]
+
+
 def pct_capacity_bucket_summary(df: pd.DataFrame) -> pd.DataFrame:
     grouped = df.groupby(["interconnectorId", "interconnectorName", "flow_band_pct_capacity"], observed=False, sort=True)
     out = grouped.agg(observations=("signed_pct_capacity", "size")).reset_index()
@@ -899,6 +963,50 @@ def write_csv(df: pd.DataFrame, path: Path) -> None:
 
 def existing_columns(df: pd.DataFrame, columns: list[str]) -> list[str]:
     return [column for column in columns if column in df.columns]
+
+
+def build_direction_share_summary(summary: pd.DataFrame, fleet_summary: pd.Series | dict[str, object]) -> pd.DataFrame:
+    """Return direction-share rows for physical links plus the aggregate fleet."""
+
+    fleet_frame = pd.DataFrame([dict(fleet_summary)])
+    out = pd.concat([summary.copy(), fleet_frame], ignore_index=True, sort=False)
+    out["aggregation_level"] = np.where(
+        out["interconnectorId"].eq("TOTAL_GB_INTERCONNECTORS"),
+        "fleet_total",
+        "interconnector",
+    )
+    columns = existing_columns(
+        out,
+        [
+            "aggregation_level",
+            "interconnectorId",
+            "interconnectorName",
+            "interconnectorBiddingZone",
+            "observations",
+            "duration_hours",
+            "import_half_hours",
+            "export_half_hours",
+            "near_zero_half_hours",
+            "import_share_pct",
+            "export_share_pct",
+            "near_zero_share_pct",
+            "dominant_direction",
+            "mean_signed_mw",
+            "mean_import_mw",
+            "mean_export_mw",
+            "median_signed_mw",
+            "mean_import_mw_when_importing",
+            "mean_export_mw_when_exporting",
+            "max_import_mw",
+            "max_export_mw",
+            "import_gwh",
+            "export_gwh",
+            "net_gwh",
+            "abs_flow_gwh",
+            "deadband_mw",
+        ],
+    )
+    return out[columns].sort_values(["aggregation_level", "interconnectorId"]).reset_index(drop=True)
 
 
 def without_capacity_pct_columns(df: pd.DataFrame) -> pd.DataFrame:
@@ -1046,6 +1154,7 @@ def figure_diurnal_columns(df: pd.DataFrame) -> list[str]:
 def export_figure_input_data(
     output_dir: Path,
     summary: pd.DataFrame,
+    direction_share_summary: pd.DataFrame,
     monthly: pd.DataFrame,
     month_of_year: pd.DataFrame,
     season_overall: pd.DataFrame,
@@ -1053,6 +1162,7 @@ def export_figure_input_data(
     envelope: pd.DataFrame,
     diurnal: pd.DataFrame,
     bucket_summary: pd.DataFrame,
+    fleet_level_buckets: pd.DataFrame,
     flow_corr_matrix: pd.DataFrame,
     direction_pairwise: pd.DataFrame,
     conditional_direction: pd.DataFrame,
@@ -1063,29 +1173,44 @@ def export_figure_input_data(
     manifest_rows: list[dict[str, object]] = []
 
     direction_cols = existing_columns(
-        summary,
+        direction_share_summary,
         [
+            "aggregation_level",
             "interconnectorId",
             "interconnectorName",
+            "interconnectorBiddingZone",
+            "observations",
+            "duration_hours",
+            "import_half_hours",
+            "export_half_hours",
+            "near_zero_half_hours",
             "import_share_pct",
             "export_share_pct",
             "near_zero_share_pct",
             "dominant_direction",
             "mean_signed_mw",
+            "mean_import_mw",
+            "mean_export_mw",
             "median_signed_mw",
+            "mean_import_mw_when_importing",
+            "mean_export_mw_when_exporting",
+            "max_import_mw",
+            "max_export_mw",
             "import_gwh",
             "export_gwh",
             "net_gwh",
+            "abs_flow_gwh",
+            "deadband_mw",
         ],
     )
     write_figure_input_csv(
-        summary[direction_cols].copy(),
+        direction_share_summary[direction_cols].copy(),
         figure_data_dir / "direction_share_by_interconnector.csv",
         manifest_rows,
         output_dir=output_dir,
         figure_basename="direction_share_by_interconnector",
-        source_table="interconnector_summary.csv",
-        notes="Direction shares plus actual MW/GWh context; no capacity-normalised percentage fields.",
+        source_table="direction_share_summary.csv",
+        notes="Direction shares, half-hour counts, and aggregate MW/GWh context for each link plus the fleet total row.",
     )
 
     energy_cols = existing_columns(
@@ -1203,6 +1328,15 @@ def export_figure_input_data(
         figure_basename="level_bands_by_interconnector",
         source_table="level_bucket_summary.csv",
         notes="MW flow-band duration shares by interconnector.",
+    )
+    write_figure_input_csv(
+        fleet_level_buckets.copy(),
+        figure_data_dir / "fleet_level_bands_mw.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="fleet_level_bands_mw",
+        source_table="fleet_level_bucket_summary.csv",
+        notes="Aggregate GB interconnector fleet import/export MW level-band counts and duration shares.",
     )
     write_figure_input_csv(
         flow_corr_matrix.copy(),
@@ -2037,6 +2171,21 @@ def plot_level_buckets(bucket_summary: pd.DataFrame, figure_dir: Path) -> None:
     plt.close(fig)
 
 
+def plot_fleet_level_buckets(fleet_level_buckets: pd.DataFrame, figure_dir: Path) -> None:
+    plt, _, _ = require_matplotlib()
+    data = fleet_level_buckets.sort_values("flow_band_mw").copy()
+    colors = data["flow_direction"].map({"export": "#c43c39", "near_zero": "#b8b8b8", "import": "#2f6db2"}).fillna("#777777")
+    fig, ax = plt.subplots(figsize=(12, 5.5))
+    ax.bar(data["level_label"], data["duration_share_pct"], color=colors)
+    ax.set_ylabel("Share of half-hours (%)")
+    ax.set_title("Fleet Import/Export Level Bands")
+    ax.tick_params(axis="x", rotation=45)
+    ax.grid(axis="y", alpha=0.25)
+    fig.tight_layout()
+    fig.savefig(figure_dir / "fleet_level_bands_mw.png", dpi=160)
+    plt.close(fig)
+
+
 def require_plotly():
     try:
         import plotly.graph_objects as go
@@ -2222,6 +2371,27 @@ def plotly_level_buckets(bucket_summary: pd.DataFrame, figure_dir: Path) -> None
     fig.update_layout(barmode="stack", xaxis_title="Share of half-hours (%)", yaxis_title="")
     plotly_layout(fig, "Flow Level Bands by Interconnector")
     fig.write_html(figure_dir / "level_bands_by_interconnector.html", include_plotlyjs="directory")
+
+
+def plotly_fleet_level_buckets(fleet_level_buckets: pd.DataFrame, figure_dir: Path) -> None:
+    go = require_plotly()
+    data = fleet_level_buckets.sort_values("flow_band_mw").copy()
+    colors = data["flow_direction"].map({"export": "#c43c39", "near_zero": "#b8b8b8", "import": "#2f6db2"}).fillna("#777777")
+    fig = go.Figure(
+        go.Bar(
+            x=data["level_label"],
+            y=data["duration_share_pct"],
+            marker_color=colors,
+            text=data["duration_share_pct"].map(lambda value: f"{value:.1f}%"),
+            textposition="outside",
+            customdata=np.stack([data["observations"], data["duration_hours"]], axis=-1),
+            hovertemplate="%{x}<br>Share: %{y:.2f}%<br>Half-hours: %{customdata[0]:,.0f}<br>Hours: %{customdata[1]:,.1f}<extra></extra>",
+        )
+    )
+    fig.update_layout(xaxis_title="", yaxis_title="Share of half-hours (%)", showlegend=False, height=560)
+    fig.update_xaxes(tickangle=45)
+    plotly_layout(fig, "Fleet Import/Export Level Bands")
+    fig.write_html(figure_dir / "fleet_level_bands_mw.html", include_plotlyjs="directory")
 
 
 def plotly_pct_capacity_buckets(bucket_summary: pd.DataFrame, figure_dir: Path) -> None:
@@ -2893,6 +3063,7 @@ def plotly_interconnector_subfigures(
 def generate_plotly_charts(
     output_dir: Path,
     summary: pd.DataFrame,
+    direction_share_summary: pd.DataFrame | None,
     monthly: pd.DataFrame,
     month_of_year: pd.DataFrame,
     season_overall: pd.DataFrame,
@@ -2900,6 +3071,7 @@ def generate_plotly_charts(
     envelope: pd.DataFrame,
     diurnal: pd.DataFrame,
     bucket_summary: pd.DataFrame,
+    fleet_level_buckets: pd.DataFrame,
     pct_capacity_buckets: pd.DataFrame,
     flow_corr_matrix: pd.DataFrame,
     direction_pairwise: pd.DataFrame,
@@ -2907,13 +3079,15 @@ def generate_plotly_charts(
 ) -> None:
     figure_dir = output_dir / "figures"
     figure_dir.mkdir(parents=True, exist_ok=True)
-    plotly_direction_share(summary, figure_dir)
+    direction_data = direction_share_summary if direction_share_summary is not None else summary
+    plotly_direction_share(direction_data, figure_dir)
     plotly_net_energy(summary, figure_dir)
     plotly_monthly_heatmap(monthly, figure_dir)
     plotly_fleet_rolling(rolling, figure_dir)
     plotly_weekly_envelope(envelope, figure_dir)
     plotly_fleet_diurnal(diurnal, figure_dir)
     plotly_level_buckets(bucket_summary, figure_dir)
+    plotly_fleet_level_buckets(fleet_level_buckets, figure_dir)
     plotly_pct_capacity_buckets(pct_capacity_buckets, figure_dir)
     plotly_fleet_month_of_year(month_of_year, figure_dir)
     plotly_fleet_month_of_year_pct_capacity(month_of_year, figure_dir)
@@ -2949,6 +3123,7 @@ def generate_plotly_charts(
 def generate_charts(
     output_dir: Path,
     summary: pd.DataFrame,
+    direction_share_summary: pd.DataFrame | None,
     monthly: pd.DataFrame,
     month_of_year: pd.DataFrame,
     season_overall: pd.DataFrame,
@@ -2956,6 +3131,7 @@ def generate_charts(
     envelope: pd.DataFrame,
     diurnal: pd.DataFrame,
     bucket_summary: pd.DataFrame,
+    fleet_level_buckets: pd.DataFrame,
     pct_capacity_buckets: pd.DataFrame,
     flow_corr_matrix: pd.DataFrame,
     direction_pairwise: pd.DataFrame,
@@ -2963,15 +3139,18 @@ def generate_charts(
 ) -> None:
     figure_dir = output_dir / "figures"
     figure_dir.mkdir(parents=True, exist_ok=True)
+    direction_data = direction_share_summary if direction_share_summary is not None else summary
     try:
-        plot_direction_share(summary, figure_dir)
+        plot_direction_share(direction_data, figure_dir)
         plot_net_energy(summary, figure_dir)
         plot_monthly_heatmap(monthly, figure_dir)
         plot_fleet_rolling(rolling, figure_dir)
         plot_weekly_envelope(envelope, figure_dir)
         plot_fleet_diurnal(diurnal, figure_dir)
         plot_level_buckets(bucket_summary, figure_dir)
+        plot_fleet_level_buckets(fleet_level_buckets, figure_dir)
         try:
+            plotly_fleet_level_buckets(fleet_level_buckets, figure_dir)
             plotly_pct_capacity_buckets(pct_capacity_buckets, figure_dir)
             plotly_fleet_month_of_year(month_of_year, figure_dir)
             plotly_fleet_month_of_year_pct_capacity(month_of_year, figure_dir)
@@ -3009,6 +3188,7 @@ def generate_charts(
         generate_plotly_charts(
             output_dir,
             summary,
+            direction_share_summary,
             monthly,
             month_of_year,
             season_overall,
@@ -3016,6 +3196,7 @@ def generate_charts(
             envelope,
             diurnal,
             bucket_summary,
+            fleet_level_buckets,
             pct_capacity_buckets,
             flow_corr_matrix,
             direction_pairwise,
@@ -3056,6 +3237,7 @@ def main() -> None:
 
     summary = summarise_by_interconnector(data, args.deadband_mw)
     fleet_summary = summarise_by_interconnector(fleet, args.deadband_mw).iloc[0]
+    direction_share_summary = build_direction_share_summary(summary, fleet_summary)
 
     monthly = add_direction_regime_fields(summarise_periods(combined, ["interconnectorId", "calendar_month"], args.deadband_mw))
     seasonal = add_direction_regime_fields(summarise_periods(combined, ["interconnectorId", "season_year", "season"], args.deadband_mw))
@@ -3073,12 +3255,14 @@ def main() -> None:
     envelope = seasonal_weekly_envelope(daily)
     diurnal = diurnal_profile(combined)
     buckets = level_bucket_summary(combined)
+    fleet_level_buckets = build_fleet_level_bucket_summary(buckets)
     pct_buckets = pct_capacity_bucket_summary(combined)
     flow_corr_matrix, flow_corr_pairwise = flow_correlation_outputs(data)
     direction_pairwise, conditional_direction = direction_alignment_outputs(data)
 
     write_csv(summary, args.output_dir / "interconnector_summary.csv")
     write_csv(pd.DataFrame([fleet_summary]), args.output_dir / "fleet_summary.csv")
+    write_csv(direction_share_summary, args.output_dir / "direction_share_summary.csv")
     write_csv(capacity_reference, args.output_dir / "capacity_reference.csv")
     write_csv(monthly, args.output_dir / "monthly_summary.csv")
     write_csv(seasonal, args.output_dir / "seasonal_summary.csv")
@@ -3097,6 +3281,7 @@ def main() -> None:
     write_csv(envelope, args.output_dir / "weekly_seasonal_envelope.csv")
     write_csv(diurnal, args.output_dir / "diurnal_profile_by_season.csv")
     write_csv(buckets, args.output_dir / "level_bucket_summary.csv")
+    write_csv(fleet_level_buckets, args.output_dir / "fleet_level_bucket_summary.csv")
     write_csv(pct_buckets, args.output_dir / "pct_capacity_bucket_summary.csv")
     write_csv(flow_corr_matrix, args.output_dir / "interconnector_flow_correlation_matrix.csv")
     write_csv(flow_corr_pairwise, args.output_dir / "interconnector_flow_correlation_pairwise.csv")
@@ -3126,6 +3311,7 @@ def main() -> None:
     export_figure_input_data(
         args.output_dir,
         summary,
+        direction_share_summary,
         monthly,
         month_of_year,
         season_overall,
@@ -3133,6 +3319,7 @@ def main() -> None:
         envelope,
         diurnal,
         buckets,
+        fleet_level_buckets,
         flow_corr_matrix,
         direction_pairwise,
         conditional_direction,
@@ -3190,6 +3377,7 @@ def main() -> None:
         generate_charts(
             args.output_dir,
             summary,
+            direction_share_summary,
             monthly,
             month_of_year,
             season_overall,
@@ -3197,6 +3385,7 @@ def main() -> None:
             envelope,
             diurnal,
             buckets,
+            fleet_level_buckets,
             pct_buckets,
             flow_corr_matrix,
             direction_pairwise,

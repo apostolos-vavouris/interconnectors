@@ -1,5 +1,5 @@
 figure_basename,csv_path,source_table,rows,columns,notes
-direction_share_by_interconnector,figure_input_data/direction_share_by_interconnector.csv,interconnector_summary.csv,10,11,Direction shares plus actual MW/GWh context; no capacity-normalised percentage fields.
+direction_share_by_interconnector,figure_input_data/direction_share_by_interconnector.csv,direction_share_summary.csv,11,26,"Direction shares, half-hour counts, and aggregate MW/GWh context for each link plus the fleet total row."
 net_energy_by_interconnector,figure_input_data/net_energy_by_interconnector.csv,interconnector_summary.csv,10,7,Net energy chart input with import-positive GWh and mean signed MW.
 monthly_mean_signed_mw_heatmap,figure_input_data/monthly_mean_signed_mw_heatmap.csv,monthly_summary.csv,576,22,Calendar-month actual MW summary used for the monthly heatmap.
 fleet_monthly_history_mw,figure_input_data/fleet_monthly_history_mw.csv,monthly_summary.csv,60,22,Aggregate GB interconnector fleet monthly actual MW summary.
@@ -11,6 +11,7 @@ fleet_rolling_net_mw,figure_input_data/fleet_rolling_net_mw.csv,rolling_windows.
 fleet_weekly_seasonal_envelope,figure_input_data/fleet_weekly_seasonal_envelope.csv,weekly_seasonal_envelope.csv,52,12,Aggregate fleet weekly seasonal envelope in actual MW.
 fleet_diurnal_by_season,figure_input_data/fleet_diurnal_by_season.csv,diurnal_profile_by_season.csv,192,12,Aggregate fleet diurnal-by-season profile in actual MW.
 level_bands_by_interconnector,figure_input_data/level_bands_by_interconnector_mw.csv,level_bucket_summary.csv,110,6,MW flow-band duration shares by interconnector.
+fleet_level_bands_mw,figure_input_data/fleet_level_bands_mw.csv,fleet_level_bucket_summary.csv,11,10,Aggregate GB interconnector fleet import/export MW level-band counts and duration shares.
 flow_correlation_heatmap,figure_input_data/flow_correlation_heatmap.csv,interconnector_flow_correlation_matrix.csv,10,11,Pairwise signed MW correlation matrix.
 direction_alignment_and_opposition_heatmaps,figure_input_data/direction_alignment_pairwise.csv,interconnector_direction_alignment_pairwise.csv,45,10,Pairwise direction alignment/opposition shares.
 conditional_import_export_alignment_heatmaps,figure_input_data/conditional_direction_shares.csv,interconnector_conditional_direction_shares.csv,180,7,Conditional direction shares for import/export alignment heatmaps.

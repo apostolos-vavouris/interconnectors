@@ -1,0 +1,12 @@
+aggregation_level,interconnectorId,interconnectorName,flow_direction,mw_band,level_label,flow_band_mw,observations,duration_hours,duration_share_pct
+fleet_total,TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,export,>1500 MW,Export >1500 MW,export_gt_1500_mw,11298,5649.0,12.890491294525704
+fleet_total,TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,export,1000-1500 MW,Export 1000-1500 MW,export_1000_1500_mw,2384,1192.0,2.7200328594573624
+fleet_total,TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,export,500-1000 MW,Export 500-1000 MW,export_500_1000_mw,2553,1276.5,2.912853980786345
+fleet_total,TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,export,250-500 MW,Export 250-500 MW,export_250_500_mw,1405,702.5,1.603039499806038
+fleet_total,TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,export,50-250 MW,Export 50-250 MW,export_50_250_mw,1185,592.5,1.3520297560641672
+fleet_total,TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,near_zero,<=50 MW,Near zero <=50 MW,near_zero_abs_le_50_mw,665,332.5,0.7587339981288365
+fleet_total,TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,import,50-250 MW,Import 50-250 MW,import_50_250_mw,1231,615.5,1.404513611573831
+fleet_total,TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,import,250-500 MW,Import 250-500 MW,import_250_500_mw,1628,814.0,1.8574721036898432
+fleet_total,TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,import,500-1000 MW,Import 500-1000 MW,import_500_1000_mw,3747,1873.5,4.275152317276316
+fleet_total,TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,import,1000-1500 MW,Import 1000-1500 MW,import_1000_1500_mw,4032,2016.0,4.6003240307601025
+fleet_total,TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,import,>1500 MW,Import >1500 MW,import_gt_1500_mw,57518,28759.0,65.62535654793145

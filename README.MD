@@ -64,12 +64,16 @@ Key outputs:
 - `capacity_reference.csv` - capacity basis used for `% capacity` metrics. If `interconnector_capacities.csv` is absent, this defaults to observed absolute peak MW in the analysis window.
 - `interconnector_summary.csv` - duty cycle, MW levels, energy, switching, and near-zero metrics by link.
 - `fleet_summary.csv` - aggregate GB interconnector BM position.
+- `direction_share_summary.csv` - import/export/near-zero counts and shares,
+  plus mean signed/import/export MW, for each link and the aggregate fleet.
 - `monthly_summary.csv` and `seasonal_summary.csv` - seasonal operating regimes.
 - `season_overall_summary.csv`, `month_of_year_summary.csv`, and `season_month_summary.csv` - season and month-of-year climatology across the fleet and per interconnector.
 - `rolling_windows.csv` - 7, 30, and 90 day rolling trend metrics.
 - `weekly_seasonal_envelope.csv` - seasonal envelope by ISO week.
 - `diurnal_profile_by_season.csv` - within-day profiles by season.
 - `level_bucket_summary.csv` - share of time spent in import/export MW bands.
+- `fleet_level_bucket_summary.csv` - aggregate GB interconnector fleet counts,
+  hours, and shares in the same MW import/export bands.
 - `pct_capacity_bucket_summary.csv` - share of time spent in import/export utilisation bands.
 - `interconnector_flow_correlation_matrix.csv` and `interconnector_flow_correlation_pairwise.csv` - signed-MW co-movement between links.
 - `interconnector_direction_alignment_pairwise.csv` and `interconnector_conditional_direction_shares.csv` - whether links import/export together or offset each other.
