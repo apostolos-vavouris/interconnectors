@@ -585,6 +585,74 @@ def build_wind_bucket_summary(joined: pd.DataFrame, wind: pd.DataFrame, deadband
     ]
 
 
+def build_low_high_wind_comparison(bucket_summary: pd.DataFrame) -> pd.DataFrame:
+    """Compare each interconnector's behaviour in low- and high-wind quintiles."""
+
+    rows: list[dict[str, object]] = []
+    low_bucket = "lowest_20pct"
+    high_bucket = "highest_20pct"
+    metrics = [
+        "observations",
+        "mean_wind_mw",
+        "mean_signed_mw",
+        "median_signed_mw",
+        "mean_import_mw",
+        "mean_export_mw",
+        "net_gwh",
+        "import_half_hours",
+        "export_half_hours",
+        "near_zero_half_hours",
+        "import_share_pct",
+        "export_share_pct",
+        "near_zero_share_pct",
+    ]
+
+    for (wind_metric, wind_metric_label, interconnector_id, interconnector_name), group in bucket_summary.groupby(
+        ["wind_metric", "wind_metric_label", "interconnectorId", "interconnectorName"],
+        sort=True,
+    ):
+        by_bucket = group.set_index("wind_bucket")
+        if low_bucket not in by_bucket.index or high_bucket not in by_bucket.index:
+            continue
+
+        low = by_bucket.loc[low_bucket]
+        high = by_bucket.loc[high_bucket]
+        row: dict[str, object] = {
+            "wind_metric": wind_metric,
+            "wind_metric_label": wind_metric_label,
+            "aggregation_level": "fleet_total"
+            if interconnector_id == "TOTAL_GB_INTERCONNECTORS"
+            else "interconnector",
+            "interconnectorId": interconnector_id,
+            "interconnectorName": interconnector_name,
+            "low_wind_bucket": low_bucket,
+            "high_wind_bucket": high_bucket,
+        }
+
+        for metric in metrics:
+            row[f"low_{metric}"] = low.get(metric)
+            row[f"high_{metric}"] = high.get(metric)
+
+        row["mean_signed_mw_delta_low_minus_high"] = low["mean_signed_mw"] - high["mean_signed_mw"]
+        row["mean_signed_mw_delta_high_minus_low"] = high["mean_signed_mw"] - low["mean_signed_mw"]
+        row["mean_export_mw_delta_low_minus_high"] = low["mean_export_mw"] - high["mean_export_mw"]
+        row["export_share_pct_delta_low_minus_high"] = low["export_share_pct"] - high["export_share_pct"]
+        row["mean_import_mw_delta_low_minus_high"] = low["mean_import_mw"] - high["mean_import_mw"]
+        row["import_share_pct_delta_low_minus_high"] = low["import_share_pct"] - high["import_share_pct"]
+        row["low_wind_has_higher_export_share"] = low["export_share_pct"] > high["export_share_pct"]
+        row["low_wind_is_more_export_or_less_import_signed_mw"] = low["mean_signed_mw"] < high["mean_signed_mw"]
+        rows.append(row)
+
+    out = pd.DataFrame(rows)
+    if out.empty:
+        return out
+
+    sort_order = {"interconnector": 0, "fleet_total": 1}
+    out["_sort_order"] = out["aggregation_level"].map(sort_order).fillna(99)
+    out = out.sort_values(["wind_metric", "_sort_order", "interconnectorId"]).drop(columns="_sort_order")
+    return out.reset_index(drop=True)
+
+
 def format_num(value: object, digits: int = 0) -> str:
     if value is None or pd.isna(value):
         return "n/a"
@@ -969,6 +1037,7 @@ def write_story(
             "- `correlation_summary.csv` - half-hourly, daily, and monthly correlations for actual and before-curtailment wind.",
             "- `correlation_by_season.csv` and `correlation_by_month_of_year.csv` - daily correlations by seasonal slices.",
             "- `wind_level_bucket_summary.csv` - import/export levels and shares by wind quintile.",
+            "- `wind_low_high_bucket_interconnector_comparison.csv` - low-wind vs high-wind comparison table for every interconnector.",
             "- `lag_correlation_summary.csv` - tested lag correlations for signed-MW position.",
             "",
             "## Coverage note",
@@ -1018,6 +1087,7 @@ def main() -> None:
     correlation_by_season = build_correlation_table(daily, "daily", 10, extra_group_cols=["season"])
     correlation_by_month = build_correlation_table(daily, "daily", 10, extra_group_cols=["month", "month_name"])
     wind_bucket_summary = build_wind_bucket_summary(joined, wind, args.deadband_mw)
+    low_high_comparison = build_low_high_wind_comparison(wind_bucket_summary)
     lag_summary = build_lag_correlation_table(joined, args.min_correlation_observations)
 
     write_csv(wind, args.output_dir / "wind_half_hourly_timeseries.csv")
@@ -1030,6 +1100,7 @@ def main() -> None:
     write_csv(correlation_by_season, args.output_dir / "correlation_by_season.csv")
     write_csv(correlation_by_month, args.output_dir / "correlation_by_month_of_year.csv")
     write_csv(wind_bucket_summary, args.output_dir / "wind_level_bucket_summary.csv")
+    write_csv(low_high_comparison, args.output_dir / "wind_low_high_bucket_interconnector_comparison.csv")
     write_csv(lag_summary, args.output_dir / "lag_correlation_summary.csv")
     write_run_config(
         args.output_dir / "run_config.csv",
