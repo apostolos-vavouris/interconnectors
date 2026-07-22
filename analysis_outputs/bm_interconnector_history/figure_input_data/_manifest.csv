@@ -7,7 +7,11 @@ month_of_year_mean_heatmap,figure_input_data/month_of_year_mean_heatmap.csv,mont
 fleet_month_of_year_profile,figure_input_data/fleet_month_of_year_profile_mw.csv,month_of_year_summary.csv,12,23,Aggregate GB interconnector fleet collapsed month-of-year actual MW profile.
 season_mean_signed_mw,figure_input_data/season_mean_signed_mw.csv,season_overall_summary.csv,44,22,Collapsed seasonal actual MW means; MW equivalent of the seasonal % capacity heatmap.
 season_direction_share_by_interconnector,figure_input_data/season_direction_share_by_interconnector.csv,season_overall_summary.csv,44,22,Seasonal import/export/near-zero shares with actual MW context.
-fleet_rolling_net_mw,figure_input_data/fleet_rolling_net_mw.csv,rolling_windows.csv,1826,32,Aggregate fleet daily and rolling actual MW/GWh values.
+fleet_rolling_net_mw,figure_input_data/fleet_rolling_net_mw.csv,rolling_windows.csv,1826,46,Aggregate fleet daily and rolling actual MW/GWh values.
+fleet_rolling_trend_context,figure_input_data/fleet_rolling_trend_context.csv,rolling_windows.csv,1826,12,Aggregate 30-day rolling trend context with active-capacity basis for the fleet.
+fleet_annual_import_export_trend,figure_input_data/fleet_annual_import_export_trend.csv,annual_trend_summary.csv,6,15,"Year-by-year aggregate import/export levels, net flow, and active capacity utilisation."
+interconnector_trend_delta_by_link,figure_input_data/interconnector_trend_delta_by_link.csv,rolling_trend_summary.csv,10,17,Per-link trend delta chart input from the 30-day rolling endpoint comparison.
+interconnector_rolling_trend_small_multiples,figure_input_data/interconnector_rolling_30d_trends.csv,rolling_windows.csv,15620,9,Per-interconnector 30-day rolling signed MW series used for the small-multiple trend chart.
 fleet_weekly_seasonal_envelope,figure_input_data/fleet_weekly_seasonal_envelope.csv,weekly_seasonal_envelope.csv,52,12,Aggregate fleet weekly seasonal envelope in actual MW.
 fleet_diurnal_by_season,figure_input_data/fleet_diurnal_by_season.csv,diurnal_profile_by_season.csv,192,12,Aggregate fleet diurnal-by-season profile in actual MW.
 level_bands_by_interconnector,figure_input_data/level_bands_by_interconnector_mw.csv,level_bucket_summary.csv,110,6,MW flow-band duration shares by interconnector.
@@ -15,61 +19,61 @@ fleet_level_bands_mw,figure_input_data/fleet_level_bands_mw.csv,fleet_level_buck
 flow_correlation_heatmap,figure_input_data/flow_correlation_heatmap.csv,interconnector_flow_correlation_matrix.csv,10,11,Pairwise signed MW correlation matrix.
 direction_alignment_and_opposition_heatmaps,figure_input_data/direction_alignment_pairwise.csv,interconnector_direction_alignment_pairwise.csv,45,10,Pairwise direction alignment/opposition shares.
 conditional_import_export_alignment_heatmaps,figure_input_data/conditional_direction_shares.csv,interconnector_conditional_direction_shares.csv,180,7,Conditional direction shares for import/export alignment heatmaps.
-INTELEC_daily_rolling,figure_input_data/interconnectors/subfigures/INTELEC_daily_rolling.csv,rolling_windows.csv,1499,32,Daily and rolling actual MW/GWh data for the interconnector subfigure.
+INTELEC_daily_rolling,figure_input_data/interconnectors/subfigures/INTELEC_daily_rolling.csv,rolling_windows.csv,1499,46,Daily and rolling actual MW/GWh data for the interconnector subfigure.
 INTELEC_monthly_history,figure_input_data/interconnectors/subfigures/INTELEC_monthly_history.csv,monthly_summary.csv,50,22,Calendar-month actual MW data for the interconnector monthly subfigure.
 INTELEC_month_of_year_mw,figure_input_data/interconnectors/subfigures/INTELEC_month_of_year_mw.csv,month_of_year_summary.csv,12,23,Actual MW version of the collapsed month-of-year view.
 INTELEC_seasonal_direction_share,figure_input_data/interconnectors/subfigures/INTELEC_seasonal_direction_share.csv,season_overall_summary.csv,4,22,Seasonal direction shares with actual MW/GWh context.
 INTELEC_weekly_seasonal_envelope,figure_input_data/interconnectors/subfigures/INTELEC_weekly_seasonal_envelope.csv,weekly_seasonal_envelope.csv,52,12,Weekly seasonal envelope in actual MW.
 INTELEC_level_bands_mw,figure_input_data/interconnectors/subfigures/INTELEC_level_bands_mw.csv,level_bucket_summary.csv,9,6,MW flow-band duration shares for the interconnector.
-INTEW_daily_rolling,figure_input_data/interconnectors/subfigures/INTEW_daily_rolling.csv,rolling_windows.csv,1826,32,Daily and rolling actual MW/GWh data for the interconnector subfigure.
+INTEW_daily_rolling,figure_input_data/interconnectors/subfigures/INTEW_daily_rolling.csv,rolling_windows.csv,1826,46,Daily and rolling actual MW/GWh data for the interconnector subfigure.
 INTEW_monthly_history,figure_input_data/interconnectors/subfigures/INTEW_monthly_history.csv,monthly_summary.csv,60,22,Calendar-month actual MW data for the interconnector monthly subfigure.
 INTEW_month_of_year_mw,figure_input_data/interconnectors/subfigures/INTEW_month_of_year_mw.csv,month_of_year_summary.csv,12,23,Actual MW version of the collapsed month-of-year view.
 INTEW_seasonal_direction_share,figure_input_data/interconnectors/subfigures/INTEW_seasonal_direction_share.csv,season_overall_summary.csv,4,22,Seasonal direction shares with actual MW/GWh context.
 INTEW_weekly_seasonal_envelope,figure_input_data/interconnectors/subfigures/INTEW_weekly_seasonal_envelope.csv,weekly_seasonal_envelope.csv,52,12,Weekly seasonal envelope in actual MW.
 INTEW_level_bands_mw,figure_input_data/interconnectors/subfigures/INTEW_level_bands_mw.csv,level_bucket_summary.csv,7,6,MW flow-band duration shares for the interconnector.
-INTFR_daily_rolling,figure_input_data/interconnectors/subfigures/INTFR_daily_rolling.csv,rolling_windows.csv,1826,32,Daily and rolling actual MW/GWh data for the interconnector subfigure.
+INTFR_daily_rolling,figure_input_data/interconnectors/subfigures/INTFR_daily_rolling.csv,rolling_windows.csv,1826,46,Daily and rolling actual MW/GWh data for the interconnector subfigure.
 INTFR_monthly_history,figure_input_data/interconnectors/subfigures/INTFR_monthly_history.csv,monthly_summary.csv,60,22,Calendar-month actual MW data for the interconnector monthly subfigure.
 INTFR_month_of_year_mw,figure_input_data/interconnectors/subfigures/INTFR_month_of_year_mw.csv,month_of_year_summary.csv,12,23,Actual MW version of the collapsed month-of-year view.
 INTFR_seasonal_direction_share,figure_input_data/interconnectors/subfigures/INTFR_seasonal_direction_share.csv,season_overall_summary.csv,4,22,Seasonal direction shares with actual MW/GWh context.
 INTFR_weekly_seasonal_envelope,figure_input_data/interconnectors/subfigures/INTFR_weekly_seasonal_envelope.csv,weekly_seasonal_envelope.csv,52,12,Weekly seasonal envelope in actual MW.
 INTFR_level_bands_mw,figure_input_data/interconnectors/subfigures/INTFR_level_bands_mw.csv,level_bucket_summary.csv,11,6,MW flow-band duration shares for the interconnector.
-INTGRNL_daily_rolling,figure_input_data/interconnectors/subfigures/INTGRNL_daily_rolling.csv,rolling_windows.csv,517,32,Daily and rolling actual MW/GWh data for the interconnector subfigure.
+INTGRNL_daily_rolling,figure_input_data/interconnectors/subfigures/INTGRNL_daily_rolling.csv,rolling_windows.csv,517,46,Daily and rolling actual MW/GWh data for the interconnector subfigure.
 INTGRNL_monthly_history,figure_input_data/interconnectors/subfigures/INTGRNL_monthly_history.csv,monthly_summary.csv,18,22,Calendar-month actual MW data for the interconnector monthly subfigure.
 INTGRNL_month_of_year_mw,figure_input_data/interconnectors/subfigures/INTGRNL_month_of_year_mw.csv,month_of_year_summary.csv,12,23,Actual MW version of the collapsed month-of-year view.
 INTGRNL_seasonal_direction_share,figure_input_data/interconnectors/subfigures/INTGRNL_seasonal_direction_share.csv,season_overall_summary.csv,4,22,Seasonal direction shares with actual MW/GWh context.
 INTGRNL_weekly_seasonal_envelope,figure_input_data/interconnectors/subfigures/INTGRNL_weekly_seasonal_envelope.csv,weekly_seasonal_envelope.csv,52,12,Weekly seasonal envelope in actual MW.
 INTGRNL_level_bands_mw,figure_input_data/interconnectors/subfigures/INTGRNL_level_bands_mw.csv,level_bucket_summary.csv,7,6,MW flow-band duration shares for the interconnector.
-INTIFA2_daily_rolling,figure_input_data/interconnectors/subfigures/INTIFA2_daily_rolling.csv,rolling_windows.csv,1826,32,Daily and rolling actual MW/GWh data for the interconnector subfigure.
+INTIFA2_daily_rolling,figure_input_data/interconnectors/subfigures/INTIFA2_daily_rolling.csv,rolling_windows.csv,1826,46,Daily and rolling actual MW/GWh data for the interconnector subfigure.
 INTIFA2_monthly_history,figure_input_data/interconnectors/subfigures/INTIFA2_monthly_history.csv,monthly_summary.csv,60,22,Calendar-month actual MW data for the interconnector monthly subfigure.
 INTIFA2_month_of_year_mw,figure_input_data/interconnectors/subfigures/INTIFA2_month_of_year_mw.csv,month_of_year_summary.csv,12,23,Actual MW version of the collapsed month-of-year view.
 INTIFA2_seasonal_direction_share,figure_input_data/interconnectors/subfigures/INTIFA2_seasonal_direction_share.csv,season_overall_summary.csv,4,22,Seasonal direction shares with actual MW/GWh context.
 INTIFA2_weekly_seasonal_envelope,figure_input_data/interconnectors/subfigures/INTIFA2_weekly_seasonal_envelope.csv,weekly_seasonal_envelope.csv,52,12,Weekly seasonal envelope in actual MW.
 INTIFA2_level_bands_mw,figure_input_data/interconnectors/subfigures/INTIFA2_level_bands_mw.csv,level_bucket_summary.csv,10,6,MW flow-band duration shares for the interconnector.
-INTIRL_daily_rolling,figure_input_data/interconnectors/subfigures/INTIRL_daily_rolling.csv,rolling_windows.csv,1826,32,Daily and rolling actual MW/GWh data for the interconnector subfigure.
+INTIRL_daily_rolling,figure_input_data/interconnectors/subfigures/INTIRL_daily_rolling.csv,rolling_windows.csv,1826,46,Daily and rolling actual MW/GWh data for the interconnector subfigure.
 INTIRL_monthly_history,figure_input_data/interconnectors/subfigures/INTIRL_monthly_history.csv,monthly_summary.csv,60,22,Calendar-month actual MW data for the interconnector monthly subfigure.
 INTIRL_month_of_year_mw,figure_input_data/interconnectors/subfigures/INTIRL_month_of_year_mw.csv,month_of_year_summary.csv,12,23,Actual MW version of the collapsed month-of-year view.
 INTIRL_seasonal_direction_share,figure_input_data/interconnectors/subfigures/INTIRL_seasonal_direction_share.csv,season_overall_summary.csv,4,22,Seasonal direction shares with actual MW/GWh context.
 INTIRL_weekly_seasonal_envelope,figure_input_data/interconnectors/subfigures/INTIRL_weekly_seasonal_envelope.csv,weekly_seasonal_envelope.csv,52,12,Weekly seasonal envelope in actual MW.
 INTIRL_level_bands_mw,figure_input_data/interconnectors/subfigures/INTIRL_level_bands_mw.csv,level_bucket_summary.csv,7,6,MW flow-band duration shares for the interconnector.
-INTNED_daily_rolling,figure_input_data/interconnectors/subfigures/INTNED_daily_rolling.csv,rolling_windows.csv,1826,32,Daily and rolling actual MW/GWh data for the interconnector subfigure.
+INTNED_daily_rolling,figure_input_data/interconnectors/subfigures/INTNED_daily_rolling.csv,rolling_windows.csv,1826,46,Daily and rolling actual MW/GWh data for the interconnector subfigure.
 INTNED_monthly_history,figure_input_data/interconnectors/subfigures/INTNED_monthly_history.csv,monthly_summary.csv,60,22,Calendar-month actual MW data for the interconnector monthly subfigure.
 INTNED_month_of_year_mw,figure_input_data/interconnectors/subfigures/INTNED_month_of_year_mw.csv,month_of_year_summary.csv,12,23,Actual MW version of the collapsed month-of-year view.
 INTNED_seasonal_direction_share,figure_input_data/interconnectors/subfigures/INTNED_seasonal_direction_share.csv,season_overall_summary.csv,4,22,Seasonal direction shares with actual MW/GWh context.
 INTNED_weekly_seasonal_envelope,figure_input_data/interconnectors/subfigures/INTNED_weekly_seasonal_envelope.csv,weekly_seasonal_envelope.csv,52,12,Weekly seasonal envelope in actual MW.
 INTNED_level_bands_mw,figure_input_data/interconnectors/subfigures/INTNED_level_bands_mw.csv,level_bucket_summary.csv,9,6,MW flow-band duration shares for the interconnector.
-INTNEM_daily_rolling,figure_input_data/interconnectors/subfigures/INTNEM_daily_rolling.csv,rolling_windows.csv,1826,32,Daily and rolling actual MW/GWh data for the interconnector subfigure.
+INTNEM_daily_rolling,figure_input_data/interconnectors/subfigures/INTNEM_daily_rolling.csv,rolling_windows.csv,1826,46,Daily and rolling actual MW/GWh data for the interconnector subfigure.
 INTNEM_monthly_history,figure_input_data/interconnectors/subfigures/INTNEM_monthly_history.csv,monthly_summary.csv,60,22,Calendar-month actual MW data for the interconnector monthly subfigure.
 INTNEM_month_of_year_mw,figure_input_data/interconnectors/subfigures/INTNEM_month_of_year_mw.csv,month_of_year_summary.csv,12,23,Actual MW version of the collapsed month-of-year view.
 INTNEM_seasonal_direction_share,figure_input_data/interconnectors/subfigures/INTNEM_seasonal_direction_share.csv,season_overall_summary.csv,4,22,Seasonal direction shares with actual MW/GWh context.
 INTNEM_weekly_seasonal_envelope,figure_input_data/interconnectors/subfigures/INTNEM_weekly_seasonal_envelope.csv,weekly_seasonal_envelope.csv,52,12,Weekly seasonal envelope in actual MW.
 INTNEM_level_bands_mw,figure_input_data/interconnectors/subfigures/INTNEM_level_bands_mw.csv,level_bucket_summary.csv,9,6,MW flow-band duration shares for the interconnector.
-INTNSL_daily_rolling,figure_input_data/interconnectors/subfigures/INTNSL_daily_rolling.csv,rolling_windows.csv,1734,32,Daily and rolling actual MW/GWh data for the interconnector subfigure.
+INTNSL_daily_rolling,figure_input_data/interconnectors/subfigures/INTNSL_daily_rolling.csv,rolling_windows.csv,1734,46,Daily and rolling actual MW/GWh data for the interconnector subfigure.
 INTNSL_monthly_history,figure_input_data/interconnectors/subfigures/INTNSL_monthly_history.csv,monthly_summary.csv,57,22,Calendar-month actual MW data for the interconnector monthly subfigure.
 INTNSL_month_of_year_mw,figure_input_data/interconnectors/subfigures/INTNSL_month_of_year_mw.csv,month_of_year_summary.csv,12,23,Actual MW version of the collapsed month-of-year view.
 INTNSL_seasonal_direction_share,figure_input_data/interconnectors/subfigures/INTNSL_seasonal_direction_share.csv,season_overall_summary.csv,4,22,Seasonal direction shares with actual MW/GWh context.
 INTNSL_weekly_seasonal_envelope,figure_input_data/interconnectors/subfigures/INTNSL_weekly_seasonal_envelope.csv,weekly_seasonal_envelope.csv,52,12,Weekly seasonal envelope in actual MW.
 INTNSL_level_bands_mw,figure_input_data/interconnectors/subfigures/INTNSL_level_bands_mw.csv,level_bucket_summary.csv,10,6,MW flow-band duration shares for the interconnector.
-INTVKL_daily_rolling,figure_input_data/interconnectors/subfigures/INTVKL_daily_rolling.csv,rolling_windows.csv,914,32,Daily and rolling actual MW/GWh data for the interconnector subfigure.
+INTVKL_daily_rolling,figure_input_data/interconnectors/subfigures/INTVKL_daily_rolling.csv,rolling_windows.csv,914,46,Daily and rolling actual MW/GWh data for the interconnector subfigure.
 INTVKL_monthly_history,figure_input_data/interconnectors/subfigures/INTVKL_monthly_history.csv,monthly_summary.csv,31,22,Calendar-month actual MW data for the interconnector monthly subfigure.
 INTVKL_month_of_year_mw,figure_input_data/interconnectors/subfigures/INTVKL_month_of_year_mw.csv,month_of_year_summary.csv,12,23,Actual MW version of the collapsed month-of-year view.
 INTVKL_seasonal_direction_share,figure_input_data/interconnectors/subfigures/INTVKL_seasonal_direction_share.csv,season_overall_summary.csv,4,22,Seasonal direction shares with actual MW/GWh context.

@@ -61,6 +61,8 @@ Key outputs:
 
 - `story.md` - generated client-facing narrative and exhibit pack.
 - `presentation_outline.md` - slide-by-slide deck outline, including the fleet story and one slide per interconnector.
+- `seasonal_interconnector_story.md` - per-interconnector seasonal narrative,
+  highlighting strongest import/export seasons and month-of-year shape.
 - `capacity_reference.csv` - capacity basis used for `% capacity` metrics. If `interconnector_capacities.csv` is absent, this defaults to observed absolute peak MW in the analysis window.
 - `interconnector_summary.csv` - duty cycle, MW levels, energy, switching, and near-zero metrics by link.
 - `fleet_summary.csv` - aggregate GB interconnector BM position.
@@ -69,6 +71,13 @@ Key outputs:
 - `monthly_summary.csv` and `seasonal_summary.csv` - seasonal operating regimes.
 - `season_overall_summary.csv`, `month_of_year_summary.csv`, and `season_month_summary.csv` - season and month-of-year climatology across the fleet and per interconnector.
 - `rolling_windows.csv` - 7, 30, and 90 day rolling trend metrics.
+- `rolling_trend_summary.csv` - compact five-year trend readout from the
+  30-day rolling series, with import/export direction labels by link and fleet.
+- `annual_trend_summary.csv` - year-by-year cross-check, including active
+  capacity metrics for the aggregate fleet where not every interconnector was
+  operating.
+- `trend_story.md` - short narrative on whether the fleet and each link have
+  shifted towards more imports, more exports, or no clear directional trend.
 - `weekly_seasonal_envelope.csv` - seasonal envelope by ISO week.
 - `diurnal_profile_by_season.csv` - within-day profiles by season.
 - `level_bucket_summary.csv` - share of time spent in import/export MW bands.
@@ -80,6 +89,7 @@ Key outputs:
 - `figures/` - charts for the recommended exhibit pack. The script writes PNGs
   when `matplotlib` is available, otherwise it falls back to interactive Plotly
   HTML files.
+- `figures/fleet_rolling_trend_context.*`, `figures/fleet_annual_import_export_trend.*`, `figures/interconnector_trend_delta_by_link.*`, and `figures/interconnector_rolling_trend_small_multiples.*` - trend illustrations for the five-year rolling readout.
 - `figures/interconnectors/subfigures/` - separate modular charts for each
   interconnector, intended for one-slide-per-link presentation layouts.
 

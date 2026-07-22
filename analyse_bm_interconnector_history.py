@@ -96,6 +96,22 @@ PCT_CAPACITY_LABELS = [
     "import_gt_75pct_capacity",
 ]
 
+TREND_LABEL_DISPLAY = {
+    "more_importing": "More importing",
+    "more_exporting": "More exporting",
+    "mixed_or_step_change": "Mixed / step-change",
+    "no_clear_pattern": "No clear pattern",
+    "insufficient_data": "Insufficient data",
+}
+
+TREND_LABEL_COLORS = {
+    "more_importing": "#2f6db2",
+    "more_exporting": "#c43c39",
+    "mixed_or_step_change": "#8a6f2a",
+    "no_clear_pattern": "#7f7f7f",
+    "insufficient_data": "#b8b8b8",
+}
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -408,6 +424,22 @@ def summarise_group(g: pd.DataFrame, deadband_mw: float) -> dict[str, object]:
         else np.nan,
         "observed_abs_peak_pct_capacity": g["abs_pct_capacity"].max() if "abs_pct_capacity" in g.columns else np.nan,
         "observed_abs_p95_pct_capacity": g["abs_pct_capacity"].quantile(0.95) if "abs_pct_capacity" in g.columns else np.nan,
+        "mean_active_capacity_mw": g["active_capacity_mw"].mean() if "active_capacity_mw" in g.columns else np.nan,
+        "mean_signed_pct_active_capacity": g["signed_pct_active_capacity"].mean()
+        if "signed_pct_active_capacity" in g.columns
+        else np.nan,
+        "mean_import_pct_active_capacity_when_importing": g.loc[import_mask, "import_pct_active_capacity"].mean()
+        if "import_pct_active_capacity" in g.columns
+        else np.nan,
+        "mean_export_pct_active_capacity_when_exporting": g.loc[export_mask, "export_pct_active_capacity"].mean()
+        if "export_pct_active_capacity" in g.columns
+        else np.nan,
+        "mean_available_interconnector_count": g["available_interconnector_count"].mean()
+        if "available_interconnector_count" in g.columns
+        else np.nan,
+        "mean_missing_interconnector_count": g["missing_interconnector_count"].mean()
+        if "missing_interconnector_count" in g.columns
+        else np.nan,
         "import_gwh": g["import_gwh"].sum(),
         "export_gwh": g["export_gwh"].sum(),
         "net_gwh": g["net_gwh"].sum(),
@@ -696,10 +728,15 @@ def build_fleet_half_hourly(df: pd.DataFrame, start: pd.Timestamp, end: pd.Times
     full_index = pd.date_range(start=start, end=end, freq="30min", tz="UTC")
     wide = df.pivot_table(index="startTime", columns="interconnectorId", values="signed_mw", aggfunc="first")
     wide = wide.reindex(full_index)
+    capacity_wide = df.pivot_table(index="startTime", columns="interconnectorId", values="capacity_mw", aggfunc="first")
+    capacity_wide = capacity_wide.reindex(full_index)
+    available_mask = wide.notna()
+    active_capacity_mw = capacity_wide.where(available_mask).sum(axis=1)
     total = pd.DataFrame(
         {
             "startTime": wide.index,
             "signed_mw": wide.fillna(0).sum(axis=1),
+            "active_capacity_mw": active_capacity_mw,
             "available_interconnector_count": wide.notna().sum(axis=1),
             "missing_interconnector_count": wide.shape[1] - wide.notna().sum(axis=1),
         }
@@ -707,6 +744,10 @@ def build_fleet_half_hourly(df: pd.DataFrame, start: pd.Timestamp, end: pd.Times
     total["raw_generation_mw"] = total["signed_mw"]
     total["import_mw"] = total["signed_mw"].clip(lower=0)
     total["export_mw"] = (-total["signed_mw"]).clip(lower=0)
+    active_capacity = total["active_capacity_mw"].replace(0, np.nan)
+    total["signed_pct_active_capacity"] = total["signed_mw"] / active_capacity * 100.0
+    total["import_pct_active_capacity"] = total["import_mw"] / active_capacity * 100.0
+    total["export_pct_active_capacity"] = total["export_mw"] / active_capacity * 100.0
     total["settlementPeriod"] = (
         total["startTime"].dt.hour * 2 + (total["startTime"].dt.minute // 30) + 1
     ).astype("Int64")
@@ -721,22 +762,35 @@ def build_fleet_half_hourly(df: pd.DataFrame, start: pd.Timestamp, end: pd.Times
 
 def daily_stats(df: pd.DataFrame) -> pd.DataFrame:
     grouped = df.groupby(["interconnectorId", "interconnectorName", "date"], sort=True)
-    out = grouped.agg(
-        observations=("signed_mw", "size"),
-        mean_signed_mw=("signed_mw", "mean"),
-        mean_signed_pct_capacity=("signed_pct_capacity", "mean"),
-        median_signed_mw=("signed_mw", "median"),
-        p10_signed_mw=("signed_mw", lambda s: s.quantile(0.10)),
-        p90_signed_mw=("signed_mw", lambda s: s.quantile(0.90)),
-        p10_signed_pct_capacity=("signed_pct_capacity", lambda s: s.quantile(0.10)),
-        p90_signed_pct_capacity=("signed_pct_capacity", lambda s: s.quantile(0.90)),
-        import_share_pct=("direction_state", lambda s: (s == "import").mean() * 100.0),
-        export_share_pct=("direction_state", lambda s: (s == "export").mean() * 100.0),
-        near_zero_share_pct=("direction_state", lambda s: (s == "near_zero").mean() * 100.0),
-        import_gwh=("import_gwh", "sum"),
-        export_gwh=("export_gwh", "sum"),
-        net_gwh=("net_gwh", "sum"),
-    )
+    agg_spec = {
+        "observations": ("signed_mw", "size"),
+        "mean_signed_mw": ("signed_mw", "mean"),
+        "mean_import_mw": ("import_mw", "mean"),
+        "mean_export_mw": ("export_mw", "mean"),
+        "mean_capacity_mw": ("capacity_mw", "mean"),
+        "mean_signed_pct_capacity": ("signed_pct_capacity", "mean"),
+        "median_signed_mw": ("signed_mw", "median"),
+        "p10_signed_mw": ("signed_mw", lambda s: s.quantile(0.10)),
+        "p90_signed_mw": ("signed_mw", lambda s: s.quantile(0.90)),
+        "p10_signed_pct_capacity": ("signed_pct_capacity", lambda s: s.quantile(0.10)),
+        "p90_signed_pct_capacity": ("signed_pct_capacity", lambda s: s.quantile(0.90)),
+        "import_share_pct": ("direction_state", lambda s: (s == "import").mean() * 100.0),
+        "export_share_pct": ("direction_state", lambda s: (s == "export").mean() * 100.0),
+        "near_zero_share_pct": ("direction_state", lambda s: (s == "near_zero").mean() * 100.0),
+        "import_gwh": ("import_gwh", "sum"),
+        "export_gwh": ("export_gwh", "sum"),
+        "net_gwh": ("net_gwh", "sum"),
+    }
+    optional_agg = {
+        "mean_active_capacity_mw": ("active_capacity_mw", "mean"),
+        "mean_signed_pct_active_capacity": ("signed_pct_active_capacity", "mean"),
+        "mean_import_pct_active_capacity": ("import_pct_active_capacity", "mean"),
+        "mean_export_pct_active_capacity": ("export_pct_active_capacity", "mean"),
+        "mean_available_interconnector_count": ("available_interconnector_count", "mean"),
+        "mean_missing_interconnector_count": ("missing_interconnector_count", "mean"),
+    }
+    agg_spec.update({name: spec for name, spec in optional_agg.items() if spec[0] in df.columns})
+    out = grouped.agg(**agg_spec)
     return out.reset_index()
 
 
@@ -756,9 +810,35 @@ def add_rolling_windows(daily: pd.DataFrame, windows: list[int]) -> pd.DataFrame
             group[f"rolling_{window}d_mean_signed_mw"] = group["mean_signed_mw"].rolling(
                 window, min_periods=min_periods
             ).mean()
+            group[f"rolling_{window}d_mean_import_mw"] = group["mean_import_mw"].rolling(
+                window, min_periods=min_periods
+            ).mean()
+            group[f"rolling_{window}d_mean_export_mw"] = group["mean_export_mw"].rolling(
+                window, min_periods=min_periods
+            ).mean()
             group[f"rolling_{window}d_mean_signed_pct_capacity"] = group["mean_signed_pct_capacity"].rolling(
                 window, min_periods=min_periods
             ).mean()
+            if "mean_active_capacity_mw" in group.columns:
+                group[f"rolling_{window}d_mean_active_capacity_mw"] = group["mean_active_capacity_mw"].rolling(
+                    window, min_periods=min_periods
+                ).mean()
+            if "mean_signed_pct_active_capacity" in group.columns:
+                group[f"rolling_{window}d_mean_signed_pct_active_capacity"] = group[
+                    "mean_signed_pct_active_capacity"
+                ].rolling(window, min_periods=min_periods).mean()
+            if "mean_import_pct_active_capacity" in group.columns:
+                group[f"rolling_{window}d_mean_import_pct_active_capacity"] = group[
+                    "mean_import_pct_active_capacity"
+                ].rolling(window, min_periods=min_periods).mean()
+            if "mean_export_pct_active_capacity" in group.columns:
+                group[f"rolling_{window}d_mean_export_pct_active_capacity"] = group[
+                    "mean_export_pct_active_capacity"
+                ].rolling(window, min_periods=min_periods).mean()
+            if "mean_available_interconnector_count" in group.columns:
+                group[f"rolling_{window}d_mean_available_interconnector_count"] = group[
+                    "mean_available_interconnector_count"
+                ].rolling(window, min_periods=min_periods).mean()
             group[f"rolling_{window}d_import_share_pct"] = import_obs / obs * 100.0
             group[f"rolling_{window}d_export_share_pct"] = export_obs / obs * 100.0
             group[f"rolling_{window}d_import_gwh"] = group["import_gwh"].rolling(window, min_periods=min_periods).sum()
@@ -766,6 +846,212 @@ def add_rolling_windows(daily: pd.DataFrame, windows: list[int]) -> pd.DataFrame
             group[f"rolling_{window}d_net_gwh"] = group["net_gwh"].rolling(window, min_periods=min_periods).sum()
         parts.append(group)
     return pd.concat(parts, ignore_index=True)
+
+
+def _linear_trend_stats(group: pd.DataFrame, value_col: str, endpoint_days: int = 90) -> dict[str, float]:
+    clean = group[["date", value_col]].dropna().sort_values("date")
+    if clean.empty:
+        return {
+            "start_value": np.nan,
+            "end_value": np.nan,
+            "delta": np.nan,
+            "slope_per_year": np.nan,
+            "r2": np.nan,
+            "endpoint_days_used": 0,
+            "trend_observations": 0,
+        }
+
+    endpoint_n = min(endpoint_days, max(7, len(clean) // 5))
+    endpoint_n = min(endpoint_n, max(1, len(clean) // 2))
+    start_value = clean[value_col].head(endpoint_n).mean()
+    end_value = clean[value_col].tail(endpoint_n).mean()
+
+    if len(clean) < 2 or clean[value_col].nunique(dropna=True) < 2:
+        slope = np.nan
+        r2 = np.nan
+    else:
+        x = (clean["date"] - clean["date"].iloc[0]).dt.total_seconds() / (365.25 * 24 * 60 * 60)
+        y = clean[value_col].astype(float)
+        slope, intercept = np.polyfit(x.to_numpy(), y.to_numpy(), 1)
+        fitted = slope * x + intercept
+        ss_res = float(((y - fitted) ** 2).sum())
+        ss_tot = float(((y - y.mean()) ** 2).sum())
+        r2 = np.nan if ss_tot == 0 else 1.0 - ss_res / ss_tot
+
+    return {
+        "start_value": start_value,
+        "end_value": end_value,
+        "delta": end_value - start_value,
+        "slope_per_year": slope,
+        "r2": r2,
+        "endpoint_days_used": int(endpoint_n),
+        "trend_observations": int(len(clean)),
+    }
+
+
+def _trend_label(delta_mw: float, slope_mw_per_year: float, capacity_basis_mw: float, is_fleet: bool) -> str:
+    if pd.isna(delta_mw):
+        return "insufficient_data"
+    default_threshold = 150.0 if is_fleet else 50.0
+    capacity_threshold = (0.03 if is_fleet else 0.05) * capacity_basis_mw if not pd.isna(capacity_basis_mw) else np.nan
+    material_threshold = max(default_threshold, capacity_threshold) if not pd.isna(capacity_threshold) else default_threshold
+    if abs(delta_mw) < material_threshold:
+        return "no_clear_pattern"
+    if pd.isna(slope_mw_per_year):
+        return "more_importing" if delta_mw > 0 else "more_exporting"
+    if delta_mw > 0 and slope_mw_per_year >= 0:
+        return "more_importing"
+    if delta_mw < 0 and slope_mw_per_year <= 0:
+        return "more_exporting"
+    return "mixed_or_step_change"
+
+
+def build_rolling_trend_summary(rolling: pd.DataFrame) -> pd.DataFrame:
+    rows = []
+    metric_map = {
+        "mean_signed_mw": "rolling_30d_mean_signed_mw",
+        "mean_import_mw": "rolling_30d_mean_import_mw",
+        "mean_export_mw": "rolling_30d_mean_export_mw",
+        "import_share_pct": "rolling_30d_import_share_pct",
+        "export_share_pct": "rolling_30d_export_share_pct",
+        "mean_signed_pct_capacity": "rolling_30d_mean_signed_pct_capacity",
+        "mean_signed_pct_active_capacity": "rolling_30d_mean_signed_pct_active_capacity",
+    }
+    for interconnector_id, group in rolling.groupby("interconnectorId", sort=True):
+        group = group.sort_values("date").copy()
+        row = {
+            "interconnectorId": interconnector_id,
+            "interconnectorName": group["interconnectorName"].dropna().iloc[0]
+            if group["interconnectorName"].notna().any()
+            else interconnector_id,
+            "first_rolling_date": group["date"].min(),
+            "last_rolling_date": group["date"].max(),
+            "rolling_days": int(group["date"].nunique()),
+            "duration_years": (group["date"].max() - group["date"].min()) / pd.Timedelta(days=365.25),
+            "calendar_years_touched": group["date"].dt.year.nunique(),
+            "mean_capacity_mw": group["mean_capacity_mw"].mean() if "mean_capacity_mw" in group.columns else np.nan,
+            "mean_active_capacity_mw": group["mean_active_capacity_mw"].mean()
+            if "mean_active_capacity_mw" in group.columns
+            else np.nan,
+            "mean_available_interconnector_count": group["mean_available_interconnector_count"].mean()
+            if "mean_available_interconnector_count" in group.columns
+            else np.nan,
+        }
+        for metric_name, source_col in metric_map.items():
+            if source_col not in group.columns:
+                continue
+            stats = _linear_trend_stats(group, source_col, endpoint_days=90)
+            row[f"start_90d_rolling30_{metric_name}"] = stats["start_value"]
+            row[f"end_90d_rolling30_{metric_name}"] = stats["end_value"]
+            row[f"delta_rolling30_{metric_name}"] = stats["delta"]
+            row[f"slope_rolling30_{metric_name}_per_year"] = stats["slope_per_year"]
+            row[f"r2_rolling30_{metric_name}"] = stats["r2"]
+            row[f"endpoint_days_used_{metric_name}"] = stats["endpoint_days_used"]
+            row[f"trend_observations_{metric_name}"] = stats["trend_observations"]
+
+        is_fleet = interconnector_id == "TOTAL_GB_INTERCONNECTORS"
+        capacity_basis = row["mean_active_capacity_mw"] if is_fleet else row["mean_capacity_mw"]
+        row["trend_label"] = _trend_label(
+            row.get("delta_rolling30_mean_signed_mw", np.nan),
+            row.get("slope_rolling30_mean_signed_mw_per_year", np.nan),
+            capacity_basis,
+            is_fleet,
+        )
+        rows.append(row)
+
+    return pd.DataFrame(rows).sort_values(
+        ["interconnectorId"], key=lambda s: s.ne("TOTAL_GB_INTERCONNECTORS").astype(int).astype(str) + s.astype(str)
+    )
+
+
+def build_trend_story(
+    output_dir: Path,
+    trend_summary: pd.DataFrame,
+    annual_summary: pd.DataFrame,
+    analysis_start: pd.Timestamp,
+    analysis_end: pd.Timestamp,
+) -> None:
+    label_text = {
+        "more_importing": "more importing",
+        "more_exporting": "more exporting",
+        "mixed_or_step_change": "mixed or step-change pattern",
+        "no_clear_pattern": "no clear directional trend",
+        "insufficient_data": "insufficient data",
+    }
+
+    lines = [
+        "# GB Interconnector Five-Year Rolling Trend",
+        "",
+        f"Analysis window: {analysis_start.date()} to {analysis_end.date()}. Positive MW means GB importing; negative MW means GB exporting.",
+        "",
+        "Method: compare the first and last 90 valid days of each 30-day rolling daily mean, then cross-check with the linear slope across the rolling series. Fleet percentage metrics use active fleet capacity, i.e. only interconnectors with data in each settlement period.",
+        "",
+        "Recommended visuals: `figures/fleet_rolling_trend_context.*`, `figures/fleet_annual_import_export_trend.*`, `figures/interconnector_trend_delta_by_link.*`, and `figures/interconnector_rolling_trend_small_multiples.*`.",
+        "",
+    ]
+
+    fleet = trend_summary[trend_summary["interconnectorId"] == "TOTAL_GB_INTERCONNECTORS"]
+    if not fleet.empty:
+        row = fleet.iloc[0]
+        label = label_text.get(row["trend_label"], row["trend_label"])
+        lines.extend(
+            [
+                "## Fleet Readout",
+                "",
+                f"- Overall label: {label}.",
+                f"- 30-day rolling mean position moved from {format_num(row['start_90d_rolling30_mean_signed_mw'])} MW to {format_num(row['end_90d_rolling30_mean_signed_mw'])} MW, a change of {format_num(row['delta_rolling30_mean_signed_mw'])} MW.",
+                f"- On an active-capacity basis, the same position moved from {format_num(row['start_90d_rolling30_mean_signed_pct_active_capacity'], 1)}% to {format_num(row['end_90d_rolling30_mean_signed_pct_active_capacity'], 1)}%, a change of {format_num(row['delta_rolling30_mean_signed_pct_active_capacity'], 1)} percentage points.",
+                f"- Linear slope across the rolling series is {format_num(row['slope_rolling30_mean_signed_mw_per_year'])} MW/year with R2 {format_num(row['r2_rolling30_mean_signed_mw'], 2)}.",
+                f"- Import share moved by {format_num(row['delta_rolling30_import_share_pct'], 1)} percentage points; export share moved by {format_num(row['delta_rolling30_export_share_pct'], 1)} percentage points.",
+                f"- Mean active fleet capacity across the window was {format_num(row['mean_active_capacity_mw'])} MW, with {format_num(row['mean_available_interconnector_count'], 1)} links active on average.",
+            ]
+        )
+        if row["trend_label"] == "no_clear_pattern" and abs(row["slope_rolling30_mean_signed_mw_per_year"]) > 150:
+            lines.append(
+                "- Interpretation: the endpoint comparison is broadly flat; the positive slope is mainly a consequence of the deep 2022 trough, so this is better read as volatile rather than a sustained import/export trend."
+            )
+        lines.append("")
+
+        fleet_annual = annual_summary[annual_summary["interconnectorId"] == "TOTAL_GB_INTERCONNECTORS"].sort_values("year")
+        if not fleet_annual.empty:
+            lines.extend(["Annual fleet cross-check:", ""])
+            for _, annual in fleet_annual.iterrows():
+                active_capacity = annual.get("mean_active_capacity_mw", np.nan)
+                active_pct = annual.get("mean_signed_pct_active_capacity", np.nan)
+                lines.append(
+                    f"- {int(annual['year'])}: mean {format_num(annual['mean_signed_mw'])} MW "
+                    f"({format_num(active_pct, 1)}% of active capacity), import share {format_pct(annual['import_share_pct'])}, "
+                    f"export share {format_pct(annual['export_share_pct'])}, active capacity {format_num(active_capacity)} MW."
+                )
+            lines.append("")
+
+    links = trend_summary[trend_summary["interconnectorId"] != "TOTAL_GB_INTERCONNECTORS"].copy()
+    if not links.empty:
+        links["abs_delta_mw"] = links["delta_rolling30_mean_signed_mw"].abs()
+        lines.extend(["## Link-Level Readout", ""])
+        for _, row in links.sort_values("abs_delta_mw", ascending=False).iterrows():
+            label = label_text.get(row["trend_label"], row["trend_label"])
+            lines.append(
+                f"- {row['interconnectorId']} ({row['interconnectorName']}): {label}. "
+                f"30-day mean moved {format_num(row['delta_rolling30_mean_signed_mw'])} MW "
+                f"({format_num(row['start_90d_rolling30_mean_signed_mw'])} to {format_num(row['end_90d_rolling30_mean_signed_mw'])} MW); "
+                f"import share delta {format_num(row['delta_rolling30_import_share_pct'], 1)} pp, "
+                f"export share delta {format_num(row['delta_rolling30_export_share_pct'], 1)} pp."
+            )
+        lines.append("")
+
+    label_counts = trend_summary["trend_label"].value_counts().rename_axis("trend_label").reset_index(name="interconnector_count")
+    lines.extend(["## How To Use This", ""])
+    for _, row in label_counts.iterrows():
+        lines.append(f"- {label_text.get(row['trend_label'], row['trend_label'])}: {int(row['interconnector_count'])} series.")
+    lines.extend(
+        [
+            "",
+            "Use `rolling_trend_summary.csv` for the compact evidence table and `annual_trend_summary.csv` for the year-by-year check. The fleet row is `TOTAL_GB_INTERCONNECTORS`.",
+            "",
+        ]
+    )
+    (output_dir / "trend_story.md").write_text("\n".join(lines), encoding="utf-8")
 
 
 def seasonal_weekly_envelope(daily: pd.DataFrame) -> pd.DataFrame:
@@ -1080,12 +1366,26 @@ def figure_rolling_columns(df: pd.DataFrame) -> list[str]:
             "date",
             "observations",
             "mean_signed_mw",
+            "mean_import_mw",
+            "mean_export_mw",
             "median_signed_mw",
             "p10_signed_mw",
             "p90_signed_mw",
+            "mean_active_capacity_mw",
+            "mean_signed_pct_active_capacity",
+            "mean_import_pct_active_capacity",
+            "mean_export_pct_active_capacity",
+            "mean_available_interconnector_count",
             "rolling_7d_mean_signed_mw",
             "rolling_30d_mean_signed_mw",
             "rolling_90d_mean_signed_mw",
+            "rolling_30d_mean_import_mw",
+            "rolling_30d_mean_export_mw",
+            "rolling_30d_mean_active_capacity_mw",
+            "rolling_30d_mean_signed_pct_active_capacity",
+            "rolling_30d_mean_import_pct_active_capacity",
+            "rolling_30d_mean_export_pct_active_capacity",
+            "rolling_30d_mean_available_interconnector_count",
             "import_share_pct",
             "export_share_pct",
             "near_zero_share_pct",
@@ -1159,6 +1459,8 @@ def export_figure_input_data(
     month_of_year: pd.DataFrame,
     season_overall: pd.DataFrame,
     rolling: pd.DataFrame,
+    rolling_trend: pd.DataFrame,
+    annual_trend: pd.DataFrame,
     envelope: pd.DataFrame,
     diurnal: pd.DataFrame,
     bucket_summary: pd.DataFrame,
@@ -1296,6 +1598,122 @@ def export_figure_input_data(
         figure_basename="fleet_rolling_net_mw",
         source_table="rolling_windows.csv",
         notes="Aggregate fleet daily and rolling actual MW/GWh values.",
+    )
+    fleet_trend_cols = existing_columns(
+        fleet_rolling,
+        [
+            "interconnectorId",
+            "interconnectorName",
+            "date",
+            "rolling_30d_mean_signed_mw",
+            "rolling_90d_mean_signed_mw",
+            "rolling_30d_mean_import_mw",
+            "rolling_30d_mean_export_mw",
+            "rolling_30d_import_share_pct",
+            "rolling_30d_export_share_pct",
+            "rolling_30d_mean_signed_pct_active_capacity",
+            "rolling_30d_mean_active_capacity_mw",
+            "rolling_30d_mean_available_interconnector_count",
+        ],
+    )
+    write_figure_input_csv(
+        fleet_rolling[fleet_trend_cols].copy(),
+        figure_data_dir / "fleet_rolling_trend_context.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="fleet_rolling_trend_context",
+        source_table="rolling_windows.csv",
+        notes="Aggregate 30-day rolling trend context with active-capacity basis for the fleet.",
+    )
+    fleet_annual = annual_trend[annual_trend["interconnectorId"] == "TOTAL_GB_INTERCONNECTORS"].sort_values("year")
+    annual_cols = existing_columns(
+        fleet_annual,
+        [
+            "interconnectorId",
+            "interconnectorName",
+            "year",
+            "mean_signed_mw",
+            "mean_import_mw",
+            "mean_export_mw",
+            "import_share_pct",
+            "export_share_pct",
+            "near_zero_share_pct",
+            "import_gwh",
+            "export_gwh",
+            "net_gwh",
+            "mean_active_capacity_mw",
+            "mean_signed_pct_active_capacity",
+            "mean_available_interconnector_count",
+        ],
+    )
+    write_figure_input_csv(
+        fleet_annual[annual_cols].copy(),
+        figure_data_dir / "fleet_annual_import_export_trend.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="fleet_annual_import_export_trend",
+        source_table="annual_trend_summary.csv",
+        notes="Year-by-year aggregate import/export levels, net flow, and active capacity utilisation.",
+    )
+    trend_cols = existing_columns(
+        rolling_trend,
+        [
+            "interconnectorId",
+            "interconnectorName",
+            "trend_label",
+            "first_rolling_date",
+            "last_rolling_date",
+            "duration_years",
+            "calendar_years_touched",
+            "start_90d_rolling30_mean_signed_mw",
+            "end_90d_rolling30_mean_signed_mw",
+            "delta_rolling30_mean_signed_mw",
+            "delta_rolling30_mean_import_mw",
+            "delta_rolling30_mean_export_mw",
+            "delta_rolling30_import_share_pct",
+            "delta_rolling30_export_share_pct",
+            "slope_rolling30_mean_signed_mw_per_year",
+            "r2_rolling30_mean_signed_mw",
+            "delta_rolling30_mean_signed_pct_active_capacity",
+        ],
+    )
+    write_figure_input_csv(
+        rolling_trend[rolling_trend["interconnectorId"] != "TOTAL_GB_INTERCONNECTORS"][trend_cols].copy(),
+        figure_data_dir / "interconnector_trend_delta_by_link.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="interconnector_trend_delta_by_link",
+        source_table="rolling_trend_summary.csv",
+        notes="Per-link trend delta chart input from the 30-day rolling endpoint comparison.",
+    )
+    rolling_small = rolling[rolling["interconnectorId"] != "TOTAL_GB_INTERCONNECTORS"].copy()
+    rolling_small = rolling_small.merge(
+        rolling_trend[["interconnectorId", "trend_label"]],
+        on="interconnectorId",
+        how="left",
+    )
+    rolling_small_cols = existing_columns(
+        rolling_small,
+        [
+            "interconnectorId",
+            "interconnectorName",
+            "trend_label",
+            "date",
+            "rolling_30d_mean_signed_mw",
+            "rolling_30d_mean_import_mw",
+            "rolling_30d_mean_export_mw",
+            "rolling_30d_import_share_pct",
+            "rolling_30d_export_share_pct",
+        ],
+    )
+    write_figure_input_csv(
+        rolling_small[rolling_small_cols].copy(),
+        figure_data_dir / "interconnector_rolling_30d_trends.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="interconnector_rolling_trend_small_multiples",
+        source_table="rolling_windows.csv",
+        notes="Per-interconnector 30-day rolling signed MW series used for the small-multiple trend chart.",
     )
 
     fleet_envelope = envelope[envelope["interconnectorId"] == "TOTAL_GB_INTERCONNECTORS"].sort_values("week")
@@ -1451,6 +1869,114 @@ def format_pct(value: float, decimals: int = 1) -> str:
     if pd.isna(value):
         return "n/a"
     return f"{value:.{decimals}f}%"
+
+
+def build_seasonal_interconnector_story(
+    output_dir: Path,
+    season_overall: pd.DataFrame,
+    month_of_year: pd.DataFrame,
+    analysis_start: pd.Timestamp,
+    analysis_end: pd.Timestamp,
+) -> None:
+    """Write a season-focused per-interconnector narrative."""
+
+    season_order = ["Winter", "Spring", "Summer", "Autumn"]
+    source = season_overall[season_overall["interconnectorId"] != "TOTAL_GB_INTERCONNECTORS"].copy()
+    months_source = month_of_year[month_of_year["interconnectorId"] != "TOTAL_GB_INTERCONNECTORS"].copy()
+
+    def season_phrase(row: pd.Series) -> str:
+        return (
+            f"{row['season']} {format_num(row['mean_signed_mw'])} MW "
+            f"({format_pct(row['import_share_pct'])} import / {format_pct(row['export_share_pct'])} export)"
+        )
+
+    lines = [
+        "# Seasonal Interconnector Story",
+        "",
+        f"Analysis window: {analysis_start.strftime('%Y-%m-%d %H:%M UTC')} to {analysis_end.strftime('%Y-%m-%d %H:%M UTC')}.",
+        "",
+        "Positive MW means GB importing. Negative MW means GB exporting.",
+        "This note focuses on whether each link has a stable seasonal regime or a clear seasonal swing.",
+        "",
+        "## Overall Read",
+        "",
+        "- The continental links are generally import-led, with spring often the strongest import season.",
+        "- The Irish links are export-led across most or all seasons, especially Greenlink and Moyle.",
+        "- IFA2 and Eleclink are more seasonal than the headline direction share suggests: both show much weaker or more mixed autumn behaviour.",
+        "- North Sea Link remains strongly import-led in every season, while Viking Link is also import-led but with shorter operating history.",
+        "",
+        "## Per-Interconnector Seasonal Notes",
+        "",
+    ]
+
+    for interconnector_id in sorted(source["interconnectorId"].unique()):
+        seasons = source[source["interconnectorId"] == interconnector_id].copy()
+        if seasons.empty:
+            continue
+        seasons["season"] = pd.Categorical(seasons["season"], categories=season_order, ordered=True)
+        seasons = seasons.sort_values("season")
+
+        months = months_source[months_source["interconnectorId"] == interconnector_id].sort_values("month")
+        name = seasons["interconnectorName"].dropna().iloc[0]
+        max_row = seasons.sort_values("mean_signed_mw", ascending=False).iloc[0]
+        min_row = seasons.sort_values("mean_signed_mw", ascending=True).iloc[0]
+        seasonal_range_mw = max_row["mean_signed_mw"] - min_row["mean_signed_mw"]
+        seasonal_range_pct = seasons["mean_signed_pct_capacity"].max() - seasons["mean_signed_pct_capacity"].min()
+
+        mostly_import = seasons[seasons["mostly_direction"] == "mostly_import"]
+        mostly_export = seasons[seasons["mostly_direction"] == "mostly_export"]
+        mixed = seasons[~seasons["mostly_direction"].isin(["mostly_import", "mostly_export"])]
+
+        if len(mostly_import) == len(seasons):
+            regime = "Consistently import-led across seasons."
+        elif len(mostly_export) == len(seasons):
+            regime = "Consistently export-led across seasons."
+        elif len(mostly_import) > len(mostly_export):
+            regime = "Mostly import-led, but with a seasonal weakening or mixed period."
+        elif len(mostly_export) > len(mostly_import):
+            regime = "Mostly export-led, but with a seasonal weakening or mixed period."
+        else:
+            regime = "Mixed seasonal regime."
+
+        strongest_month = months.sort_values("mean_signed_mw", ascending=False).iloc[0] if not months.empty else None
+        weakest_month = months.sort_values("mean_signed_mw", ascending=True).iloc[0] if not months.empty else None
+        max_season_label = "Strongest import season" if max_row["mean_signed_mw"] > 0 else "Least export-leaning season"
+        min_season_label = "Most export-leaning season" if min_row["mean_signed_mw"] < 0 else "Weakest import season"
+
+        lines.extend(
+            [
+                f"### {interconnector_id} - {name}",
+                "",
+                f"- Seasonal regime: {regime}",
+                f"- {max_season_label}: {season_phrase(max_row)}.",
+                f"- {min_season_label}: {season_phrase(min_row)}.",
+                (
+                    f"- Seasonal swing: {format_num(seasonal_range_mw)} MW between those seasons "
+                    f"({format_num(seasonal_range_pct, 1)} percentage points of observed capacity)."
+                ),
+            ]
+        )
+
+        if strongest_month is not None and weakest_month is not None:
+            strongest_month_label = "strongest import month" if strongest_month["mean_signed_mw"] > 0 else "least export-leaning month"
+            weakest_month_label = "most export-leaning month" if weakest_month["mean_signed_mw"] < 0 else "weakest import month"
+            lines.append(
+                f"- Month shape: {strongest_month_label} is {strongest_month['month_name']} "
+                f"({format_num(strongest_month['mean_signed_mw'])} MW); {weakest_month_label} is "
+                f"{weakest_month['month_name']} ({format_num(weakest_month['mean_signed_mw'])} MW)."
+            )
+
+        if not mixed.empty:
+            mixed_bits = ", ".join(
+                f"{row['season']} ({format_pct(row['import_share_pct'])} import / {format_pct(row['export_share_pct'])} export)"
+                for _, row in mixed.iterrows()
+            )
+            lines.append(f"- Watch point: mixed seasons are {mixed_bits}.")
+
+        lines.append("")
+
+    output_path = output_dir / "seasonal_interconnector_story.md"
+    output_path.write_text("\n".join(lines), encoding="utf-8")
 
 
 def build_story(
@@ -1654,13 +2180,14 @@ def build_story(
             "1. `figures/direction_share_by_interconnector.*` - simple answer to how often each link imported, exported, or sat near zero.",
             "2. `figures/net_energy_by_interconnector.*` - which links have been net importers/exporters over the period.",
             "3. `figures/monthly_mean_signed_mw_heatmap.*` - regime changes and seasonality by link.",
-            "4. `figures/fleet_rolling_net_mw.*` - whether the total GB interconnector BM position was tightening or relaxing.",
-            "5. `figures/fleet_weekly_seasonal_envelope.*` - expected seasonal range across the five-year history.",
-            "6. `figures/fleet_diurnal_by_season.*` - whether operation changes materially within day and season.",
-            "7. `figures/flow_correlation_heatmap.*` and `figures/direction_alignment_heatmap.*` - whether links tend to move together or offset each other.",
-            "8. `figures/fleet_month_of_year_profile.*`, `figures/month_of_year_mean_heatmap.*`, and `figures/season_direction_share_by_interconnector.*` - seasonal/month shape across the fleet and each link.",
-            "9. `figures/month_of_year_pct_capacity_heatmap.*`, `figures/season_pct_capacity_heatmap.*`, and `figures/pct_capacity_bands_by_interconnector.*` - capacity-normalised comparative views.",
-            "10. `figures/interconnectors/*_operating_profile.*` - one profile per interconnector for appendix or drill-down.",
+            "4. `figures/fleet_rolling_net_mw.*` and `figures/fleet_rolling_trend_context.*` - whether the total GB interconnector BM position was tightening or relaxing, with active-capacity context.",
+            "5. `figures/fleet_annual_import_export_trend.*`, `figures/interconnector_trend_delta_by_link.*`, and `figures/interconnector_rolling_trend_small_multiples.*` - five-year import/export trend readout.",
+            "6. `figures/fleet_weekly_seasonal_envelope.*` - expected seasonal range across the five-year history.",
+            "7. `figures/fleet_diurnal_by_season.*` - whether operation changes materially within day and season.",
+            "8. `figures/flow_correlation_heatmap.*` and `figures/direction_alignment_heatmap.*` - whether links tend to move together or offset each other.",
+            "9. `figures/fleet_month_of_year_profile.*`, `figures/month_of_year_mean_heatmap.*`, and `figures/season_direction_share_by_interconnector.*` - seasonal/month shape across the fleet and each link.",
+            "10. `figures/month_of_year_pct_capacity_heatmap.*`, `figures/season_pct_capacity_heatmap.*`, and `figures/pct_capacity_bands_by_interconnector.*` - capacity-normalised comparative views.",
+            "11. `figures/interconnectors/*_operating_profile.*` - one profile per interconnector for appendix or drill-down.",
             "",
             "## Tables Written",
             "",
@@ -1674,6 +2201,8 @@ def build_story(
             "- `season_month_summary.csv`",
             "- `daily_timeseries.csv`",
             "- `rolling_windows.csv`",
+            "- `rolling_trend_summary.csv`",
+            "- `annual_trend_summary.csv`",
             "- `weekly_seasonal_envelope.csv`",
             "- `diurnal_profile_by_season.csv`",
             "- `level_bucket_summary.csv`",
@@ -2286,6 +2815,278 @@ def plotly_fleet_rolling(rolling: pd.DataFrame, figure_dir: Path) -> None:
     fig.update_layout(xaxis_title="", yaxis_title="MW (import positive)")
     plotly_layout(fig, "Fleet Rolling Net BM Position")
     fig.write_html(figure_dir / "fleet_rolling_net_mw.html", include_plotlyjs="directory")
+
+
+def plotly_fleet_rolling_trend_context(
+    rolling: pd.DataFrame,
+    rolling_trend: pd.DataFrame,
+    figure_dir: Path,
+) -> None:
+    go = require_plotly()
+    from plotly.subplots import make_subplots
+
+    data = rolling[rolling["interconnectorId"] == "TOTAL_GB_INTERCONNECTORS"].sort_values("date")
+    if data.empty:
+        return
+
+    fig = make_subplots(
+        rows=2,
+        cols=1,
+        shared_xaxes=True,
+        vertical_spacing=0.11,
+        row_heights=[0.62, 0.38],
+        specs=[[{}], [{"secondary_y": True}]],
+        subplot_titles=(
+            "Fleet rolling mean MW",
+            "Active-capacity utilisation and active fleet size",
+        ),
+    )
+    fig.add_scatter(
+        x=data["date"],
+        y=data["rolling_30d_mean_signed_mw"],
+        mode="lines",
+        name="30-day mean MW",
+        line={"color": "#2f6db2", "width": 2.2},
+        row=1,
+        col=1,
+    )
+    fig.add_scatter(
+        x=data["date"],
+        y=data["rolling_90d_mean_signed_mw"],
+        mode="lines",
+        name="90-day mean MW",
+        line={"color": "#222222", "width": 1.6},
+        row=1,
+        col=1,
+    )
+    fig.add_hline(y=0, line_color="#777777", line_width=1, row=1, col=1)
+
+    trend = rolling_trend[rolling_trend["interconnectorId"] == "TOTAL_GB_INTERCONNECTORS"]
+    valid = data.dropna(subset=["rolling_30d_mean_signed_mw"])
+    if not trend.empty and not valid.empty:
+        trend_row = trend.iloc[0]
+        fig.add_scatter(
+            x=[valid["date"].iloc[0], valid["date"].iloc[-1]],
+            y=[
+                trend_row["start_90d_rolling30_mean_signed_mw"],
+                trend_row["end_90d_rolling30_mean_signed_mw"],
+            ],
+            mode="markers+text",
+            name="Start/end 90-day average",
+            marker={"color": "#111111", "size": 9, "symbol": "diamond"},
+            text=["Start", "End"],
+            textposition=["bottom center", "top center"],
+            row=1,
+            col=1,
+        )
+
+    if "rolling_30d_mean_signed_pct_active_capacity" in data.columns:
+        fig.add_scatter(
+            x=data["date"],
+            y=data["rolling_30d_mean_signed_pct_active_capacity"],
+            mode="lines",
+            name="30-day mean % active capacity",
+            line={"color": "#2a9d8f", "width": 2},
+            row=2,
+            col=1,
+            secondary_y=False,
+        )
+        fig.add_hline(y=0, line_color="#777777", line_width=1, row=2, col=1)
+        if not trend.empty and not valid.empty:
+            trend_row = trend.iloc[0]
+            fig.add_scatter(
+                x=[valid["date"].iloc[0], valid["date"].iloc[-1]],
+                y=[
+                    trend_row["start_90d_rolling30_mean_signed_pct_active_capacity"],
+                    trend_row["end_90d_rolling30_mean_signed_pct_active_capacity"],
+                ],
+                mode="markers",
+                name="Start/end active-capacity average",
+                marker={"color": "#2a9d8f", "size": 8, "symbol": "diamond"},
+                row=2,
+                col=1,
+                secondary_y=False,
+            )
+    if "rolling_30d_mean_active_capacity_mw" in data.columns:
+        fig.add_scatter(
+            x=data["date"],
+            y=data["rolling_30d_mean_active_capacity_mw"],
+            mode="lines",
+            name="30-day active capacity MW",
+            line={"color": "#6f6f6f", "width": 1.5, "dash": "dash"},
+            row=2,
+            col=1,
+            secondary_y=True,
+        )
+
+    fig.update_yaxes(title_text="MW (import positive)", row=1, col=1)
+    fig.update_yaxes(title_text="% active capacity", row=2, col=1, secondary_y=False)
+    fig.update_yaxes(title_text="Active capacity MW", row=2, col=1, secondary_y=True)
+    fig.update_layout(height=780)
+    plotly_layout(fig, "Fleet Rolling Trend Context")
+    fig.write_html(figure_dir / "fleet_rolling_trend_context.html", include_plotlyjs="directory")
+
+
+def plotly_fleet_annual_import_export_trend(annual_trend: pd.DataFrame, figure_dir: Path) -> None:
+    go = require_plotly()
+    from plotly.subplots import make_subplots
+
+    data = annual_trend[annual_trend["interconnectorId"] == "TOTAL_GB_INTERCONNECTORS"].sort_values("year")
+    if data.empty:
+        return
+
+    fig = make_subplots(specs=[[{"secondary_y": True}]])
+    fig.add_bar(
+        x=data["year"],
+        y=data["mean_import_mw"],
+        name="Mean import MW",
+        marker_color="#2f6db2",
+        secondary_y=False,
+    )
+    fig.add_bar(
+        x=data["year"],
+        y=-data["mean_export_mw"],
+        name="Mean export MW",
+        marker_color="#c43c39",
+        secondary_y=False,
+    )
+    fig.add_scatter(
+        x=data["year"],
+        y=data["mean_signed_mw"],
+        mode="lines+markers",
+        name="Mean signed MW",
+        line={"color": "#111111", "width": 2},
+        marker={"size": 8},
+        secondary_y=False,
+    )
+    if "mean_signed_pct_active_capacity" in data.columns:
+        fig.add_scatter(
+            x=data["year"],
+            y=data["mean_signed_pct_active_capacity"],
+            mode="lines+markers",
+            name="% active capacity",
+            line={"color": "#2a9d8f", "width": 2, "dash": "dot"},
+            marker={"size": 7},
+            secondary_y=True,
+        )
+    fig.add_hline(y=0, line_color="#777777", line_width=1)
+    fig.update_layout(barmode="relative", xaxis={"dtick": 1}, height=620)
+    fig.update_yaxes(title_text="Mean MW (import positive)", secondary_y=False)
+    fig.update_yaxes(title_text="Mean % active capacity", secondary_y=True)
+    plotly_layout(fig, "Fleet Annual Import/Export Trend")
+    fig.write_html(figure_dir / "fleet_annual_import_export_trend.html", include_plotlyjs="directory")
+
+
+def plotly_interconnector_trend_delta_by_link(rolling_trend: pd.DataFrame, figure_dir: Path) -> None:
+    go = require_plotly()
+    data = rolling_trend[rolling_trend["interconnectorId"] != "TOTAL_GB_INTERCONNECTORS"].copy()
+    data = data.dropna(subset=["delta_rolling30_mean_signed_mw"]).sort_values("delta_rolling30_mean_signed_mw")
+    if data.empty:
+        return
+    colors = data["trend_label"].map(TREND_LABEL_COLORS).fillna("#7f7f7f")
+    labels = data["trend_label"].map(TREND_LABEL_DISPLAY).fillna(data["trend_label"])
+    fig = go.Figure(
+        go.Bar(
+            y=data["interconnectorId"],
+            x=data["delta_rolling30_mean_signed_mw"],
+            orientation="h",
+            marker_color=colors,
+            text=data["delta_rolling30_mean_signed_mw"].map(lambda value: f"{value:,.0f} MW"),
+            textposition="outside",
+            customdata=np.stack(
+                [
+                    data["interconnectorName"],
+                    labels,
+                    data["start_90d_rolling30_mean_signed_mw"],
+                    data["end_90d_rolling30_mean_signed_mw"],
+                    data["delta_rolling30_import_share_pct"],
+                    data["delta_rolling30_export_share_pct"],
+                ],
+                axis=-1,
+            ),
+            hovertemplate=(
+                "<b>%{y}</b><br>%{customdata[0]}<br>"
+                "Trend: %{customdata[1]}<br>"
+                "Start 90d avg: %{customdata[2]:,.0f} MW<br>"
+                "End 90d avg: %{customdata[3]:,.0f} MW<br>"
+                "Import share delta: %{customdata[4]:.1f} pp<br>"
+                "Export share delta: %{customdata[5]:.1f} pp<extra></extra>"
+            ),
+        )
+    )
+    for label, color in TREND_LABEL_COLORS.items():
+        if label in set(data["trend_label"]):
+            fig.add_scatter(
+                x=[None],
+                y=[None],
+                mode="markers",
+                marker={"color": color, "size": 9},
+                name=TREND_LABEL_DISPLAY.get(label, label),
+            )
+    fig.add_vline(x=0, line_color="#777777", line_width=1)
+    fig.update_layout(
+        xaxis_title="Change in 30-day rolling mean MW (end 90-day average minus start 90-day average)",
+        yaxis_title="",
+        height=650,
+        showlegend=True,
+    )
+    plotly_layout(fig, "Interconnector Trend Delta by Link")
+    fig.write_html(figure_dir / "interconnector_trend_delta_by_link.html", include_plotlyjs="directory")
+
+
+def plotly_interconnector_rolling_trend_small_multiples(
+    rolling: pd.DataFrame,
+    rolling_trend: pd.DataFrame,
+    figure_dir: Path,
+) -> None:
+    go = require_plotly()
+    from plotly.subplots import make_subplots
+
+    trend_labels = rolling_trend.set_index("interconnectorId")["trend_label"].to_dict()
+    ids = sorted(interconnector_id for interconnector_id in rolling["interconnectorId"].unique() if interconnector_id != "TOTAL_GB_INTERCONNECTORS")
+    if not ids:
+        return
+    cols = 2
+    rows = math.ceil(len(ids) / cols)
+    fig = make_subplots(
+        rows=rows,
+        cols=cols,
+        shared_xaxes=True,
+        vertical_spacing=0.08,
+        horizontal_spacing=0.08,
+        subplot_titles=ids,
+    )
+    for index, interconnector_id in enumerate(ids):
+        row = index // cols + 1
+        col = index % cols + 1
+        link = rolling[rolling["interconnectorId"] == interconnector_id].sort_values("date")
+        label = trend_labels.get(interconnector_id, "no_clear_pattern")
+        fig.add_scatter(
+            x=link["date"],
+            y=link["rolling_30d_mean_signed_mw"],
+            mode="lines",
+            line={"color": TREND_LABEL_COLORS.get(label, "#7f7f7f"), "width": 1.7},
+            name=TREND_LABEL_DISPLAY.get(label, label),
+            showlegend=False,
+            row=row,
+            col=col,
+        )
+        fig.add_hline(y=0, line_color="#999999", line_width=1, row=row, col=col)
+        fig.update_yaxes(title_text="MW", row=row, col=col)
+
+    for label in sorted(set(trend_labels.values())):
+        fig.add_scatter(
+            x=[None],
+            y=[None],
+            mode="lines",
+            line={"color": TREND_LABEL_COLORS.get(label, "#7f7f7f"), "width": 3},
+            name=TREND_LABEL_DISPLAY.get(label, label),
+        )
+
+    fig.update_layout(height=max(850, rows * 230), showlegend=True)
+    fig.update_xaxes(title_text="")
+    plotly_layout(fig, "Interconnector 30-Day Rolling Trend Small Multiples")
+    fig.write_html(figure_dir / "interconnector_rolling_trend_small_multiples.html", include_plotlyjs="directory")
 
 
 def plotly_weekly_envelope(envelope: pd.DataFrame, figure_dir: Path) -> None:
@@ -3068,6 +3869,8 @@ def generate_plotly_charts(
     month_of_year: pd.DataFrame,
     season_overall: pd.DataFrame,
     rolling: pd.DataFrame,
+    rolling_trend: pd.DataFrame,
+    annual_trend: pd.DataFrame,
     envelope: pd.DataFrame,
     diurnal: pd.DataFrame,
     bucket_summary: pd.DataFrame,
@@ -3084,6 +3887,10 @@ def generate_plotly_charts(
     plotly_net_energy(summary, figure_dir)
     plotly_monthly_heatmap(monthly, figure_dir)
     plotly_fleet_rolling(rolling, figure_dir)
+    plotly_fleet_rolling_trend_context(rolling, rolling_trend, figure_dir)
+    plotly_fleet_annual_import_export_trend(annual_trend, figure_dir)
+    plotly_interconnector_trend_delta_by_link(rolling_trend, figure_dir)
+    plotly_interconnector_rolling_trend_small_multiples(rolling, rolling_trend, figure_dir)
     plotly_weekly_envelope(envelope, figure_dir)
     plotly_fleet_diurnal(diurnal, figure_dir)
     plotly_level_buckets(bucket_summary, figure_dir)
@@ -3128,6 +3935,8 @@ def generate_charts(
     month_of_year: pd.DataFrame,
     season_overall: pd.DataFrame,
     rolling: pd.DataFrame,
+    rolling_trend: pd.DataFrame,
+    annual_trend: pd.DataFrame,
     envelope: pd.DataFrame,
     diurnal: pd.DataFrame,
     bucket_summary: pd.DataFrame,
@@ -3159,6 +3968,10 @@ def generate_charts(
             plotly_calendar_month_pct_capacity_heatmap(monthly, figure_dir)
             plotly_season_pct_capacity_heatmap(season_overall, figure_dir)
             plotly_season_direction_heatmap(season_overall, figure_dir)
+            plotly_fleet_rolling_trend_context(rolling, rolling_trend, figure_dir)
+            plotly_fleet_annual_import_export_trend(annual_trend, figure_dir)
+            plotly_interconnector_trend_delta_by_link(rolling_trend, figure_dir)
+            plotly_interconnector_rolling_trend_small_multiples(rolling, rolling_trend, figure_dir)
             plotly_correlation_and_alignment(flow_corr_matrix, direction_pairwise, conditional_direction, figure_dir)
             plotly_interconnector_profiles(
                 summary,
@@ -3193,6 +4006,8 @@ def generate_charts(
             month_of_year,
             season_overall,
             rolling,
+            rolling_trend,
+            annual_trend,
             envelope,
             diurnal,
             bucket_summary,
@@ -3247,11 +4062,13 @@ def main() -> None:
     weekday = add_direction_regime_fields(summarise_periods(combined, ["interconnectorId", "day_of_week"], args.deadband_mw))
     weekday["day_name"] = weekday["day_of_week"].astype(int).map(lambda day: calendar.day_name[day])
     weekday = weekday.sort_values(["interconnectorId", "day_of_week"], kind="mergesort").reset_index(drop=True)
+    annual_trend = add_direction_regime_fields(summarise_periods(combined, ["interconnectorId", "year"], args.deadband_mw))
     daily = daily_stats(combined)
     daily_regimes = add_daily_timing_fields(daily)
     timing_top_days = top_direction_days(daily_regimes)
     timing_runs = direction_run_summary(daily_regimes)
     rolling = add_rolling_windows(daily, windows=[7, 30, 90])
+    rolling_trend = build_rolling_trend_summary(rolling)
     envelope = seasonal_weekly_envelope(daily)
     diurnal = diurnal_profile(combined)
     buckets = level_bucket_summary(combined)
@@ -3278,6 +4095,8 @@ def main() -> None:
     write_csv(timing_top_days, args.output_dir / "direction_timing_top_days.csv")
     write_csv(timing_runs, args.output_dir / "direction_timing_runs.csv")
     write_csv(rolling, args.output_dir / "rolling_windows.csv")
+    write_csv(annual_trend, args.output_dir / "annual_trend_summary.csv")
+    write_csv(rolling_trend, args.output_dir / "rolling_trend_summary.csv")
     write_csv(envelope, args.output_dir / "weekly_seasonal_envelope.csv")
     write_csv(diurnal, args.output_dir / "diurnal_profile_by_season.csv")
     write_csv(buckets, args.output_dir / "level_bucket_summary.csv")
@@ -3293,11 +4112,15 @@ def main() -> None:
                 "startTime",
                 "signed_mw",
                 "capacity_mw",
+                "active_capacity_mw",
                 "signed_pct_capacity",
+                "signed_pct_active_capacity",
                 "import_mw",
                 "export_mw",
                 "import_pct_capacity",
                 "export_pct_capacity",
+                "import_pct_active_capacity",
+                "export_pct_active_capacity",
                 "import_gwh",
                 "export_gwh",
                 "net_gwh",
@@ -3316,6 +4139,8 @@ def main() -> None:
         month_of_year,
         season_overall,
         rolling,
+        rolling_trend,
+        annual_trend,
         envelope,
         diurnal,
         buckets,
@@ -3346,6 +4171,20 @@ def main() -> None:
         weekday,
         timing_top_days,
         timing_runs,
+    )
+    build_seasonal_interconnector_story(
+        args.output_dir,
+        season_overall,
+        month_of_year,
+        analysis_start,
+        analysis_end,
+    )
+    build_trend_story(
+        args.output_dir,
+        rolling_trend,
+        annual_trend,
+        analysis_start,
+        analysis_end,
     )
     build_presentation_outline(
         args.output_dir,
@@ -3382,6 +4221,8 @@ def main() -> None:
             month_of_year,
             season_overall,
             rolling,
+            rolling_trend,
+            annual_trend,
             envelope,
             diurnal,
             buckets,
