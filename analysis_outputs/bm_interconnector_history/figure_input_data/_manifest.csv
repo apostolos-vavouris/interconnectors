@@ -9,6 +9,8 @@ season_mean_signed_mw,figure_input_data/season_mean_signed_mw.csv,season_overall
 season_direction_share_by_interconnector,figure_input_data/season_direction_share_by_interconnector.csv,season_overall_summary.csv,44,22,Seasonal import/export/near-zero shares with actual MW context.
 fleet_rolling_net_mw,figure_input_data/fleet_rolling_net_mw.csv,rolling_windows.csv,1826,46,Aggregate fleet daily and rolling actual MW/GWh values.
 fleet_rolling_trend_context,figure_input_data/fleet_rolling_trend_context.csv,rolling_windows.csv,1826,12,Aggregate 30-day rolling trend context with active-capacity basis for the fleet.
+fleet_rolling_trend_sensitivity,figure_input_data/fleet_rolling_trend_sensitivity.csv,rolling_windows.csv,1817,5,Fleet 30-day rolling net BM position with fitted trend lines including and excluding calendar-year 2022.
+fleet_rolling_trend_sensitivity_slopes,figure_input_data/fleet_rolling_slope_comparison.csv,fleet_rolling_slope_comparison.csv,2,12,"Slope, fitted endpoint values, and R2 for fleet rolling net BM trend fits including and excluding calendar-year 2022."
 fleet_annual_import_export_trend,figure_input_data/fleet_annual_import_export_trend.csv,annual_trend_summary.csv,6,15,"Year-by-year aggregate import/export levels, net flow, and active capacity utilisation."
 interconnector_trend_delta_by_link,figure_input_data/interconnector_trend_delta_by_link.csv,rolling_trend_summary.csv,10,17,Per-link trend delta chart input from the 30-day rolling endpoint comparison.
 interconnector_rolling_trend_small_multiples,figure_input_data/interconnector_rolling_30d_trends.csv,rolling_windows.csv,15620,9,Per-interconnector 30-day rolling signed MW series used for the small-multiple trend chart.

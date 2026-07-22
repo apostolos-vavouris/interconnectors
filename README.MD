@@ -76,6 +76,8 @@ Key outputs:
 - `annual_trend_summary.csv` - year-by-year cross-check, including active
   capacity metrics for the aggregate fleet where not every interconnector was
   operating.
+- `fleet_rolling_slope_comparison.csv` - fitted fleet rolling-net-MW slope
+  including all data and excluding calendar-year 2022.
 - `trend_story.md` - short narrative on whether the fleet and each link have
   shifted towards more imports, more exports, or no clear directional trend.
 - `weekly_seasonal_envelope.csv` - seasonal envelope by ISO week.
@@ -89,7 +91,7 @@ Key outputs:
 - `figures/` - charts for the recommended exhibit pack. The script writes PNGs
   when `matplotlib` is available, otherwise it falls back to interactive Plotly
   HTML files.
-- `figures/fleet_rolling_trend_context.*`, `figures/fleet_annual_import_export_trend.*`, `figures/interconnector_trend_delta_by_link.*`, and `figures/interconnector_rolling_trend_small_multiples.*` - trend illustrations for the five-year rolling readout.
+- `figures/fleet_rolling_trend_context.*`, `figures/fleet_rolling_trend_sensitivity.*`, `figures/fleet_annual_import_export_trend.*`, `figures/interconnector_trend_delta_by_link.*`, and `figures/interconnector_rolling_trend_small_multiples.*` - trend illustrations for the five-year rolling readout.
 - `figures/interconnectors/subfigures/` - separate modular charts for each
   interconnector, intended for one-slide-per-link presentation layouts.
 

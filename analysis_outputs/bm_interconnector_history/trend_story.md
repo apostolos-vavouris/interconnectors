@@ -4,7 +4,7 @@ Analysis window: 2021-07-01 to 2026-06-30. Positive MW means GB importing; negat
 
 Method: compare the first and last 90 valid days of each 30-day rolling daily mean, then cross-check with the linear slope across the rolling series. Fleet percentage metrics use active fleet capacity, i.e. only interconnectors with data in each settlement period.
 
-Recommended visuals: `figures/fleet_rolling_trend_context.*`, `figures/fleet_annual_import_export_trend.*`, `figures/interconnector_trend_delta_by_link.*`, and `figures/interconnector_rolling_trend_small_multiples.*`.
+Recommended visuals: `figures/fleet_rolling_trend_context.*`, `figures/fleet_rolling_trend_sensitivity.*`, `figures/fleet_annual_import_export_trend.*`, `figures/interconnector_trend_delta_by_link.*`, and `figures/interconnector_rolling_trend_small_multiples.*`.
 
 ## Fleet Readout
 
@@ -15,6 +15,7 @@ Recommended visuals: `figures/fleet_rolling_trend_context.*`, `figures/fleet_ann
 - Import share moved by -12.2 percentage points; export share moved by 12.1 percentage points.
 - Mean active fleet capacity across the window was 12,464 MW, with 8.6 links active on average.
 - Interpretation: the endpoint comparison is broadly flat; the positive slope is mainly a consequence of the deep 2022 trough, so this is better read as volatile rather than a sustained import/export trend.
+- Trend-line sensitivity: fitted slope is 586 MW/year including 2022, versus 118 MW/year excluding calendar-year 2022.
 
 Annual fleet cross-check:
 

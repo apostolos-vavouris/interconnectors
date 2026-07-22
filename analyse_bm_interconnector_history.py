@@ -889,6 +889,112 @@ def _linear_trend_stats(group: pd.DataFrame, value_col: str, endpoint_days: int 
     }
 
 
+def _fit_linear_trend_for_plot(
+    data: pd.DataFrame,
+    value_col: str,
+    *,
+    origin: pd.Timestamp,
+) -> dict[str, object]:
+    clean = data[["date", value_col]].dropna().sort_values("date")
+    if len(clean) < 2 or clean[value_col].nunique(dropna=True) < 2:
+        return {
+            "slope_mw_per_year": np.nan,
+            "intercept_mw": np.nan,
+            "r2": np.nan,
+            "observations": int(len(clean)),
+            "fit_start_date": clean["date"].min() if not clean.empty else pd.NaT,
+            "fit_end_date": clean["date"].max() if not clean.empty else pd.NaT,
+            "fit_start_value_mw": np.nan,
+            "fit_end_value_mw": np.nan,
+            "fit_delta_mw": np.nan,
+        }
+
+    x = (clean["date"] - origin).dt.total_seconds() / (365.25 * 24 * 60 * 60)
+    y = clean[value_col].astype(float)
+    slope, intercept = np.polyfit(x.to_numpy(), y.to_numpy(), 1)
+    fitted = slope * x + intercept
+    ss_res = float(((y - fitted) ** 2).sum())
+    ss_tot = float(((y - y.mean()) ** 2).sum())
+    r2 = np.nan if ss_tot == 0 else 1.0 - ss_res / ss_tot
+    first_x = float(x.iloc[0])
+    last_x = float(x.iloc[-1])
+    fit_start_value = slope * first_x + intercept
+    fit_end_value = slope * last_x + intercept
+    return {
+        "slope_mw_per_year": slope,
+        "intercept_mw": intercept,
+        "r2": r2,
+        "observations": int(len(clean)),
+        "fit_start_date": clean["date"].iloc[0],
+        "fit_end_date": clean["date"].iloc[-1],
+        "fit_start_value_mw": fit_start_value,
+        "fit_end_value_mw": fit_end_value,
+        "fit_delta_mw": fit_end_value - fit_start_value,
+    }
+
+
+def build_fleet_rolling_slope_comparison(rolling: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    value_col = "rolling_30d_mean_signed_mw"
+    fleet = rolling[rolling["interconnectorId"] == "TOTAL_GB_INTERCONNECTORS"].sort_values("date").copy()
+    source = fleet[["date", value_col]].dropna().copy()
+    if source.empty:
+        empty_summary = pd.DataFrame(
+            columns=[
+                "trend_case",
+                "trend_case_label",
+                "excluded_period",
+                "slope_mw_per_year",
+                "intercept_mw",
+                "r2",
+                "observations",
+                "fit_start_date",
+                "fit_end_date",
+                "fit_start_value_mw",
+                "fit_end_value_mw",
+                "fit_delta_mw",
+            ]
+        )
+        return empty_summary, source.rename(columns={value_col: "rolling_30d_mean_signed_mw"})
+
+    origin = source["date"].min()
+    cases = [
+        {
+            "trend_case": "including_2022_trough",
+            "trend_case_label": "Including 2022 trough",
+            "excluded_period": "",
+            "mask": pd.Series(True, index=source.index),
+        },
+        {
+            "trend_case": "excluding_2022_trough",
+            "trend_case_label": "Excluding calendar-year 2022",
+            "excluded_period": "2022-01-01 to 2022-12-31",
+            "mask": source["date"].dt.year != 2022,
+        },
+    ]
+
+    rows = []
+    plot_data = source.rename(columns={value_col: "rolling_30d_mean_signed_mw"}).copy()
+    x_all = (plot_data["date"] - origin).dt.total_seconds() / (365.25 * 24 * 60 * 60)
+    plot_data["is_calendar_year_2022"] = plot_data["date"].dt.year == 2022
+
+    for case in cases:
+        fitted = _fit_linear_trend_for_plot(source.loc[case["mask"]], value_col, origin=origin)
+        row = {
+            "trend_case": case["trend_case"],
+            "trend_case_label": case["trend_case_label"],
+            "excluded_period": case["excluded_period"],
+            **fitted,
+        }
+        rows.append(row)
+        trend_col = f"{case['trend_case']}_trend_mw"
+        if pd.isna(fitted["slope_mw_per_year"]):
+            plot_data[trend_col] = np.nan
+        else:
+            plot_data[trend_col] = fitted["slope_mw_per_year"] * x_all + fitted["intercept_mw"]
+
+    return pd.DataFrame(rows), plot_data
+
+
 def _trend_label(delta_mw: float, slope_mw_per_year: float, capacity_basis_mw: float, is_fleet: bool) -> str:
     if pd.isna(delta_mw):
         return "insufficient_data"
@@ -968,6 +1074,7 @@ def build_trend_story(
     output_dir: Path,
     trend_summary: pd.DataFrame,
     annual_summary: pd.DataFrame,
+    fleet_slope_comparison: pd.DataFrame,
     analysis_start: pd.Timestamp,
     analysis_end: pd.Timestamp,
 ) -> None:
@@ -986,7 +1093,7 @@ def build_trend_story(
         "",
         "Method: compare the first and last 90 valid days of each 30-day rolling daily mean, then cross-check with the linear slope across the rolling series. Fleet percentage metrics use active fleet capacity, i.e. only interconnectors with data in each settlement period.",
         "",
-        "Recommended visuals: `figures/fleet_rolling_trend_context.*`, `figures/fleet_annual_import_export_trend.*`, `figures/interconnector_trend_delta_by_link.*`, and `figures/interconnector_rolling_trend_small_multiples.*`.",
+        "Recommended visuals: `figures/fleet_rolling_trend_context.*`, `figures/fleet_rolling_trend_sensitivity.*`, `figures/fleet_annual_import_export_trend.*`, `figures/interconnector_trend_delta_by_link.*`, and `figures/interconnector_rolling_trend_small_multiples.*`.",
         "",
     ]
 
@@ -1010,6 +1117,14 @@ def build_trend_story(
             lines.append(
                 "- Interpretation: the endpoint comparison is broadly flat; the positive slope is mainly a consequence of the deep 2022 trough, so this is better read as volatile rather than a sustained import/export trend."
             )
+        if not fleet_slope_comparison.empty:
+            slopes = fleet_slope_comparison.set_index("trend_case")
+            if {"including_2022_trough", "excluding_2022_trough"}.issubset(slopes.index):
+                all_slope = slopes.loc["including_2022_trough", "slope_mw_per_year"]
+                ex_2022_slope = slopes.loc["excluding_2022_trough", "slope_mw_per_year"]
+                lines.append(
+                    f"- Trend-line sensitivity: fitted slope is {format_num(all_slope)} MW/year including 2022, versus {format_num(ex_2022_slope)} MW/year excluding calendar-year 2022."
+                )
         lines.append("")
 
         fleet_annual = annual_summary[annual_summary["interconnectorId"] == "TOTAL_GB_INTERCONNECTORS"].sort_values("year")
@@ -1461,6 +1576,8 @@ def export_figure_input_data(
     rolling: pd.DataFrame,
     rolling_trend: pd.DataFrame,
     annual_trend: pd.DataFrame,
+    fleet_slope_comparison: pd.DataFrame,
+    fleet_slope_plot_data: pd.DataFrame,
     envelope: pd.DataFrame,
     diurnal: pd.DataFrame,
     bucket_summary: pd.DataFrame,
@@ -1624,6 +1741,24 @@ def export_figure_input_data(
         figure_basename="fleet_rolling_trend_context",
         source_table="rolling_windows.csv",
         notes="Aggregate 30-day rolling trend context with active-capacity basis for the fleet.",
+    )
+    write_figure_input_csv(
+        fleet_slope_plot_data.copy(),
+        figure_data_dir / "fleet_rolling_trend_sensitivity.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="fleet_rolling_trend_sensitivity",
+        source_table="rolling_windows.csv",
+        notes="Fleet 30-day rolling net BM position with fitted trend lines including and excluding calendar-year 2022.",
+    )
+    write_figure_input_csv(
+        fleet_slope_comparison.copy(),
+        figure_data_dir / "fleet_rolling_slope_comparison.csv",
+        manifest_rows,
+        output_dir=output_dir,
+        figure_basename="fleet_rolling_trend_sensitivity_slopes",
+        source_table="fleet_rolling_slope_comparison.csv",
+        notes="Slope, fitted endpoint values, and R2 for fleet rolling net BM trend fits including and excluding calendar-year 2022.",
     )
     fleet_annual = annual_trend[annual_trend["interconnectorId"] == "TOTAL_GB_INTERCONNECTORS"].sort_values("year")
     annual_cols = existing_columns(
@@ -2180,7 +2315,7 @@ def build_story(
             "1. `figures/direction_share_by_interconnector.*` - simple answer to how often each link imported, exported, or sat near zero.",
             "2. `figures/net_energy_by_interconnector.*` - which links have been net importers/exporters over the period.",
             "3. `figures/monthly_mean_signed_mw_heatmap.*` - regime changes and seasonality by link.",
-            "4. `figures/fleet_rolling_net_mw.*` and `figures/fleet_rolling_trend_context.*` - whether the total GB interconnector BM position was tightening or relaxing, with active-capacity context.",
+            "4. `figures/fleet_rolling_net_mw.*`, `figures/fleet_rolling_trend_context.*`, and `figures/fleet_rolling_trend_sensitivity.*` - whether the total GB interconnector BM position was tightening or relaxing, with active-capacity and 2022-sensitivity context.",
             "5. `figures/fleet_annual_import_export_trend.*`, `figures/interconnector_trend_delta_by_link.*`, and `figures/interconnector_rolling_trend_small_multiples.*` - five-year import/export trend readout.",
             "6. `figures/fleet_weekly_seasonal_envelope.*` - expected seasonal range across the five-year history.",
             "7. `figures/fleet_diurnal_by_season.*` - whether operation changes materially within day and season.",
@@ -2203,6 +2338,7 @@ def build_story(
             "- `rolling_windows.csv`",
             "- `rolling_trend_summary.csv`",
             "- `annual_trend_summary.csv`",
+            "- `fleet_rolling_slope_comparison.csv`",
             "- `weekly_seasonal_envelope.csv`",
             "- `diurnal_profile_by_season.csv`",
             "- `level_bucket_summary.csv`",
@@ -2925,6 +3061,70 @@ def plotly_fleet_rolling_trend_context(
     fig.update_layout(height=780)
     plotly_layout(fig, "Fleet Rolling Trend Context")
     fig.write_html(figure_dir / "fleet_rolling_trend_context.html", include_plotlyjs="directory")
+
+
+def plotly_fleet_rolling_trend_sensitivity(
+    fleet_slope_comparison: pd.DataFrame,
+    fleet_slope_plot_data: pd.DataFrame,
+    figure_dir: Path,
+) -> None:
+    go = require_plotly()
+    data = fleet_slope_plot_data.sort_values("date").copy()
+    if data.empty:
+        return
+
+    slopes = fleet_slope_comparison.set_index("trend_case") if not fleet_slope_comparison.empty else pd.DataFrame()
+
+    def slope_label(case: str, fallback: str) -> str:
+        if case in slopes.index:
+            slope = slopes.loc[case, "slope_mw_per_year"]
+            r2 = slopes.loc[case, "r2"]
+            return f"{fallback}: {slope:,.0f} MW/year, R2 {r2:.2f}"
+        return fallback
+
+    fig = go.Figure()
+    fig.add_scatter(
+        x=data["date"],
+        y=data["rolling_30d_mean_signed_mw"],
+        mode="lines",
+        name="30-day rolling net BM position",
+        line={"color": "#8f9aa7", "width": 1.4},
+    )
+    if "including_2022_trough_trend_mw" in data.columns:
+        fig.add_scatter(
+            x=data["date"],
+            y=data["including_2022_trough_trend_mw"],
+            mode="lines",
+            name=slope_label("including_2022_trough", "Trend including 2022"),
+            line={"color": "#111111", "width": 2.6},
+        )
+    if "excluding_2022_trough_trend_mw" in data.columns:
+        fig.add_scatter(
+            x=data["date"],
+            y=data["excluding_2022_trough_trend_mw"],
+            mode="lines",
+            name=slope_label("excluding_2022_trough", "Trend excluding 2022"),
+            line={"color": "#2a9d8f", "width": 2.6, "dash": "dash"},
+        )
+
+    fig.add_hline(y=0, line_color="#777777", line_width=1)
+    fig.add_vrect(
+        x0="2022-01-01",
+        x1="2022-12-31",
+        fillcolor="#c43c39",
+        opacity=0.08,
+        layer="below",
+        line_width=0,
+        annotation_text="2022 trough excluded from green fit",
+        annotation_position="top left",
+    )
+    fig.update_layout(
+        xaxis_title="",
+        yaxis_title="MW (import positive)",
+        height=650,
+    )
+    plotly_layout(fig, "Fleet Rolling Net BM Trend Sensitivity")
+    fig.write_html(figure_dir / "fleet_rolling_trend_sensitivity.html", include_plotlyjs="directory")
 
 
 def plotly_fleet_annual_import_export_trend(annual_trend: pd.DataFrame, figure_dir: Path) -> None:
@@ -3871,6 +4071,8 @@ def generate_plotly_charts(
     rolling: pd.DataFrame,
     rolling_trend: pd.DataFrame,
     annual_trend: pd.DataFrame,
+    fleet_slope_comparison: pd.DataFrame,
+    fleet_slope_plot_data: pd.DataFrame,
     envelope: pd.DataFrame,
     diurnal: pd.DataFrame,
     bucket_summary: pd.DataFrame,
@@ -3888,6 +4090,7 @@ def generate_plotly_charts(
     plotly_monthly_heatmap(monthly, figure_dir)
     plotly_fleet_rolling(rolling, figure_dir)
     plotly_fleet_rolling_trend_context(rolling, rolling_trend, figure_dir)
+    plotly_fleet_rolling_trend_sensitivity(fleet_slope_comparison, fleet_slope_plot_data, figure_dir)
     plotly_fleet_annual_import_export_trend(annual_trend, figure_dir)
     plotly_interconnector_trend_delta_by_link(rolling_trend, figure_dir)
     plotly_interconnector_rolling_trend_small_multiples(rolling, rolling_trend, figure_dir)
@@ -3937,6 +4140,8 @@ def generate_charts(
     rolling: pd.DataFrame,
     rolling_trend: pd.DataFrame,
     annual_trend: pd.DataFrame,
+    fleet_slope_comparison: pd.DataFrame,
+    fleet_slope_plot_data: pd.DataFrame,
     envelope: pd.DataFrame,
     diurnal: pd.DataFrame,
     bucket_summary: pd.DataFrame,
@@ -3969,6 +4174,7 @@ def generate_charts(
             plotly_season_pct_capacity_heatmap(season_overall, figure_dir)
             plotly_season_direction_heatmap(season_overall, figure_dir)
             plotly_fleet_rolling_trend_context(rolling, rolling_trend, figure_dir)
+            plotly_fleet_rolling_trend_sensitivity(fleet_slope_comparison, fleet_slope_plot_data, figure_dir)
             plotly_fleet_annual_import_export_trend(annual_trend, figure_dir)
             plotly_interconnector_trend_delta_by_link(rolling_trend, figure_dir)
             plotly_interconnector_rolling_trend_small_multiples(rolling, rolling_trend, figure_dir)
@@ -4008,6 +4214,8 @@ def generate_charts(
             rolling,
             rolling_trend,
             annual_trend,
+            fleet_slope_comparison,
+            fleet_slope_plot_data,
             envelope,
             diurnal,
             bucket_summary,
@@ -4069,6 +4277,7 @@ def main() -> None:
     timing_runs = direction_run_summary(daily_regimes)
     rolling = add_rolling_windows(daily, windows=[7, 30, 90])
     rolling_trend = build_rolling_trend_summary(rolling)
+    fleet_slope_comparison, fleet_slope_plot_data = build_fleet_rolling_slope_comparison(rolling)
     envelope = seasonal_weekly_envelope(daily)
     diurnal = diurnal_profile(combined)
     buckets = level_bucket_summary(combined)
@@ -4097,6 +4306,7 @@ def main() -> None:
     write_csv(rolling, args.output_dir / "rolling_windows.csv")
     write_csv(annual_trend, args.output_dir / "annual_trend_summary.csv")
     write_csv(rolling_trend, args.output_dir / "rolling_trend_summary.csv")
+    write_csv(fleet_slope_comparison, args.output_dir / "fleet_rolling_slope_comparison.csv")
     write_csv(envelope, args.output_dir / "weekly_seasonal_envelope.csv")
     write_csv(diurnal, args.output_dir / "diurnal_profile_by_season.csv")
     write_csv(buckets, args.output_dir / "level_bucket_summary.csv")
@@ -4141,6 +4351,8 @@ def main() -> None:
         rolling,
         rolling_trend,
         annual_trend,
+        fleet_slope_comparison,
+        fleet_slope_plot_data,
         envelope,
         diurnal,
         buckets,
@@ -4183,6 +4395,7 @@ def main() -> None:
         args.output_dir,
         rolling_trend,
         annual_trend,
+        fleet_slope_comparison,
         analysis_start,
         analysis_end,
     )
@@ -4223,6 +4436,8 @@ def main() -> None:
             rolling,
             rolling_trend,
             annual_trend,
+            fleet_slope_comparison,
+            fleet_slope_plot_data,
             envelope,
             diurnal,
             buckets,

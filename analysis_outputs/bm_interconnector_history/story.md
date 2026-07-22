@@ -99,7 +99,7 @@ Highest opposite-direction operating shares:
 1. `figures/direction_share_by_interconnector.*` - simple answer to how often each link imported, exported, or sat near zero.
 2. `figures/net_energy_by_interconnector.*` - which links have been net importers/exporters over the period.
 3. `figures/monthly_mean_signed_mw_heatmap.*` - regime changes and seasonality by link.
-4. `figures/fleet_rolling_net_mw.*` and `figures/fleet_rolling_trend_context.*` - whether the total GB interconnector BM position was tightening or relaxing, with active-capacity context.
+4. `figures/fleet_rolling_net_mw.*`, `figures/fleet_rolling_trend_context.*`, and `figures/fleet_rolling_trend_sensitivity.*` - whether the total GB interconnector BM position was tightening or relaxing, with active-capacity and 2022-sensitivity context.
 5. `figures/fleet_annual_import_export_trend.*`, `figures/interconnector_trend_delta_by_link.*`, and `figures/interconnector_rolling_trend_small_multiples.*` - five-year import/export trend readout.
 6. `figures/fleet_weekly_seasonal_envelope.*` - expected seasonal range across the five-year history.
 7. `figures/fleet_diurnal_by_season.*` - whether operation changes materially within day and season.
@@ -122,6 +122,7 @@ Highest opposite-direction operating shares:
 - `rolling_windows.csv`
 - `rolling_trend_summary.csv`
 - `annual_trend_summary.csv`
+- `fleet_rolling_slope_comparison.csv`
 - `weekly_seasonal_envelope.csv`
 - `diurnal_profile_by_season.csv`
 - `level_bucket_summary.csv`
