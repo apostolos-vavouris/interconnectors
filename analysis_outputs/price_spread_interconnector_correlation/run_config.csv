@@ -1,0 +1,10 @@
+analysis_start,2021-07-01 00:00:00+00:00
+analysis_end,2026-06-30 22:30:00+00:00
+positive_direction,import
+flow_deadband_mw,1.0
+price_deadband,1.0
+price_time_shift_hours,0.0
+interconnector_data_dir,HH_data
+price_file,bidding_zones_electricity_markets_prices.csv
+metadata_file,interconnectors_names.csv
+capacity_file,not supplied; observed peak used

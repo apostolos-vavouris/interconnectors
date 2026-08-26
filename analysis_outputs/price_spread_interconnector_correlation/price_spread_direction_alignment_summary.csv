@@ -1,0 +1,41 @@
+interconnectorId,interconnectorName,interconnectorBiddingZone,price_zone_code,economic_alignment,observations,duration_hours,share_pct,economic_alignment_label
+INTELEC,Eleclink (INTELEC),FRANCE,FR,aligned_with_price_spread,52086,26043.0,72.44429608612201,Aligned with spread
+INTELEC,Eleclink (INTELEC),FRANCE,FR,counter_price_spread,8092,4046.0,11.254833235973184,Counter-spread
+INTELEC,Eleclink (INTELEC),FRANCE,FR,flow_near_zero_while_price_signal,8500,4250.0,11.822303819299563,Flow near zero while spread signals
+INTELEC,Eleclink (INTELEC),FRANCE,FR,price_near_parity,3220,1610.0,4.478566858605246,Price near parity
+INTEW,Ireland(East-West),IRELAND,IRL,aligned_with_price_spread,41118,20559.0,46.93085579930148,Aligned with spread
+INTEW,Ireland(East-West),IRELAND,IRL,counter_price_spread,18330,9165.0,20.92131394525989,Counter-spread
+INTEW,Ireland(East-West),IRELAND,IRL,flow_near_zero_while_price_signal,25644,12822.0,29.26929486155181,Flow near zero while spread signals
+INTEW,Ireland(East-West),IRELAND,IRL,price_near_parity,2522,1261.0,2.878535393886822,Price near parity
+INTFR,France(IFA),FRANCE,FR,aligned_with_price_spread,69332,34666.0,79.13347181957221,Aligned with spread
+INTFR,France(IFA),FRANCE,FR,counter_price_spread,11528,5764.0,13.157714520510421,Counter-spread
+INTFR,France(IFA),FRANCE,FR,flow_near_zero_while_price_signal,3147,1573.5,3.5918917068048484,Flow near zero while spread signals
+INTFR,France(IFA),FRANCE,FR,price_near_parity,3607,1803.5,4.1169219531125165,Price near parity
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,aligned_with_price_spread,15565,7782.5,62.7266865479165,Aligned with spread
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,counter_price_spread,7634,3817.0,30.764890787458693,Counter-spread
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,flow_near_zero_while_price_signal,733,366.5,2.953977593294108,Flow near zero while spread signals
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,price_near_parity,882,441.0,3.5544450713307003,Price near parity
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,aligned_with_price_spread,63556,31778.0,72.54091811810898,Aligned with spread
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,counter_price_spread,20389,10194.5,23.27139498253704,Counter-spread
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,flow_near_zero_while_price_signal,62,31.0,0.07076494624146826,Flow near zero while spread signals
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,price_near_parity,3607,1803.5,4.1169219531125165,Price near parity
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,aligned_with_price_spread,53522,26761.0,61.08841052799781,Aligned with spread
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,counter_price_spread,26487,13243.5,30.231469856415643,Counter-spread
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,flow_near_zero_while_price_signal,5083,2541.5,5.801584221699729,Flow near zero while spread signals
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,price_near_parity,2522,1261.0,2.878535393886822,Price near parity
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,aligned_with_price_spread,61673,30836.5,70.39171821854954,Aligned with spread
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,counter_price_spread,13765,6882.5,15.710959435706624,Counter-spread
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,flow_near_zero_while_price_signal,7696,3848.0,8.783984294747414,Flow near zero while spread signals
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,price_near_parity,4480,2240.0,5.113338050996416,Price near parity
+INTNEM,Belgium (Nemolink),BELGIUM,B,aligned_with_price_spread,66556,33278.0,75.96502842011552,Aligned with spread
+INTNEM,Belgium (Nemolink),BELGIUM,B,counter_price_spread,14375,7187.5,16.407195197114614,Counter-spread
+INTNEM,Belgium (Nemolink),BELGIUM,B,flow_near_zero_while_price_signal,1984,992.0,2.2644782797269842,Flow near zero while spread signals
+INTNEM,Belgium (Nemolink),BELGIUM,B,price_near_parity,4699,2349.5,5.363298103042893,Price near parity
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,aligned_with_price_spread,71959,35979.5,86.53910910140465,Aligned with spread
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,counter_price_spread,8562,4281.0,10.296805849528575,Counter-spread
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,flow_near_zero_while_price_signal,1887,943.5,2.269338079661343,Flow near zero while spread signals
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,price_near_parity,744,372.0,0.8947469694054262,Price near parity
+INTVKL,Denmark (Viking link),DENMARK1,DK,aligned_with_price_spread,33555,16777.5,76.48734898563939,Aligned with spread
+INTVKL,Denmark (Viking link),DENMARK1,DK,counter_price_spread,5076,2538.0,11.570549350353316,Counter-spread
+INTVKL,Denmark (Viking link),DENMARK1,DK,flow_near_zero_while_price_signal,2929,1464.5,6.676544335536813,Flow near zero while spread signals
+INTVKL,Denmark (Viking link),DENMARK1,DK,price_near_parity,2310,1155.0,5.265557328470481,Price near parity

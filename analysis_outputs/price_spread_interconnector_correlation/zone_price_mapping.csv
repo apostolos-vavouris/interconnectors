@@ -1,0 +1,11 @@
+interconnectorId,interconnectorName,interconnectorBiddingZone,price_zone_code
+INTELEC,Eleclink (INTELEC),FRANCE,FR
+INTEW,Ireland(East-West),IRELAND,IRL
+INTFR,France(IFA),FRANCE,FR
+INTGRNL,Ireland (Greenlink),IRELAND,IRL
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL
+INTNED,Netherlands(BritNed),NETHERLANDS,NL
+INTNEM,Belgium (Nemolink),BELGIUM,B
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO
+INTVKL,Denmark (Viking link),DENMARK1,DK

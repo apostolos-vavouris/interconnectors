@@ -1,0 +1,12 @@
+interconnectorId,interconnectorName,observed_import_peak_mw,observed_export_peak_mw,observed_abs_peak_mw,observed_abs_p99_mw,observed_abs_p95_mw,capacity_mw,capacity_source
+INTELEC,Eleclink (INTELEC),1260,1028,1260,1024.0,1020.0,1260,observed_abs_peak_in_analysis_window
+INTEW,Ireland(East-West),504,588,588,532.0,532.0,588,observed_abs_peak_in_analysis_window
+INTFR,France(IFA),2630,2072,2630,2008.0,2004.0,2630,observed_abs_peak_in_analysis_window
+INTGRNL,Ireland (Greenlink),506,518,518,514.0,514.0,518,observed_abs_peak_in_analysis_window
+INTIFA2,IFA2 (INTIFA2),1398,1626,1626,1030.0,1028.0,1626,observed_abs_peak_in_analysis_window
+INTIRL,Northern Ireland(Moyle),682,592,682,456.0,452.0,682,observed_abs_peak_in_analysis_window
+INTNED,Netherlands(BritNed),1402,1094,1402,1074.0,1054.0,1402,observed_abs_peak_in_analysis_window
+INTNEM,Belgium (Nemolink),1366,1044,1366,1022.0,1020.0,1366,observed_abs_peak_in_analysis_window
+INTNSL,North Sea Link (INTNSL),1846,1454,1846,1452.0,1400.0,1846,observed_abs_peak_in_analysis_window
+INTVKL,Denmark (Viking link),2480,1456,2480,1428.0,1424.0,2480,observed_abs_peak_in_analysis_window
+TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,9230,7914,9230,7604.0,6712.0,14398,sum_of_interconnector_capacity_mw

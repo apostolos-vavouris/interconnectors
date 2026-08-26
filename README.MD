@@ -43,6 +43,21 @@ to:
 analysis_outputs/wind_interconnector_correlation/
 ```
 
+To analyse whether GB-vs-bidding-zone price spreads explain interconnector
+flows, run:
+
+```powershell
+..\elexon-iris\.venv\Scripts\python.exe .\analyse_price_spread_interconnector_correlation.py
+```
+
+This joins `bidding_zones_electricity_markets_prices.csv` to the half-hourly
+interconnector flows and defines the spread as `GB price - bidding-zone price`.
+Outputs are written to:
+
+```text
+analysis_outputs/price_spread_interconnector_correlation/
+```
+
 To export those wind-correlation HTML figures to PNG, run:
 
 ```powershell
@@ -108,3 +123,21 @@ Wind/interconnector correlation outputs:
   high-wind comparison table for every interconnector and the aggregate fleet.
 - `interconnector_wind_join_half_hourly_wide.csv` - joined wind and signed
   interconnector MW series for further analysis.
+
+Price-spread/interconnector outputs:
+
+- `story.md` - short narrative for the price-spread/flow relationship.
+- `price_spread_correlation_summary.csv` - per-interconnector half-hourly
+  spread-vs-flow correlation, regression slope, and directional alignment.
+- `price_spread_correlation_by_frequency.csv` - half-hourly, daily, and monthly
+  correlation cuts.
+- `price_spread_band_summary.csv` - import/export levels and direction shares
+  across fixed GB-minus-zone spread bands.
+- `price_spread_quantile_summary.csv` - same relationship across link-specific
+  spread deciles.
+- `price_spread_direction_alignment_summary.csv` - whether flow direction
+  aligns with, counters, or sits near zero against the price spread signal.
+- `price_spread_lag_correlation_summary.csv` - lag sensitivity where positive
+  lag means the spread leads the flow.
+- `interconnector_price_spread_join_half_hourly.csv.gz` - joined flow and price
+  spread data for further analysis.

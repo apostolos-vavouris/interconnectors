@@ -1,0 +1,1441 @@
+interconnectorId,interconnectorName,interconnectorBiddingZone,price_zone_code,spread_band_order,spread_band,spread_band_label,observations,duration_hours,duration_share_pct,mean_price_spread_gb_minus_zone,median_price_spread_gb_minus_zone,mean_signed_mw,median_signed_mw,mean_signed_pct_capacity,mean_import_mw,mean_export_mw,import_share_pct,export_share_pct,near_zero_share_pct,aligned_share_pct,counter_price_share_pct,import_gwh,export_gwh,net_gwh
+INTELEC,Eleclink (INTELEC),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by >100,2369,1184.5,3.294945617402431,-164.63853102574924,-147.48,-803.8927817644576,-1022.0,-63.801014425750594,0.0,803.8927817644576,0.0,84.21274799493457,15.787252005065428,84.21274799493457,0.0,0.0,952.211,-952.211
+INTELEC,Eleclink (INTELEC),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by 50-100,2114,1057.0,2.9402765028234445,-71.88039735099338,-70.07,-811.8921475875118,-972.0,-64.43588472916761,3.717123935666982,815.6092715231788,1.3245033112582782,87.51182592242195,11.163670766319774,87.51182592242195,1.3245033112582782,3.9290000000000003,862.099,-858.1700000000001
+INTELEC,Eleclink (INTELEC),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by 25-50,2009,1004.5,2.7942362791732736,-36.115978098556496,-35.47000000000003,-724.6092583374814,-908.0,-57.5086712966255,14.286709805873569,738.8959681433549,3.5340965654554504,85.8636137381782,10.602289696366352,85.8636137381782,3.5340965654554504,14.351,742.221,-727.87
+INTELEC,Eleclink (INTELEC),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by 10-25,3530,1765.0,4.909733233191465,-15.704957507082153,-14.86,-360.7643059490085,-380.0,-28.63208777373083,82.33371104815863,443.0980169971671,21.274787535410763,65.97733711048159,12.747875354107649,65.97733711048159,21.274787535410763,145.319,782.068,-636.749
+INTELEC,Eleclink (INTELEC),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by 5-10,3820,1910.0,5.31308242232051,-7.192010471204188,-7.064999999999998,15.957068062827226,0.0,1.266433973240256,211.0109947643979,195.05392670157067,45.916230366492144,41.07329842931937,13.010471204188482,41.07329842931937,45.916230366492144,403.031,372.553,30.477999999999998
+INTELEC,Eleclink (INTELEC),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by 0-5,6430,3215.0,8.943225124481904,-2.286409020217729,-2.1899999999999977,224.33810264385693,206.0,17.804611320941028,326.43856920684294,102.100466562986,62.363919129082426,26.765163297045103,10.870917573872472,21.321928460342146,46.06531881804044,1049.5,328.253,721.247
+INTELEC,Eleclink (INTELEC),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by 0-5,8404,4202.0,11.688781329105122,2.460552118039029,2.429999999999996,398.79009995240364,433.0,31.65000793273045,454.81056639695385,56.020466444550216,73.59590671108995,15.135649690623513,11.268443598286531,59.935744883388864,11.292241789623988,1911.114,235.398,1675.7160000000001
+INTELEC,Eleclink (INTELEC),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by 5-10,6862,3431.0,9.544076330356894,7.420906441270767,7.390000000000001,557.2553191489362,700.0,44.22661263086795,585.6423783153599,28.387059166423782,80.7781987758671,7.694549693966773,11.527251530166133,80.7781987758671,7.694549693966773,2009.339,97.396,1911.943
+INTELEC,Eleclink (INTELEC),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by 10-25,11348,5674.0,15.783471028401348,16.409118787451533,15.965000000000003,702.5867113147691,980.0,55.76085010434676,721.3648219950652,18.778110680296088,82.55199154035954,4.652802255904124,12.795206203736342,82.55199154035954,4.652802255904124,4093.024,106.547,3986.477
+INTELEC,Eleclink (INTELEC),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by 25-50,10024,5012.0,13.941973351136333,36.75903232242617,36.505,793.663407821229,996.0,62.9891593508912,805.5554668794892,11.892059058260175,83.64924181963288,3.282122905027933,13.068635275339185,83.64924181963288,3.282122905027933,4037.444,59.603,3977.841
+INTELEC,Eleclink (INTELEC),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by 50-100,12960,6480.0,18.025536176249688,71.5974475308642,70.69,843.1274691358025,996.0,66.91487850284147,846.0015432098766,2.8740740740740742,86.31172839506172,1.257716049382716,12.430555555555555,86.31172839506172,1.257716049382716,5482.09,18.624,5463.466
+INTELEC,Eleclink (INTELEC),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by >100,2028,1014.0,2.82066260535759,132.31839250493098,112.83,831.4901380670611,996.0,65.99128079897311,833.9437869822485,2.453648915187377,85.20710059171599,1.4299802761341223,13.3629191321499,85.20710059171599,1.4299802761341223,845.619,2.488,843.131
+INTELEC,Eleclink (INTELEC),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTELEC,Eleclink (INTELEC),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by >100,3958,1979.0,4.51754285844728,-136.97628852956038,-125.76,-228.15715007579587,-226.0,-38.80223640744828,28.251642243557352,256.4087923193532,12.304194037392623,62.2789287518949,25.416877210712478,62.2789287518949,12.304194037392623,55.910000000000004,507.433,-451.523
+INTEW,Ireland(East-West),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by 50-100,10608,5304.0,12.107654027895085,-69.54986613876319,-67.125,-204.30184766214177,-128.0,-34.74521218743908,23.77865761689291,228.0805052790347,11.91553544494721,59.455128205128204,28.629336349924582,59.455128205128204,11.91553544494721,126.122,1209.739,-1083.617
+INTEW,Ireland(East-West),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by 25-50,13387,6693.5,15.279521537653801,-35.78270934488683,-34.97000000000003,-191.8219167849406,-90.0,-32.62277496342527,25.385523268842906,217.20744005378353,12.325390304026294,58.12355270038096,29.551056995592738,58.12355270038096,12.325390304026294,169.918,1453.8780000000002,-1283.96
+INTEW,Ireland(East-West),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by 10-25,15946,7973.0,18.200287625265368,-16.79296187131569,-16.415,-184.94870186880723,-80.0,-31.453860862042045,22.735231405995233,207.68393327480246,11.752163551987959,58.1399724068732,30.107864041138843,58.1399724068732,11.752163551987959,181.268,1655.864,-1474.596
+INTEW,Ireland(East-West),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by 5-10,7267,3633.5,8.294336521560481,-7.4645741021054075,-7.420000000000002,-182.01898995458924,-70.0,-30.95561053649477,19.037291867345534,201.05628182193476,9.75643319113802,58.12577404706206,32.11779276179992,58.12577404706206,9.75643319113802,69.172,730.538,-661.366
+INTEW,Ireland(East-West),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by 0-5,6945,3472.5,7.926815349145114,-2.5760647948164146,-2.6200000000000045,-165.664218862491,-46.0,-28.174186881376023,23.7056875449964,189.3699064074874,11.245500359971203,55.78113750899928,32.97336213102952,46.63786897048236,9.287257019438446,82.318,657.587,-575.269
+INTEW,Ireland(East-West),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by 0-5,5695,2847.5,6.500102723309061,2.3826584723441617,2.3700000000000045,-149.52730465320457,-18.0,-25.42981371653139,27.81246707638279,177.33977172958737,13.819139596136962,52.730465320456545,33.4503950834065,10.693590869183495,40.80772607550483,79.196,504.975,-425.779
+INTEW,Ireland(East-West),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by 5-10,4109,2054.5,4.689889743648275,7.345093696763203,7.260000000000005,-131.16086639084935,0.0,-22.306269794362134,33.79703090776344,164.9578972986128,17.08444877099051,49.62277926502799,33.29277196398151,17.08444877099051,49.62277926502799,69.436,338.906,-269.47
+INTEW,Ireland(East-West),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by 10-25,7338,3669.0,8.375373798707969,16.439997274461707,15.960000000000022,-94.73371490869447,0.0,-16.11117600488001,55.08912510220769,149.82284001090215,22.853638593622243,45.27119106023439,31.87517034614336,22.853638593622243,45.27119106023439,202.122,549.7,-347.57800000000003
+INTEW,Ireland(East-West),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by 25-50,5558,2779.0,6.343735019517428,35.84262504498021,35.02999999999997,-26.8463476070529,0.0,-4.565705375349133,83.18315940985966,110.02950701691256,31.720043181000364,36.73983447283196,31.54012234616769,31.720043181000364,36.73983447283196,231.166,305.772,-74.60600000000001
+INTEW,Ireland(East-West),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by 50-100,4466,2233.0,5.097358869587052,70.83354008060905,68.99000000000001,21.29243170622481,0.0,3.6211618548001367,112.11957008508733,90.82713837886251,40.953873712494406,30.877742946708466,28.16838334079713,40.953873712494406,30.877742946708466,250.363,202.817,47.546
+INTEW,Ireland(East-West),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by >100,2337,1168.5,2.667381925263086,190.82043217800597,136.62000000000003,111.1339323919555,36.0,18.900328638087668,160.6007702182285,49.466837826273,53.53016688061617,25.459991442019685,21.00984167736414,53.53016688061617,25.459991442019685,187.662,57.802,129.86
+INTEW,Ireland(East-West),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTEW,Ireland(East-West),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by >100,2727,1363.5,3.1125162645239346,-163.08695269526953,-141.51999999999998,-729.5020168683535,-1026.0,-27.73771927256097,2.104143747708104,731.6061606160616,0.77007700770077,82.98496516318299,16.244957829116245,82.98496516318299,0.77007700770077,2.869,997.5450000000001,-994.676
+INTFR,France(IFA),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by 50-100,3033,1516.5,3.4617755153286,-71.55868117375536,-70.0,-680.2380481371579,-822.0,-25.864564567952772,7.295746785361029,687.533794922519,3.758654797230465,84.30596768875701,11.935377514012528,84.30596768875701,3.758654797230465,11.064,1042.645,-1031.5810000000001
+INTFR,France(IFA),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by 25-50,3303,1651.5,3.769945442509188,-35.95484105358765,-35.05000000000001,-591.8795034816833,-670.0,-22.50492408675602,36.44868301544051,628.3281864971239,9.112927641537997,84.80169542839843,6.085376930063579,84.80169542839843,9.112927641537997,60.195,1037.684,-977.489
+INTFR,France(IFA),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by 10-25,5286,2643.0,6.033282352135504,-16.023726825576997,-15.330000000000005,-389.4248959515702,-492.0,-14.807030264318257,130.56223987892545,519.9871358304956,24.13923571698827,72.20961029133561,3.651153991676125,72.20961029133561,24.13923571698827,345.076,1374.326,-1029.25
+INTFR,France(IFA),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by 5-10,4648,2324.0,5.305088227908781,-7.21703313253012,-7.109999999999999,19.037435456110156,-2.0,0.7238568614490551,339.276247848537,320.23881239242684,47.87005163511188,50.12908777969018,2.000860585197935,50.12908777969018,47.87005163511188,788.4780000000001,744.235,44.243
+INTFR,France(IFA),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by 0-5,7434,3717.0,8.484945328372177,-2.306754102771052,-2.219999999999999,349.4955609362389,328.0,13.28880459833608,544.0040355125101,194.5084745762712,64.28571428571429,33.8848533763788,1.8294323379069142,27.36077481840194,47.901533494753835,2022.063,722.988,1299.075
+INTFR,France(IFA),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by 0-5,9384,4692.0,10.710617024676422,2.4581543052003405,2.430000000000007,712.5784313725491,795.0,27.094236934317454,807.9663256606991,95.38789428815004,79.5076726342711,19.01108269394714,1.4812446717817562,64.62063086104007,14.279624893435635,3790.978,447.56,3343.418
+INTFR,France(IFA),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by 5-10,7830,3915.0,8.93692788823704,7.422772669220945,7.390000000000001,953.5019157088122,1000.0,36.25482569235028,1005.2669220945083,51.76500638569604,86.41123882503193,11.634738186462325,1.9540229885057472,86.41123882503193,11.634738186462325,3935.62,202.66,3732.96
+INTFR,France(IFA),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by 10-25,13851,6925.5,15.809117264364142,16.47006281134936,16.070000000000007,1124.5440762399826,1226.0,42.75832989505638,1156.6516497003827,32.10757346039997,89.14879792072774,7.948884557071692,2.9023175222005633,89.14879792072774,7.948884557071692,8010.3910000000005,222.36100000000002,7788.03
+INTFR,France(IFA),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by 25-50,12490,6245.0,14.255712557353847,36.6752842273819,36.400000000000006,1261.9466773418735,1372.0,47.982763397029416,1274.9827061649319,13.036028823058446,92.85828662930345,3.947157726180945,3.1945556445156127,92.85828662930345,3.947157726180945,7962.267,81.41,7880.857
+INTFR,France(IFA),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by 50-100,14858,7429.0,16.958476955737666,71.27899515412572,70.14499999999998,1313.2580428052229,1426.0,49.933765886130146,1314.8267599946157,1.5687171893929197,95.82043343653251,1.0162875218737382,3.1632790415937544,95.82043343653251,1.0162875218737382,9767.848,11.654,9756.194
+INTFR,France(IFA),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by >100,2770,1385.0,3.161595178852695,164.2081010830325,115.89,1151.9552346570397,1204.0,43.80057926452623,1152.618772563177,0.6635379061371841,90.86642599277978,1.227436823104693,7.906137184115523,90.86642599277978,1.227436823104693,1596.377,0.919,1595.458
+INTFR,France(IFA),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTFR,France(IFA),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by >100,1342,671.0,5.408237285403401,-135.28634873323398,-123.00999999999999,-357.0655737704918,-514.0,-68.93157794797139,26.228017883755587,383.2935916542474,12.146050670640834,85.76751117734725,2.086438152011923,85.76751117734725,12.146050670640834,17.599,257.19,-239.591
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by 50-100,3440,1720.0,13.863141774804546,-70.53158139534884,-68.38000000000001,-324.90639534883724,-510.0,-62.72324234533537,31.86046511627907,356.7668604651163,15.843023255813954,80.11627906976744,4.040697674418604,80.11627906976744,15.843023255813954,54.800000000000004,613.639,-558.839
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by 25-50,3746,1873.0,15.096316595470299,-36.23205018686599,-35.499999999999986,-351.22584089695675,-514.0,-67.80421638937389,25.859583555792845,377.0854244527496,13.507741591030435,84.08969567538708,2.4025627335824877,84.08969567538708,13.507741591030435,48.435,706.2810000000001,-657.846
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by 10-25,4550,2275.0,18.336422987023454,-16.503657142857143,-15.939999999999998,-336.21406593406596,-504.0,-64.90619033476176,26.24087912087912,362.45494505494503,13.362637362637365,83.53846153846153,3.098901098901099,83.53846153846153,13.362637362637365,59.698,824.585,-764.8870000000001
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by 5-10,2372,1186.0,9.559119851696622,-7.476863406408095,-7.549999999999997,-339.6652613827993,-506.0,-65.57244428239369,27.51602023608769,367.181281618887,13.406408094435077,83.7689713322091,2.824620573355818,83.7689713322091,13.406408094435077,32.634,435.47700000000003,-402.843
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by 0-5,2460,1230.0,9.91375836221488,-2.578552845528455,-2.6100000000000065,-359.60243902439026,-514.0,-69.42132027497881,24.734146341463415,384.33658536585364,11.788617886178862,86.0569105691057,2.154471544715447,70.73170731707317,9.471544715447154,30.423000000000002,472.73400000000004,-442.31100000000004
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by 0-5,1852,926.0,7.463528653179656,2.354006479481642,2.280000000000001,-343.18142548596114,-514.0,-66.25124044130523,29.314254859611232,372.49568034557234,14.092872570194384,83.47732181425485,2.429805615550756,9.935205183585314,64.14686825053995,27.145,344.931,-317.786
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by 5-10,1424,712.0,5.73869589747723,7.327191011235955,7.290000000000006,-336.7612359550562,-509.0,-65.01182161294521,27.69241573033708,364.45365168539325,13.342696629213483,84.12921348314607,2.528089887640449,13.342696629213483,84.12921348314607,19.717,259.491,-239.774
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by 10-25,1770,885.0,7.133070041105826,16.016700564971753,15.090000000000003,-319.4361581920904,-504.0,-61.66721200619506,32.30621468926554,351.74237288135595,15.084745762711865,81.2994350282486,3.615819209039548,15.084745762711865,81.2994350282486,28.591,311.29200000000003,-282.701
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by 25-50,1098,549.0,4.424921415330055,35.87102003642987,34.93000000000001,-311.5100182149362,-512.0,-60.13706915346259,40.74681238615665,352.2568306010929,18.21493624772313,77.8688524590164,3.9162112932604733,18.21493624772313,77.8688524590164,22.37,193.389,-171.019
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by 50-100,642,321.0,2.587249133553639,68.937507788162,66.87,-301.6448598130841,-514.0,-58.2325984195143,52.68847352024922,354.3333333333333,19.158878504672895,76.16822429906543,4.672897196261682,19.158878504672895,76.16822429906543,16.913,113.741,-96.828
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by >100,118,59.0,0.4755380027403885,118.72796610169492,110.91,-360.1694915254237,-514.0,-69.53078986977292,13.559322033898304,373.728813559322,13.559322033898304,77.96610169491525,8.47457627118644,13.559322033898304,77.96610169491525,0.8,22.05,-21.25
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTGRNL,Ireland (Greenlink),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,0,zone_gt_gb_100_plus,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,0,zone_gt_gb_100_plus,Zone > GB by >100,2727,1363.5,3.1125162645239346,-163.08695269526953,-141.51999999999998,-907.5386872020536,-1028.0,-55.81418740480034,0.022002200220022004,907.5606894022735,0.14668133480014667,99.85331866519985,0.0,99.85331866519985,0.14668133480014667,0.03,1237.459,-1237.429
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,1,zone_gt_gb_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by 50-100,3033,1516.5,3.4617755153286,-71.55868117375536,-70.0,-859.6933728981206,-1028.0,-52.87167114994592,5.142103527860204,864.8354764259809,1.615562149686779,98.35146719419716,0.03297065611605671,98.35146719419716,1.615562149686779,7.798,1311.5230000000001,-1303.7250000000001
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,1,zone_gt_gb_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,2,zone_gt_gb_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by 25-50,3303,1651.5,3.769945442509188,-35.95484105358765,-35.05000000000001,-730.042991220103,-974.0,-44.89809294096574,23.199515591886165,753.2425068119891,6.327580986981532,93.64214350590372,0.030275507114744173,93.64214350590372,6.327580986981532,38.314,1243.98,-1205.666
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,2,zone_gt_gb_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,3,zone_gt_gb_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by 10-25,5286,2643.0,6.033282352135504,-16.023726825576997,-15.330000000000005,-389.4025728339009,-464.0,-23.948497714262047,88.40900491865304,477.81157775255394,21.528566023458193,78.37684449489217,0.09458948164964057,78.37684449489217,21.528566023458193,233.665,1262.856,-1029.191
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,3,zone_gt_gb_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,4,zone_gt_gb_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by 5-10,4648,2324.0,5.305088227908781,-7.21703313253012,-7.109999999999999,-35.230206540447504,-4.0,-2.1666793690312116,192.83261617900172,228.06282271944923,42.74956970740103,57.035283993115314,0.21514629948364886,57.035283993115314,42.74956970740103,448.14300000000003,530.018,-81.875
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,4,zone_gt_gb_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,5,zone_gt_gb_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by 0-5,7434,3717.0,8.484945328372177,-2.306754102771052,-2.219999999999999,164.0336292709174,108.0,10.08816908185224,290.1084207694377,126.07479149852031,56.05326876513317,43.75840731772935,0.18832391713747645,34.50363196125908,41.955878396556365,1078.333,468.62,609.713
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,5,zone_gt_gb_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by 0-5,9384,4692.0,10.710617024676422,2.4581543052003405,2.430000000000007,334.34335038363173,328.0,20.562321671810068,399.12041773231033,64.7770673486786,66.18712702472294,33.64236999147485,0.17050298380221654,53.87894288150042,26.065643648763853,1872.673,303.934,1568.739
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,6,gb_gt_zone_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,6,gb_gt_zone_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by 5-10,7830,3915.0,8.93692788823704,7.422772669220945,7.390000000000001,448.9213282247765,522.0,27.608937775201504,493.00025542784164,44.078927203065135,71.03448275862068,28.914431673052366,0.05108556832694764,71.03448275862068,28.914431673052366,1930.096,172.56900000000002,1757.527
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,7,gb_gt_zone_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,7,gb_gt_zone_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by 10-25,13851,6925.5,15.809117264364142,16.47006281134936,16.070000000000007,595.7844198974803,826.0,36.64110823477739,626.3908743051044,30.606454407624,76.72370225976464,23.20410078694679,0.07219695328857123,76.72370225976464,23.20410078694679,4338.07,211.965,4126.1050000000005
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,8,gb_gt_zone_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,8,gb_gt_zone_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by 25-50,12490,6245.0,14.255712557353847,36.6752842273819,36.400000000000006,701.8874299439551,990.0,43.16650860663931,718.5248999199359,16.637469975980785,79.08726981585268,20.89671737389912,0.016012810248198558,79.08726981585268,20.89671737389912,4487.188,103.901,4383.287
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,9,gb_gt_zone_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,9,gb_gt_zone_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by 50-100,14858,7429.0,16.958476955737666,71.27899515412572,70.14499999999998,767.4844528200296,992.0,47.20076585609038,770.9854623771705,3.501009557140934,80.48189527527259,19.491183200969175,0.026921523758244716,80.48189527527259,19.491183200969175,5727.651,26.009,5701.642
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,10,gb_gt_zone_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,10,gb_gt_zone_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,11,gb_gt_zone_100_plus,GB > zone by >100,2770,1385.0,3.161595178852695,164.2081010830325,115.89,792.9631768953069,992.0,48.767723056291935,797.9963898916967,5.033212996389891,83.64620938628158,16.35379061371841,0.0,83.64620938628158,16.35379061371841,1105.225,6.971,1098.254
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),FRANCE,FR,11,gb_gt_zone_100_plus,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,0,zone_gt_gb_100_plus,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,0,zone_gt_gb_100_plus,Zone > GB by >100,3958,1979.0,4.51754285844728,-136.97628852956038,-125.76,-228.38150581101567,-360.0,-33.487024312465635,42.19100555836281,270.57251136937845,19.42900454775139,74.27993936331481,6.291056088933805,74.27993936331481,19.42900454775139,83.49600000000001,535.463,-451.967
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,1,zone_gt_gb_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by 50-100,10608,5304.0,12.107654027895085,-69.54986613876319,-67.125,-232.99566365007541,-346.0,-34.163587045465604,37.285444947209655,270.2811085972851,18.06184012066365,76.197209653092,5.740950226244344,76.197209653092,18.06184012066365,197.762,1433.5710000000001,-1235.809
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,1,zone_gt_gb_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,2,zone_gt_gb_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by 25-50,13387,6693.5,15.279521537653801,-35.78270934488683,-34.97000000000003,-224.08455964741913,-336.0,-32.85697355534005,40.736535444834544,264.8210950922537,18.779412863225517,75.6330768656159,5.587510271158587,75.6330768656159,18.779412863225517,272.67,1772.58,-1499.91
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,2,zone_gt_gb_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,3,zone_gt_gb_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by 10-25,15946,7973.0,18.200287625265368,-16.79296187131569,-16.415,-219.3187006145742,-318.0,-32.158167245538735,40.115765709268786,259.43446632384297,19.120782641414774,75.41076131945316,5.468456039132071,75.41076131945316,19.120782641414774,319.843,2068.471,-1748.628
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,3,zone_gt_gb_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,4,zone_gt_gb_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by 5-10,7267,3633.5,8.294336521560481,-7.4645741021054075,-7.420000000000002,-227.1545341956791,-316.0,-33.307116450979336,34.771432503096186,261.9259666987753,16.636851520572453,76.96435943305353,6.398789046374019,76.96435943305353,16.636851520572453,126.342,951.708,-825.366
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,4,zone_gt_gb_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,5,zone_gt_gb_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by 0-5,6945,3472.5,7.926815349145114,-2.5760647948164146,-2.6200000000000045,-215.95507559395247,-304.0,-31.66496709588746,39.47386609071274,255.42894168466523,18.372930165586755,74.78761699064074,6.839452843772498,61.727861771058315,15.01799856011519,137.073,886.977,-749.904
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,5,zone_gt_gb_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by 0-5,5695,2847.5,6.500102723309061,2.3826584723441617,2.3700000000000045,-182.1910447761194,-274.0,-26.714229439313694,51.4791922739245,233.6702370500439,23.336259877085162,70.44776119402985,6.2159789288849865,18.314310798946444,54.29323968393327,146.58700000000002,665.376,-518.789
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,6,gb_gt_zone_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,6,gb_gt_zone_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by 5-10,4109,2054.5,4.689889743648275,7.345093696763203,7.260000000000005,-158.66244828425408,-222.0,-23.264288604729334,57.73083475298126,216.39328303723534,26.892187880262835,66.73156485762959,6.376247262107569,26.892187880262835,66.73156485762959,118.608,444.58,-325.972
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,7,gb_gt_zone_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,7,gb_gt_zone_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by 10-25,7338,3669.0,8.375373798707969,16.439997274461707,15.960000000000022,-125.08203870264377,-160.0,-18.340474883085594,75.06323248841646,200.14527119106023,33.101662578359225,61.89697465249387,5.0013627691469065,33.101662578359225,61.89697465249387,275.407,734.333,-458.926
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,8,gb_gt_zone_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,8,gb_gt_zone_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by 25-50,5558,2779.0,6.343735019517428,35.84262504498021,35.02999999999997,-61.19575386829795,-26.0,-8.972984438166854,96.89780496581504,158.093558834113,41.38179201151493,52.482907520690894,6.1353004677941705,41.38179201151493,52.482907520690894,269.279,439.342,-170.063
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,9,gb_gt_zone_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,9,gb_gt_zone_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by 50-100,4466,2233.0,5.097358869587052,70.83354008060905,68.99000000000001,-19.442454097626513,0.0,-2.8507997210596048,107.92028660994178,127.36274070756829,48.54455888938647,44.40214957456337,7.053291536050156,48.54455888938647,44.40214957456337,240.98600000000002,284.401,-43.415
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,10,gb_gt_zone_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,10,gb_gt_zone_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,11,gb_gt_zone_100_plus,GB > zone by >100,2337,1168.5,2.667381925263086,190.82043217800597,136.62000000000003,50.34659820282413,36.0,7.3821991499742134,120.33975181857082,69.99315361574668,60.93281985451433,30.42362002567394,8.643560119811724,60.93281985451433,30.42362002567394,140.617,81.787,58.830000000000005
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),IRELAND,IRL,11,gb_gt_zone_100_plus,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,0,zone_gt_gb_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,0,zone_gt_gb_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,0,zone_gt_gb_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,0,zone_gt_gb_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,0,zone_gt_gb_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,0,zone_gt_gb_100_plus,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,0,zone_gt_gb_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,0,zone_gt_gb_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,0,zone_gt_gb_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,0,zone_gt_gb_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,0,zone_gt_gb_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,0,zone_gt_gb_100_plus,Zone > GB by >100,1359,679.5,1.5511219668089575,-145.1361515820456,-130.77999999999997,-651.4319352465047,-870.0,-46.46447469661232,23.25091979396615,674.6828550404709,6.990434142752024,81.45695364238411,11.55261221486387,81.45695364238411,6.990434142752024,15.799,458.447,-442.648
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,1,zone_gt_gb_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,1,zone_gt_gb_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,1,zone_gt_gb_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,1,zone_gt_gb_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,1,zone_gt_gb_50_100,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,1,zone_gt_gb_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,1,zone_gt_gb_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,1,zone_gt_gb_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,1,zone_gt_gb_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,1,zone_gt_gb_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,1,zone_gt_gb_50_100,Zone > GB by 50-100,2933,1466.5,3.3476385052617164,-69.81238663484487,-67.49,-603.6522332083191,-840.0,-43.056507361506355,42.43709512444596,646.089328332765,11.114899420388682,76.13365155131265,12.75144902829867,76.13365155131265,11.114899420388682,62.234,947.49,-885.256
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,1,zone_gt_gb_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,2,zone_gt_gb_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,2,zone_gt_gb_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,2,zone_gt_gb_25_50,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,2,zone_gt_gb_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,2,zone_gt_gb_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,2,zone_gt_gb_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,2,zone_gt_gb_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,2,zone_gt_gb_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,2,zone_gt_gb_25_50,Zone > GB by 25-50,4490,2245.0,5.124751752003105,-34.97715144766147,-33.7,-498.48329621380844,-752.0,-35.55515664863113,85.13452115812917,583.6178173719377,18.44097995545657,70.51224944320712,11.046770601336304,70.51224944320712,18.44097995545657,191.127,1310.222,-1119.095
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,2,zone_gt_gb_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,2,zone_gt_gb_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,2,zone_gt_gb_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,3,zone_gt_gb_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,3,zone_gt_gb_10_25,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,3,zone_gt_gb_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,3,zone_gt_gb_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,3,zone_gt_gb_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,3,zone_gt_gb_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,3,zone_gt_gb_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,3,zone_gt_gb_10_25,Zone > GB by 10-25,8864,4432.0,10.117104572328623,-16.020701714801444,-15.25,-379.4023014440433,-530.0,-27.061505095866146,120.78046028880867,500.182761732852,24.10875451263538,65.98601083032491,9.905234657039712,65.98601083032491,24.10875451263538,535.299,2216.81,-1681.511
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,3,zone_gt_gb_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,3,zone_gt_gb_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,3,zone_gt_gb_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,3,zone_gt_gb_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,4,zone_gt_gb_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,4,zone_gt_gb_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,4,zone_gt_gb_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,4,zone_gt_gb_5_10,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,4,zone_gt_gb_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,4,zone_gt_gb_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,4,zone_gt_gb_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,4,zone_gt_gb_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,4,zone_gt_gb_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,4,zone_gt_gb_5_10,Zone > GB by 5-10,6807,3403.5,7.769306275252813,-7.32129278683708,-7.22999999999999,-257.9494637872778,-342.0,-18.398677873557617,146.90553841633613,404.85500220361394,29.219920669898634,60.61407374761275,10.166005582488614,60.61407374761275,29.219920669898634,499.993,1377.924,-877.931
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,4,zone_gt_gb_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,4,zone_gt_gb_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,5,zone_gt_gb_0_5,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,5,zone_gt_gb_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,5,zone_gt_gb_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,5,zone_gt_gb_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,5,zone_gt_gb_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,5,zone_gt_gb_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,5,zone_gt_gb_0_5,Zone > GB by 0-5,10144,5072.0,11.578058301184742,-2.347084976340694,-2.2700000000000102,-66.29238958990537,0.0,-4.728415805271424,207.90832018927443,274.2007097791798,40.44755520504732,48.40299684542587,11.149447949526813,38.38722397476341,30.451498422712937,1054.511,1390.746,-336.235
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,5,zone_gt_gb_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,5,zone_gt_gb_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,5,zone_gt_gb_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,5,zone_gt_gb_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,5,zone_gt_gb_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,6,gb_gt_zone_0_5,GB > zone by 0-5,11088,5544.0,12.65551167621613,2.470945165945166,2.460000000000008,218.17442279942279,244.0,15.561656405094352,360.55790043290045,142.38347763347764,60.019841269841265,29.752886002886004,10.227272727272728,49.936868686868685,22.51984126984127,1998.933,789.374,1209.559
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,6,gb_gt_zone_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,6,gb_gt_zone_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,6,gb_gt_zone_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,6,gb_gt_zone_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,6,gb_gt_zone_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,6,gb_gt_zone_0_5,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,6,gb_gt_zone_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,6,gb_gt_zone_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,6,gb_gt_zone_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,6,gb_gt_zone_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,6,gb_gt_zone_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,7,gb_gt_zone_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,7,gb_gt_zone_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,7,gb_gt_zone_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,7,gb_gt_zone_5_10,GB > zone by 5-10,8525,4262.5,9.730180108201886,7.365028739002933,7.3300000000000125,448.43964809384164,564.0,31.98570956446802,518.1489736070381,69.70932551319648,74.82697947214076,16.457478005865102,8.715542521994134,74.82697947214076,16.457478005865102,2208.61,297.136,1911.474
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,7,gb_gt_zone_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,7,gb_gt_zone_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,7,gb_gt_zone_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,7,gb_gt_zone_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,7,gb_gt_zone_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,7,gb_gt_zone_5_10,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,7,gb_gt_zone_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,7,gb_gt_zone_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,8,gb_gt_zone_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,8,gb_gt_zone_10_25,GB > zone by 10-25,13157,6578.5,15.017006414499967,16.233677890096526,15.690000000000001,659.3939347875655,856.0,47.03237765959812,688.1208482176788,28.726913430113246,85.35380405867599,7.159686858706392,7.4865090826176175,85.35380405867599,7.159686858706392,4526.803,188.98000000000002,4337.823
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,8,gb_gt_zone_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,8,gb_gt_zone_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,8,gb_gt_zone_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,8,gb_gt_zone_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,8,gb_gt_zone_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,8,gb_gt_zone_10_25,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,8,gb_gt_zone_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,8,gb_gt_zone_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,8,gb_gt_zone_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,8,gb_gt_zone_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,9,gb_gt_zone_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,9,gb_gt_zone_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,9,gb_gt_zone_25_50,GB > zone by 25-50,9368,4684.0,10.69235510306572,35.766762382578996,35.05500000000001,757.8029461998292,992.0,54.05156534948853,771.696413321947,13.893467122117848,88.42869342442357,3.351836037574722,8.219470538001708,88.42869342442357,3.351836037574722,3614.626,65.077,3549.549
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,9,gb_gt_zone_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,9,gb_gt_zone_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,9,gb_gt_zone_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,9,gb_gt_zone_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,9,gb_gt_zone_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,9,gb_gt_zone_25_50,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,9,gb_gt_zone_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,9,gb_gt_zone_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,9,gb_gt_zone_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,10,gb_gt_zone_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,10,gb_gt_zone_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,10,gb_gt_zone_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,10,gb_gt_zone_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,10,gb_gt_zone_50_100,GB > zone by 50-100,7891,3945.5,9.00655146437784,71.42629578000253,70.22999999999999,820.8891141807122,1002.0,58.551292024301866,825.9247243695349,5.03561018882271,89.7478139652769,1.5333924724369536,8.71879356228615,89.7478139652769,1.5333924724369536,3258.686,19.868000000000002,3238.818
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,10,gb_gt_zone_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,10,gb_gt_zone_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,10,gb_gt_zone_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,10,gb_gt_zone_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,10,gb_gt_zone_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,10,gb_gt_zone_50_100,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,10,gb_gt_zone_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,11,gb_gt_zone_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,11,gb_gt_zone_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,11,gb_gt_zone_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,11,gb_gt_zone_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,11,gb_gt_zone_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,11,gb_gt_zone_100_plus,GB > zone by >100,2988,1494.0,3.4104138607985024,178.54406291834005,128.13,880.3848728246319,1004.0,62.79492673499514,883.5368139223561,3.1519410977242304,93.23962516733602,0.8032128514056224,5.957161981258366,93.23962516733602,0.8032128514056224,1320.0040000000001,4.709,1315.295
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,11,gb_gt_zone_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,11,gb_gt_zone_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,11,gb_gt_zone_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,11,gb_gt_zone_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,11,gb_gt_zone_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNED,Netherlands(BritNed),NETHERLANDS,NL,11,gb_gt_zone_100_plus,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,0,zone_gt_gb_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,0,zone_gt_gb_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,0,zone_gt_gb_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,0,zone_gt_gb_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,0,zone_gt_gb_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,0,zone_gt_gb_100_plus,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,0,zone_gt_gb_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,0,zone_gt_gb_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,0,zone_gt_gb_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,0,zone_gt_gb_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,0,zone_gt_gb_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,0,zone_gt_gb_100_plus,Zone > GB by >100,1273,636.5,1.4529641381514369,-144.96394344069128,-131.53,-764.3660644147683,-968.0,-55.95652008892886,8.017282010997643,772.3833464257659,3.063629222309505,90.65200314218382,6.284367635506677,90.65200314218382,3.063629222309505,5.103,491.622,-486.519
+INTNEM,Belgium (Nemolink),BELGIUM,B,1,zone_gt_gb_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,1,zone_gt_gb_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,1,zone_gt_gb_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,1,zone_gt_gb_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,1,zone_gt_gb_50_100,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,1,zone_gt_gb_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,1,zone_gt_gb_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,1,zone_gt_gb_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,1,zone_gt_gb_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,1,zone_gt_gb_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,1,zone_gt_gb_50_100,Zone > GB by 50-100,2423,1211.5,2.7655397539206064,-70.41529921584812,-68.52000000000001,-714.1205117622782,-916.0,-52.27822194452988,19.83904250928601,733.9595542715642,6.768468840280644,89.51712752785804,3.7144036318613285,89.51712752785804,6.768468840280644,24.035,889.192,-865.157
+INTNEM,Belgium (Nemolink),BELGIUM,B,1,zone_gt_gb_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,2,zone_gt_gb_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,2,zone_gt_gb_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,2,zone_gt_gb_25_50,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,2,zone_gt_gb_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,2,zone_gt_gb_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,2,zone_gt_gb_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,2,zone_gt_gb_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,2,zone_gt_gb_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,2,zone_gt_gb_25_50,Zone > GB by 25-50,3831,1915.5,4.372588855662337,-35.10456799791177,-33.95999999999998,-510.0991908117985,-722.0,-37.342546911551864,74.89741581832419,584.9966066301226,18.741842860871834,78.43904985643435,2.8191072826938135,78.43904985643435,18.741842860871834,143.466,1120.561,-977.095
+INTNEM,Belgium (Nemolink),BELGIUM,B,2,zone_gt_gb_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,2,zone_gt_gb_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,2,zone_gt_gb_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,3,zone_gt_gb_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,3,zone_gt_gb_10_25,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,3,zone_gt_gb_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,3,zone_gt_gb_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,3,zone_gt_gb_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,3,zone_gt_gb_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,3,zone_gt_gb_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,3,zone_gt_gb_10_25,Zone > GB by 10-25,7358,3679.0,8.398201200721346,-15.992507474857298,-15.209999999999994,-322.95134547431365,-408.0,-23.642118995191336,124.15411796683881,447.1054634411525,29.151943462897528,68.94536558847513,1.9026909486273442,68.94536558847513,29.151943462897528,456.76300000000003,1644.901,-1188.138
+INTNEM,Belgium (Nemolink),BELGIUM,B,3,zone_gt_gb_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,3,zone_gt_gb_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,3,zone_gt_gb_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,3,zone_gt_gb_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,4,zone_gt_gb_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,4,zone_gt_gb_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,4,zone_gt_gb_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,4,zone_gt_gb_5_10,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,4,zone_gt_gb_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,4,zone_gt_gb_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,4,zone_gt_gb_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,4,zone_gt_gb_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,4,zone_gt_gb_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,4,zone_gt_gb_5_10,Zone > GB by 5-10,6184,3092.0,7.058232702536124,-7.2910284605433375,-7.2299999999999995,-136.76843467011642,-156.0,-10.01233050293678,174.97994825355758,311.748382923674,38.79366106080207,58.069210866752904,3.1371280724450195,58.069210866752904,38.79366106080207,541.038,963.926,-422.88800000000003
+INTNEM,Belgium (Nemolink),BELGIUM,B,4,zone_gt_gb_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,4,zone_gt_gb_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,5,zone_gt_gb_0_5,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,5,zone_gt_gb_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,5,zone_gt_gb_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,5,zone_gt_gb_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,5,zone_gt_gb_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,5,zone_gt_gb_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,5,zone_gt_gb_0_5,Zone > GB by 0-5,9745,4872.5,11.122651631017874,-2.3161344279117495,-2.219999999999999,48.80184710107748,42.0,3.5726095974434466,245.99445869676757,197.1926115956901,52.55002565418163,44.62801436634171,2.8219599794766546,35.39250897896357,38.7172909184197,1198.608,960.821,237.787
+INTNEM,Belgium (Nemolink),BELGIUM,B,5,zone_gt_gb_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,5,zone_gt_gb_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,5,zone_gt_gb_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,5,zone_gt_gb_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,5,zone_gt_gb_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,6,gb_gt_zone_0_5,GB > zone by 0-5,11531,5765.5,13.161138630812427,2.4527213598126787,2.4200000000000017,279.88171017257827,318.0,20.48914422932491,383.0297459023502,103.14803572977192,69.54297112132512,27.942069204752407,2.51495967392247,56.404474893764636,20.94354349145781,2208.358,594.7,1613.6580000000001
+INTNEM,Belgium (Nemolink),BELGIUM,B,6,gb_gt_zone_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,6,gb_gt_zone_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,6,gb_gt_zone_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,6,gb_gt_zone_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,6,gb_gt_zone_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,6,gb_gt_zone_0_5,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,6,gb_gt_zone_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,6,gb_gt_zone_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,6,gb_gt_zone_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,6,gb_gt_zone_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,6,gb_gt_zone_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,7,gb_gt_zone_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,7,gb_gt_zone_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,7,gb_gt_zone_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,7,gb_gt_zone_5_10,GB > zone by 5-10,9286,4643.0,10.598762754810876,7.389310790437217,7.349999999999994,492.9610165841051,597.0,36.08792215110579,545.2862373465432,52.32522076243808,83.71742407925909,14.322636226577643,1.9599396941632565,83.71742407925909,14.322636226577643,2531.764,242.946,2288.818
+INTNEM,Belgium (Nemolink),BELGIUM,B,7,gb_gt_zone_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,7,gb_gt_zone_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,7,gb_gt_zone_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,7,gb_gt_zone_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,7,gb_gt_zone_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,7,gb_gt_zone_5_10,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,7,gb_gt_zone_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,7,gb_gt_zone_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,8,gb_gt_zone_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,8,gb_gt_zone_10_25,GB > zone by 10-25,15079,7539.5,17.210719747985483,16.347201405928775,15.840000000000003,707.6571390675774,862.0,51.805061425152076,728.459181643345,20.802042575767622,91.87611910604151,6.1409907818820875,1.9828901120763975,91.87611910604151,6.1409907818820875,5492.218,156.83700000000002,5335.381
+INTNEM,Belgium (Nemolink),BELGIUM,B,8,gb_gt_zone_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,8,gb_gt_zone_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,8,gb_gt_zone_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,8,gb_gt_zone_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,8,gb_gt_zone_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,8,gb_gt_zone_10_25,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,8,gb_gt_zone_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,8,gb_gt_zone_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,8,gb_gt_zone_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,8,gb_gt_zone_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,9,gb_gt_zone_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,9,gb_gt_zone_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,9,gb_gt_zone_25_50,GB > zone by 25-50,10248,5124.0,11.696760791654302,35.6953825136612,34.83,795.865925058548,972.0,58.26251281541347,807.1192427790788,11.253317720530836,94.13544106167056,3.054254488680718,2.810304449648712,94.13544106167056,3.054254488680718,4135.679,57.662,4078.017
+INTNEM,Belgium (Nemolink),BELGIUM,B,9,gb_gt_zone_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,9,gb_gt_zone_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,9,gb_gt_zone_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,9,gb_gt_zone_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,9,gb_gt_zone_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,9,gb_gt_zone_25_50,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,9,gb_gt_zone_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,9,gb_gt_zone_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,9,gb_gt_zone_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,10,gb_gt_zone_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,10,gb_gt_zone_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,10,gb_gt_zone_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,10,gb_gt_zone_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,10,gb_gt_zone_50_100,GB > zone by 50-100,7821,3910.5,8.92665555733102,70.91160209691856,68.98999999999998,857.6511954992968,1000.0,62.78559264270108,863.574478966884,5.923283467587265,96.24088991177598,1.8539828666410945,1.9051272215829178,96.24088991177598,1.8539828666410945,3377.008,23.163,3353.8450000000003
+INTNEM,Belgium (Nemolink),BELGIUM,B,10,gb_gt_zone_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,10,gb_gt_zone_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,10,gb_gt_zone_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,10,gb_gt_zone_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,10,gb_gt_zone_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,10,gb_gt_zone_50_100,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,10,gb_gt_zone_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,11,gb_gt_zone_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,11,gb_gt_zone_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,11,gb_gt_zone_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,11,gb_gt_zone_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,11,gb_gt_zone_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,11,gb_gt_zone_100_plus,GB > zone by >100,2835,1417.5,3.23578423539617,179.43312874779542,127.73,937.8906525573192,1000.0,68.65963781532352,938.5446208112875,0.653968253968254,99.08289241622576,0.28218694885361556,0.6349206349206349,99.08289241622576,0.28218694885361556,1330.387,0.927,1329.46
+INTNEM,Belgium (Nemolink),BELGIUM,B,11,gb_gt_zone_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,11,gb_gt_zone_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,11,gb_gt_zone_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,11,gb_gt_zone_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,11,gb_gt_zone_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNEM,Belgium (Nemolink),BELGIUM,B,11,gb_gt_zone_100_plus,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,0,zone_gt_gb_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,0,zone_gt_gb_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,0,zone_gt_gb_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,0,zone_gt_gb_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,0,zone_gt_gb_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,0,zone_gt_gb_100_plus,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,0,zone_gt_gb_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,0,zone_gt_gb_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,0,zone_gt_gb_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,0,zone_gt_gb_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,0,zone_gt_gb_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,0,zone_gt_gb_100_plus,Zone > GB by >100,66,33.0,0.07937271502790072,-126.97242424242425,-115.47,-928.2424242424242,-1134.0,-50.28398831215733,37.42424242424242,965.6666666666666,12.121212121212121,87.87878787878788,0.0,87.87878787878788,12.121212121212121,1.235,31.867,-30.632
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,1,zone_gt_gb_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,1,zone_gt_gb_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,1,zone_gt_gb_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,1,zone_gt_gb_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,1,zone_gt_gb_50_100,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,1,zone_gt_gb_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,1,zone_gt_gb_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,1,zone_gt_gb_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,1,zone_gt_gb_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,1,zone_gt_gb_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,1,zone_gt_gb_50_100,Zone > GB by 50-100,553,276.5,0.6650471425822589,-64.88168173598554,-61.169999999999995,-1049.9638336347198,-1240.0,-56.877780803614286,8.810126582278482,1058.7739602169981,3.79746835443038,95.47920433996383,0.7233273056057866,95.47920433996383,3.79746835443038,2.436,292.751,-290.315
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,1,zone_gt_gb_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,2,zone_gt_gb_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,2,zone_gt_gb_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,2,zone_gt_gb_25_50,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,2,zone_gt_gb_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,2,zone_gt_gb_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,2,zone_gt_gb_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,2,zone_gt_gb_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,2,zone_gt_gb_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,2,zone_gt_gb_25_50,Zone > GB by 25-50,1531,765.5,1.8412064652684241,-35.305695623775314,-34.36,-913.022860875245,-1080.0,-49.459526591291706,17.286740692357935,930.3096015676028,5.225342913128674,90.98628347485304,3.7883736120182885,90.98628347485304,5.225342913128674,13.233,712.152,-698.919
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,2,zone_gt_gb_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,2,zone_gt_gb_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,2,zone_gt_gb_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,3,zone_gt_gb_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,3,zone_gt_gb_10_25,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,3,zone_gt_gb_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,3,zone_gt_gb_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,3,zone_gt_gb_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,3,zone_gt_gb_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,3,zone_gt_gb_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,3,zone_gt_gb_10_25,Zone > GB by 10-25,2184,1092.0,2.6265152972868964,-16.69944139194139,-16.445000000000004,-616.8479853479854,-718.0,-33.41538382166768,61.88186813186813,678.7298534798534,18.13186813186813,80.26556776556777,1.6025641025641024,80.26556776556777,18.13186813186813,67.575,741.173,-673.598
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,3,zone_gt_gb_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,3,zone_gt_gb_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,3,zone_gt_gb_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,3,zone_gt_gb_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,4,zone_gt_gb_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,4,zone_gt_gb_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,4,zone_gt_gb_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,4,zone_gt_gb_5_10,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,4,zone_gt_gb_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,4,zone_gt_gb_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,4,zone_gt_gb_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,4,zone_gt_gb_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,4,zone_gt_gb_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,4,zone_gt_gb_5_10,Zone > GB by 5-10,1240,620.0,1.4912449490090436,-7.408290322580646,-7.359999999999999,-416.3774193548387,-447.0,-22.555656519763744,115.74193548387096,532.1193548387097,26.532258064516128,70.48387096774194,2.9838709677419355,70.48387096774194,26.532258064516128,71.76,329.914,-258.154
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,4,zone_gt_gb_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,4,zone_gt_gb_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,5,zone_gt_gb_0_5,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,5,zone_gt_gb_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,5,zone_gt_gb_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,5,zone_gt_gb_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,5,zone_gt_gb_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,5,zone_gt_gb_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,5,zone_gt_gb_0_5,Zone > GB by 0-5,1678,839.0,2.017991148739658,-2.3443504171632896,-2.219999999999999,-145.49702026221692,-99.0,-7.881745409654221,219.01907032181168,364.51609058402863,39.63051251489869,58.87961859356376,1.4898688915375446,46.96066746126341,29.797377830750893,183.757,305.829,-122.072
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,5,zone_gt_gb_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,5,zone_gt_gb_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,5,zone_gt_gb_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,5,zone_gt_gb_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,5,zone_gt_gb_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,6,gb_gt_zone_0_5,GB > zone by 0-5,2064,1032.0,2.4822012699634404,2.6146608527131785,2.7149999999999963,187.2751937984496,156.0,10.144918407283294,402.24612403100775,214.97093023255815,59.01162790697675,39.825581395348834,1.1627906976744187,49.51550387596899,31.3468992248062,415.118,221.85,193.268
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,6,gb_gt_zone_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,6,gb_gt_zone_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,6,gb_gt_zone_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,6,gb_gt_zone_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,6,gb_gt_zone_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,6,gb_gt_zone_0_5,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,6,gb_gt_zone_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,6,gb_gt_zone_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,6,gb_gt_zone_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,6,gb_gt_zone_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,6,gb_gt_zone_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,7,gb_gt_zone_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,7,gb_gt_zone_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,7,gb_gt_zone_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,7,gb_gt_zone_5_10,GB > zone by 5-10,2646,1323.0,3.182124302482201,7.504452003023431,7.45,440.9198790627362,493.0,23.885150545110303,575.3287981859411,134.40891912320484,70.82388510959939,28.2312925170068,0.944822373393802,70.82388510959939,28.2312925170068,761.1600000000001,177.823,583.337
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,7,gb_gt_zone_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,7,gb_gt_zone_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,7,gb_gt_zone_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,7,gb_gt_zone_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,7,gb_gt_zone_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,7,gb_gt_zone_5_10,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,7,gb_gt_zone_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,7,gb_gt_zone_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,8,gb_gt_zone_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,8,gb_gt_zone_10_25,GB > zone by 10-25,8970,4485.0,10.787473542428325,17.758171683389072,17.830000000000005,788.2202898550725,1086.0,42.69882393581108,865.673132664437,77.45284280936455,81.39353400222966,17.023411371237458,1.5830546265328875,81.39353400222966,17.023411371237458,3882.5440000000003,347.37600000000003,3535.168
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,8,gb_gt_zone_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,8,gb_gt_zone_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,8,gb_gt_zone_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,8,gb_gt_zone_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,8,gb_gt_zone_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,8,gb_gt_zone_10_25,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,8,gb_gt_zone_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,8,gb_gt_zone_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,8,gb_gt_zone_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,8,gb_gt_zone_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,9,gb_gt_zone_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,9,gb_gt_zone_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,9,gb_gt_zone_25_50,GB > zone by 25-50,18395,9197.5,22.122137771791415,37.8948480565371,38.17,1031.4544169611308,1368.0,55.87510384404825,1065.9387877140528,34.48437075292199,90.19842348464256,7.4802935580320735,2.3212829573253604,90.19842348464256,7.4802935580320735,9803.972000000002,317.17,9486.802000000001
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,9,gb_gt_zone_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,9,gb_gt_zone_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,9,gb_gt_zone_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,9,gb_gt_zone_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,9,gb_gt_zone_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,9,gb_gt_zone_25_50,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,9,gb_gt_zone_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,9,gb_gt_zone_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,9,gb_gt_zone_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,10,gb_gt_zone_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,10,gb_gt_zone_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,10,gb_gt_zone_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,10,gb_gt_zone_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,10,gb_gt_zone_50_100,GB > zone by 50-100,29963,14981.5,36.03401000577256,71.07906117544972,69.33,1077.343456930214,1396.0,58.360967330997504,1101.9825785135,24.63912158328605,91.64302639922572,5.263157894736842,3.0938157060374465,91.64302639922572,5.263157894736842,16509.352000000003,369.13100000000003,16140.221000000001
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,10,gb_gt_zone_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,10,gb_gt_zone_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,10,gb_gt_zone_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,10,gb_gt_zone_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,10,gb_gt_zone_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,10,gb_gt_zone_50_100,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,10,gb_gt_zone_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,11,gb_gt_zone_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,11,gb_gt_zone_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,11,gb_gt_zone_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,11,gb_gt_zone_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,11,gb_gt_zone_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,11,gb_gt_zone_100_plus,GB > zone by >100,13862,6931.0,16.670675389647872,159.10388832780262,134.87,767.6201125378733,694.0,41.58288800313507,811.9503679122781,44.33025537440485,88.85442216130429,9.767710287115856,1.3778675515798586,88.85442216130429,9.767710287115856,5627.628000000001,307.253,5320.375
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,11,gb_gt_zone_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,11,gb_gt_zone_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,11,gb_gt_zone_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,11,gb_gt_zone_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,11,gb_gt_zone_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),NORWAY2,NO,11,gb_gt_zone_100_plus,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,0,zone_gt_gb_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,0,zone_gt_gb_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,0,zone_gt_gb_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,0,zone_gt_gb_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,0,zone_gt_gb_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,0,zone_gt_gb_100_plus,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,0,zone_gt_gb_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,0,zone_gt_gb_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,0,zone_gt_gb_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,0,zone_gt_gb_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,0,zone_gt_gb_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,0,zone_gt_gb_100_plus,Zone > GB by >100,350,175.0,0.7978117164349213,-155.67377142857143,-133.11,-843.1485714285715,-1088.0,-33.9979262672811,3.9714285714285715,847.12,1.7142857142857144,87.71428571428571,10.571428571428571,87.71428571428571,1.7142857142857144,0.6950000000000001,148.246,-147.55100000000002
+INTVKL,Denmark (Viking link),DENMARK1,DK,1,zone_gt_gb_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,1,zone_gt_gb_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,1,zone_gt_gb_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,1,zone_gt_gb_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,1,zone_gt_gb_50_100,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,1,zone_gt_gb_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,1,zone_gt_gb_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,1,zone_gt_gb_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,1,zone_gt_gb_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,1,zone_gt_gb_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,1,zone_gt_gb_50_100,Zone > GB by 50-100,870,435.0,1.9831319808525187,-68.31898850574713,-65.27999999999999,-885.696551724138,-1092.0,-35.713570634037815,5.128735632183908,890.8252873563218,1.9540229885057472,86.55172413793103,11.494252873563218,86.55172413793103,1.9540229885057472,2.231,387.509,-385.278
+INTVKL,Denmark (Viking link),DENMARK1,DK,1,zone_gt_gb_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,2,zone_gt_gb_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,2,zone_gt_gb_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,2,zone_gt_gb_25_50,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,2,zone_gt_gb_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,2,zone_gt_gb_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,2,zone_gt_gb_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,2,zone_gt_gb_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,2,zone_gt_gb_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,2,zone_gt_gb_25_50,Zone > GB by 25-50,1872,936.0,4.267152951903351,-34.823675213675216,-33.705000000000005,-793.5277777777778,-1082.0,-31.99708781362007,22.879273504273506,816.4070512820513,4.166666666666666,82.95940170940172,12.873931623931622,82.95940170940172,4.166666666666666,21.415,764.157,-742.7420000000001
+INTVKL,Denmark (Viking link),DENMARK1,DK,2,zone_gt_gb_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,2,zone_gt_gb_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,2,zone_gt_gb_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,3,zone_gt_gb_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,3,zone_gt_gb_10_25,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,3,zone_gt_gb_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,3,zone_gt_gb_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,3,zone_gt_gb_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,3,zone_gt_gb_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,3,zone_gt_gb_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,3,zone_gt_gb_10_25,Zone > GB by 10-25,4336,2168.0,9.883747435605198,-15.615604243542434,-14.749999999999993,-628.8071955719557,-810.0,-25.355128853707892,53.90728782287823,682.7144833948339,12.269372693726938,79.52029520295203,8.210332103321033,79.52029520295203,12.269372693726938,116.871,1480.125,-1363.2540000000001
+INTVKL,Denmark (Viking link),DENMARK1,DK,3,zone_gt_gb_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,3,zone_gt_gb_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,3,zone_gt_gb_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,3,zone_gt_gb_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,4,zone_gt_gb_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,4,zone_gt_gb_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,4,zone_gt_gb_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,4,zone_gt_gb_5_10,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,4,zone_gt_gb_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,4,zone_gt_gb_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,4,zone_gt_gb_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,4,zone_gt_gb_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,4,zone_gt_gb_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,4,zone_gt_gb_5_10,Zone > GB by 5-10,3694,1847.0,8.420332801458857,-7.277558202490525,-7.180000000000007,-359.1061180292366,-424.0,-14.480085404404702,110.6854358419058,469.7915538711424,23.876556578234975,69.84298863021115,6.280454791553872,69.84298863021115,23.876556578234975,204.436,867.705,-663.269
+INTVKL,Denmark (Viking link),DENMARK1,DK,4,zone_gt_gb_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,4,zone_gt_gb_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,5,zone_gt_gb_0_5,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,5,zone_gt_gb_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,5,zone_gt_gb_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,5,zone_gt_gb_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,5,zone_gt_gb_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,5,zone_gt_gb_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,5,zone_gt_gb_0_5,Zone > GB by 0-5,5266,2633.0,12.003647139275131,-2.3370489935434864,-2.280000000000001,-76.52449677174326,-50.0,-3.0856651924090026,200.86745157614888,277.39194834789214,40.22028104823395,52.77250284846183,7.007216103304216,42.290163311811625,28.25674135966578,528.884,730.373,-201.489
+INTVKL,Denmark (Viking link),DENMARK1,DK,5,zone_gt_gb_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,5,zone_gt_gb_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,5,zone_gt_gb_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,5,zone_gt_gb_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,5,zone_gt_gb_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,6,gb_gt_zone_0_5,GB > zone by 0-5,5208,2604.0,11.871438340551629,2.523141321044547,2.610000000000001,303.2584485407066,310.0,12.228163247609137,415.3252688172043,112.0668202764977,66.51305683563749,27.457757296466973,6.029185867895545,54.97311827956989,20.257296466973887,1081.507,291.822,789.6850000000001
+INTVKL,Denmark (Viking link),DENMARK1,DK,6,gb_gt_zone_0_5,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,6,gb_gt_zone_0_5,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,6,gb_gt_zone_0_5,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,6,gb_gt_zone_0_5,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,6,gb_gt_zone_0_5,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,6,gb_gt_zone_0_5,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,6,gb_gt_zone_0_5,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,6,gb_gt_zone_0_5,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,6,gb_gt_zone_0_5,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,6,gb_gt_zone_0_5,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,6,gb_gt_zone_0_5,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,7,gb_gt_zone_5_10,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,7,gb_gt_zone_5_10,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,7,gb_gt_zone_5_10,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,7,gb_gt_zone_5_10,GB > zone by 5-10,4196,2098.0,9.56462274903123,7.29393708293613,7.179999999999993,593.9018112488084,716.0,23.947653679387436,645.7979027645376,51.89609151572927,82.95996186844614,12.488083889418494,4.551954242135367,82.95996186844614,12.488083889418494,1354.884,108.878,1246.006
+INTVKL,Denmark (Viking link),DENMARK1,DK,7,gb_gt_zone_5_10,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,7,gb_gt_zone_5_10,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,7,gb_gt_zone_5_10,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,7,gb_gt_zone_5_10,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,7,gb_gt_zone_5_10,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,7,gb_gt_zone_5_10,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,7,gb_gt_zone_5_10,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,7,gb_gt_zone_5_10,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,8,gb_gt_zone_10_25,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,8,gb_gt_zone_10_25,GB > zone by 10-25,6350,3175.0,14.47458399817643,16.489455118110236,15.999999999999986,858.3407874015749,982.0,34.61051562103124,878.6425196850394,20.301732283464567,89.33858267716536,5.228346456692914,5.433070866141732,89.33858267716536,5.228346456692914,2789.69,64.458,2725.232
+INTVKL,Denmark (Viking link),DENMARK1,DK,8,gb_gt_zone_10_25,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,8,gb_gt_zone_10_25,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,8,gb_gt_zone_10_25,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,8,gb_gt_zone_10_25,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,8,gb_gt_zone_10_25,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,8,gb_gt_zone_10_25,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,8,gb_gt_zone_10_25,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,8,gb_gt_zone_10_25,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,8,gb_gt_zone_10_25,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,8,gb_gt_zone_10_25,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,9,gb_gt_zone_25_50,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,9,gb_gt_zone_25_50,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,9,gb_gt_zone_25_50,GB > zone by 25-50,5348,2674.0,12.190563027125597,35.783941660433804,35.045,995.9816753926701,994.0,40.1605514271238,1003.6944652206432,7.712789827973074,91.21166791323859,2.075542258788332,6.712789827973074,91.21166791323859,2.075542258788332,2683.879,20.624000000000002,2663.255
+INTVKL,Denmark (Viking link),DENMARK1,DK,9,gb_gt_zone_25_50,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,9,gb_gt_zone_25_50,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,9,gb_gt_zone_25_50,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,9,gb_gt_zone_25_50,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,9,gb_gt_zone_25_50,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,9,gb_gt_zone_25_50,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,9,gb_gt_zone_25_50,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,9,gb_gt_zone_25_50,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,9,gb_gt_zone_25_50,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,10,gb_gt_zone_50_100,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,10,gb_gt_zone_50_100,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,10,gb_gt_zone_50_100,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,10,gb_gt_zone_50_100,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,10,gb_gt_zone_50_100,GB > zone by 50-100,5580,2790.0,12.719398222019604,72.153541218638,72.025,1031.063082437276,992.0,41.575124291825645,1032.8114695340503,1.7483870967741935,91.57706093189965,0.913978494623656,7.508960573476703,91.57706093189965,0.913978494623656,2881.544,4.878,2876.666
+INTVKL,Denmark (Viking link),DENMARK1,DK,10,gb_gt_zone_50_100,GB > zone by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,10,gb_gt_zone_50_100,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,10,gb_gt_zone_50_100,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,10,gb_gt_zone_50_100,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,10,gb_gt_zone_50_100,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,10,gb_gt_zone_50_100,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,10,gb_gt_zone_50_100,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,11,gb_gt_zone_100_plus,GB > zone by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,11,gb_gt_zone_100_plus,GB > zone by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,11,gb_gt_zone_100_plus,GB > zone by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,11,gb_gt_zone_100_plus,GB > zone by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,11,gb_gt_zone_100_plus,GB > zone by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,11,gb_gt_zone_100_plus,GB > zone by >100,800,400.0,1.8235696375655346,124.3251,109.48,911.205,988.0,36.742137096774194,911.205,0.0,85.25,0.0,14.75,85.25,0.0,364.48199999999997,0.0,364.48199999999997
+INTVKL,Denmark (Viking link),DENMARK1,DK,11,gb_gt_zone_100_plus,Zone > GB by 0-5,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,11,gb_gt_zone_100_plus,Zone > GB by 10-25,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,11,gb_gt_zone_100_plus,Zone > GB by 25-50,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,11,gb_gt_zone_100_plus,Zone > GB by 5-10,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,11,gb_gt_zone_100_plus,Zone > GB by 50-100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
+INTVKL,Denmark (Viking link),DENMARK1,DK,11,gb_gt_zone_100_plus,Zone > GB by >100,0,0.0,0.0,,,,,,,,,,,,,0.0,0.0,0.0
