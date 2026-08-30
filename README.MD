@@ -21,6 +21,33 @@ The script writes tables, figures, and a generated narrative to:
 analysis_outputs/bm_interconnector_history/
 ```
 
+For one-calendar-year versions of `level_bucket_summary.csv`, such as
+`level_bucket_summary_2025_operational.csv`, use the commands in
+[`LEVEL_BUCKET_SUMMARY_BY_YEAR.md`](LEVEL_BUCKET_SUMMARY_BY_YEAR.md).
+
+To calculate one-calendar-year import/export operating-level percentiles for
+each interconnector and the aggregate fleet, run:
+
+```powershell
+..\elexon-iris\.venv\Scripts\python.exe .\analyse_yearly_import_export_level_percentiles.py --year 2025
+```
+
+Change `--year 2025` to the year you want. Outputs are written to:
+
+```text
+analysis_outputs/import_export_level_distributions/
+```
+
+To run the same percentile, PDF-style distribution, and CDF analysis across all
+available half-hourly data, run:
+
+```powershell
+..\elexon-iris\.venv\Scripts\python.exe .\analyse_yearly_import_export_level_percentiles.py --all-data
+```
+
+For the full runbook, including PNG export and validation checks, see
+[`IMPORT_EXPORT_LEVEL_DISTRIBUTIONS.md`](IMPORT_EXPORT_LEVEL_DISTRIBUTIONS.md).
+
 To export every HTML figure and per-interconnector subfigure to PNG for use in
 PowerPoint, run:
 
@@ -141,3 +168,14 @@ Price-spread/interconnector outputs:
   lag means the spread leads the flow.
 - `interconnector_price_spread_join_half_hourly.csv.gz` - joined flow and price
   spread data for further analysis.
+
+Year-specific import/export level distribution outputs:
+
+- `import_export_level_percentiles_<year>.csv` - long-form P0, P5, P10, P20, P30, P40, P50, P60, P70, P75, P85, P90, P95, and P100 levels.
+- `import_export_level_percentiles_wide_<year>.csv` - one row per interconnector/fleet total and direction, with one column per percentile.
+- `import_export_level_pdf_bins_<year>.csv` - binned probability-density table behind the PDF-style distribution plots.
+- `import_export_direction_sample_summary_<year>.csv` - import, export, and near-zero sample sizes and mean levels used to interpret the distributions.
+- `import_export_level_distribution_story_<year>.md` - compact readout for the selected year.
+- `figures/import_level_percentile_distribution_<year>.*` and `figures/export_level_percentile_distribution_<year>.*` - distribution plots across the fleet and individual interconnectors. HTML is always written when figures are enabled; PNG is also written when the local plotting/image-export packages are available.
+- `figures/interconnectors/pdf_distributions/*_level_pdf_distribution_<year>.*` - one PDF-style probability distribution plot per interconnector and one for the aggregate fleet total, with import and export distributions shown together.
+- `figures/interconnectors/cdf_distributions/*_level_cdf_distribution_<year>.*` - one cumulative distribution plot per interconnector and one for the aggregate fleet total, with import and export CDFs shown together.

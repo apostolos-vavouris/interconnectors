@@ -1,0 +1,18 @@
+key,value
+analysis_period,2025
+analysis_period_title,2025
+year,2025
+all_data,False
+requested_start,2025-01-01 00:00:00+00:00
+requested_end,2025-12-31 23:30:00+00:00
+analysis_start,2025-01-01 00:00:00+00:00
+analysis_end,2025-12-31 23:30:00+00:00
+interconnector_data_dir,HH_data
+metadata,interconnectors_names.csv
+capacity_file,interconnector_capacities.csv
+positive_direction,import
+deadband_mw,1.0
+pdf_bin_width_mw,100.0
+include_combined_pdf_figures,False
+percentiles,"P0, P5, P10, P20, P30, P40, P50, P60, P70, P75, P85, P90, P95, P100"
+method,Import and export percentiles are conditional on the series being in that direction; export levels are positive MW magnitudes.
