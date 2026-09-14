@@ -146,6 +146,8 @@ Wind/interconnector correlation outputs:
   seasonal and month-of-year correlation cuts.
 - `wind_level_bucket_summary.csv` - import/export levels and direction shares
   across low-to-high wind quintiles.
+- `wind_level_bucket_import_export_percentiles.csv` - conditional import/export
+  percentile distributions across the same wind quintiles.
 - `wind_low_high_bucket_interconnector_comparison.csv` - low-wind versus
   high-wind comparison table for every interconnector and the aggregate fleet.
 - `interconnector_wind_join_half_hourly_wide.csv` - joined wind and signed

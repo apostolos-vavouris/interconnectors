@@ -69,6 +69,9 @@ WIND_BUCKET_LABELS = [
     "highest_20pct",
 ]
 
+WIND_BUCKET_FLOW_PERCENTILES = [0, 10, 20, 30, 40, 50, 60, 70, 75, 80, 85, 90, 95, 100]
+WIND_BUCKET_FLOW_PERCENTILE_COLUMNS = [f"P{percentile}" for percentile in WIND_BUCKET_FLOW_PERCENTILES]
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -585,6 +588,91 @@ def build_wind_bucket_summary(joined: pd.DataFrame, wind: pd.DataFrame, deadband
     ]
 
 
+def percentile_value(values: pd.Series, percentile: int) -> float:
+    values = values.dropna()
+    if values.empty:
+        return np.nan
+    return float(np.percentile(values.to_numpy(dtype=float), percentile))
+
+
+def build_wind_bucket_flow_percentiles(joined: pd.DataFrame, wind: pd.DataFrame, deadband_mw: float) -> pd.DataFrame:
+    rows: list[dict[str, object]] = []
+    for wind_col, wind_label in WIND_METRICS.items():
+        bucketed = joined.merge(assign_wind_buckets(wind, wind_col), on="startTime", how="left")
+        for keys, group in bucketed.groupby(
+            ["interconnectorId", "interconnectorName", "wind_bucket"],
+            observed=False,
+            sort=True,
+        ):
+            interconnector_id, interconnector_name, wind_bucket = keys
+            wind_bucket_observations = int(len(group))
+            if wind_bucket_observations == 0:
+                continue
+
+            for direction, metric, mask in [
+                ("import", "import_mw", group["signed_mw"] > deadband_mw),
+                ("export", "export_mw", group["signed_mw"] < -deadband_mw),
+            ]:
+                values = group.loc[mask, metric]
+                direction_observations = int(values.notna().sum())
+                row: dict[str, object] = {
+                    "wind_metric": wind_col,
+                    "wind_metric_label": wind_label,
+                    "interconnectorId": interconnector_id,
+                    "interconnectorName": interconnector_name,
+                    "wind_bucket": str(wind_bucket),
+                    "direction": direction,
+                    "level_metric": f"{metric}_conditional_on_{direction}ing"
+                    if direction == "import"
+                    else "export_mw_positive_magnitude_conditional_on_exporting",
+                    "wind_bucket_observations": wind_bucket_observations,
+                    "mean_wind_mw": group[wind_col].mean(),
+                    "min_wind_mw": group[wind_col].min(),
+                    "max_wind_mw": group[wind_col].max(),
+                    "direction_observations": direction_observations,
+                    "direction_duration_hours": direction_observations * HH_HOURS,
+                    "direction_share_pct": direction_observations / wind_bucket_observations * 100.0,
+                    "mean_level_mw": values.mean(),
+                }
+                for percentile in WIND_BUCKET_FLOW_PERCENTILES:
+                    row[f"P{percentile}"] = percentile_value(values, percentile)
+                rows.append(row)
+
+    out = pd.DataFrame(rows)
+    if out.empty:
+        return out
+
+    direction_sort = {"import": 0, "export": 1}
+    aggregation_sort = {"TOTAL_GB_INTERCONNECTORS": 0}
+    out["_aggregation_sort"] = out["interconnectorId"].map(aggregation_sort).fillna(1)
+    out["_direction_sort"] = out["direction"].map(direction_sort).fillna(99)
+    out["wind_bucket"] = pd.Categorical(out["wind_bucket"], categories=WIND_BUCKET_LABELS, ordered=True)
+    out = out.sort_values(
+        ["wind_metric", "_aggregation_sort", "interconnectorId", "wind_bucket", "_direction_sort"]
+    ).drop(columns=["_aggregation_sort", "_direction_sort"])
+    out["wind_bucket"] = out["wind_bucket"].astype(str)
+    return out[
+        [
+            "wind_metric",
+            "wind_metric_label",
+            "interconnectorId",
+            "interconnectorName",
+            "wind_bucket",
+            "direction",
+            "level_metric",
+            "wind_bucket_observations",
+            "mean_wind_mw",
+            "min_wind_mw",
+            "max_wind_mw",
+            "direction_observations",
+            "direction_duration_hours",
+            "direction_share_pct",
+            "mean_level_mw",
+            *WIND_BUCKET_FLOW_PERCENTILE_COLUMNS,
+        ]
+    ].reset_index(drop=True)
+
+
 def build_low_high_wind_comparison(bucket_summary: pd.DataFrame) -> pd.DataFrame:
     """Compare each interconnector's behaviour in low- and high-wind quintiles."""
 
@@ -1037,6 +1125,7 @@ def write_story(
             "- `correlation_summary.csv` - half-hourly, daily, and monthly correlations for actual and before-curtailment wind.",
             "- `correlation_by_season.csv` and `correlation_by_month_of_year.csv` - daily correlations by seasonal slices.",
             "- `wind_level_bucket_summary.csv` - import/export levels and shares by wind quintile.",
+            "- `wind_level_bucket_import_export_percentiles.csv` - conditional import/export percentile distributions by wind quintile.",
             "- `wind_low_high_bucket_interconnector_comparison.csv` - low-wind vs high-wind comparison table for every interconnector.",
             "- `lag_correlation_summary.csv` - tested lag correlations for signed-MW position.",
             "",
@@ -1087,6 +1176,7 @@ def main() -> None:
     correlation_by_season = build_correlation_table(daily, "daily", 10, extra_group_cols=["season"])
     correlation_by_month = build_correlation_table(daily, "daily", 10, extra_group_cols=["month", "month_name"])
     wind_bucket_summary = build_wind_bucket_summary(joined, wind, args.deadband_mw)
+    wind_bucket_flow_percentiles = build_wind_bucket_flow_percentiles(joined, wind, args.deadband_mw)
     low_high_comparison = build_low_high_wind_comparison(wind_bucket_summary)
     lag_summary = build_lag_correlation_table(joined, args.min_correlation_observations)
 
@@ -1100,6 +1190,7 @@ def main() -> None:
     write_csv(correlation_by_season, args.output_dir / "correlation_by_season.csv")
     write_csv(correlation_by_month, args.output_dir / "correlation_by_month_of_year.csv")
     write_csv(wind_bucket_summary, args.output_dir / "wind_level_bucket_summary.csv")
+    write_csv(wind_bucket_flow_percentiles, args.output_dir / "wind_level_bucket_import_export_percentiles.csv")
     write_csv(low_high_comparison, args.output_dir / "wind_low_high_bucket_interconnector_comparison.csv")
     write_csv(lag_summary, args.output_dir / "lag_correlation_summary.csv")
     write_run_config(
