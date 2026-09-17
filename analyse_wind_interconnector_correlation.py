@@ -531,6 +531,16 @@ def assign_wind_buckets(wind: pd.DataFrame, wind_col: str) -> pd.DataFrame:
     return out[["startTime", "wind_bucket"]]
 
 
+def assign_seasonal_wind_buckets(wind: pd.DataFrame, wind_col: str) -> pd.DataFrame:
+    out = wind[["startTime", wind_col]].copy()
+    out["season"] = out["startTime"].dt.month.map(SEASON_BY_MONTH)
+    out["wind_bucket"] = pd.NA
+    for _, group in out.groupby("season", sort=False):
+        rank = group[wind_col].rank(method="first")
+        out.loc[group.index, "wind_bucket"] = pd.qcut(rank, q=5, labels=WIND_BUCKET_LABELS)
+    return out[["startTime", "wind_bucket"]]
+
+
 def build_wind_bucket_summary(joined: pd.DataFrame, wind: pd.DataFrame, deadband_mw: float) -> pd.DataFrame:
     rows: list[pd.DataFrame] = []
     for wind_col, wind_label in WIND_METRICS.items():
@@ -566,6 +576,82 @@ def build_wind_bucket_summary(joined: pd.DataFrame, wind: pd.DataFrame, deadband
         [
             "wind_metric",
             "wind_metric_label",
+            "interconnectorId",
+            "interconnectorName",
+            "wind_bucket",
+            "observations",
+            "mean_wind_mw",
+            "min_wind_mw",
+            "max_wind_mw",
+            "mean_signed_mw",
+            "median_signed_mw",
+            "mean_import_mw",
+            "mean_export_mw",
+            "net_gwh",
+            "import_half_hours",
+            "export_half_hours",
+            "near_zero_half_hours",
+            "import_share_pct",
+            "export_share_pct",
+            "near_zero_share_pct",
+        ]
+    ]
+
+
+def build_seasonal_wind_bucket_summary(
+    joined: pd.DataFrame,
+    wind: pd.DataFrame,
+    deadband_mw: float,
+    *,
+    bucket_scope: str = "seasonal",
+) -> pd.DataFrame:
+    if bucket_scope not in {"seasonal", "global"}:
+        raise ValueError("bucket_scope must be either 'seasonal' or 'global'")
+
+    rows: list[pd.DataFrame] = []
+    for wind_col, wind_label in WIND_METRICS.items():
+        bucket_assignments = (
+            assign_seasonal_wind_buckets(wind, wind_col)
+            if bucket_scope == "seasonal"
+            else assign_wind_buckets(wind, wind_col)
+        )
+        bucketed = joined.merge(bucket_assignments, on="startTime", how="left")
+        grouped = (
+            bucketed.groupby(["season", "interconnectorId", "interconnectorName", "wind_bucket"], observed=False, sort=True)
+            .agg(
+                observations=("signed_mw", "size"),
+                mean_wind_mw=(wind_col, "mean"),
+                min_wind_mw=(wind_col, "min"),
+                max_wind_mw=(wind_col, "max"),
+                mean_signed_mw=("signed_mw", "mean"),
+                median_signed_mw=("signed_mw", "median"),
+                mean_import_mw=("import_mw", "mean"),
+                mean_export_mw=("export_mw", "mean"),
+                net_gwh=("net_gwh", "sum"),
+                import_half_hours=("signed_mw", lambda s: (s > deadband_mw).sum()),
+                export_half_hours=("signed_mw", lambda s: (s < -deadband_mw).sum()),
+                near_zero_half_hours=("signed_mw", lambda s: (s.abs() <= deadband_mw).sum()),
+            )
+            .reset_index()
+        )
+        grouped["wind_metric"] = wind_col
+        grouped["wind_metric_label"] = wind_label
+        grouped["import_share_pct"] = grouped["import_half_hours"] / grouped["observations"] * 100.0
+        grouped["export_share_pct"] = grouped["export_half_hours"] / grouped["observations"] * 100.0
+        grouped["near_zero_share_pct"] = grouped["near_zero_half_hours"] / grouped["observations"] * 100.0
+        rows.append(grouped)
+
+    out = pd.concat(rows, ignore_index=True)
+    out["season"] = pd.Categorical(out["season"], categories=SEASON_ORDER, ordered=True)
+    out["wind_bucket"] = pd.Categorical(out["wind_bucket"].astype(str), categories=WIND_BUCKET_LABELS, ordered=True)
+    out = out.sort_values(["wind_metric", "season", "interconnectorId", "wind_bucket"]).reset_index(drop=True)
+    out["season"] = out["season"].astype(str)
+    out["wind_bucket"] = out["wind_bucket"].astype(str)
+    return out[
+        [
+            "wind_metric",
+            "wind_metric_label",
+            "season",
             "interconnectorId",
             "interconnectorName",
             "wind_bucket",
@@ -1125,6 +1211,8 @@ def write_story(
             "- `correlation_summary.csv` - half-hourly, daily, and monthly correlations for actual and before-curtailment wind.",
             "- `correlation_by_season.csv` and `correlation_by_month_of_year.csv` - daily correlations by seasonal slices.",
             "- `wind_level_bucket_summary.csv` - import/export levels and shares by wind quintile.",
+            "- `wind_level_bucket_summary_by_season.csv` - the same wind-quintile summary recalculated within each season.",
+            "- `wind_level_bucket_summary_by_season_global_quintiles.csv` - seasonal cut using the original all-period wind quintiles.",
             "- `wind_level_bucket_import_export_percentiles.csv` - conditional import/export percentile distributions by wind quintile.",
             "- `wind_low_high_bucket_interconnector_comparison.csv` - low-wind vs high-wind comparison table for every interconnector.",
             "- `lag_correlation_summary.csv` - tested lag correlations for signed-MW position.",
@@ -1176,6 +1264,13 @@ def main() -> None:
     correlation_by_season = build_correlation_table(daily, "daily", 10, extra_group_cols=["season"])
     correlation_by_month = build_correlation_table(daily, "daily", 10, extra_group_cols=["month", "month_name"])
     wind_bucket_summary = build_wind_bucket_summary(joined, wind, args.deadband_mw)
+    seasonal_wind_bucket_summary = build_seasonal_wind_bucket_summary(joined, wind, args.deadband_mw)
+    seasonal_global_wind_bucket_summary = build_seasonal_wind_bucket_summary(
+        joined,
+        wind,
+        args.deadband_mw,
+        bucket_scope="global",
+    )
     wind_bucket_flow_percentiles = build_wind_bucket_flow_percentiles(joined, wind, args.deadband_mw)
     low_high_comparison = build_low_high_wind_comparison(wind_bucket_summary)
     lag_summary = build_lag_correlation_table(joined, args.min_correlation_observations)
@@ -1190,6 +1285,11 @@ def main() -> None:
     write_csv(correlation_by_season, args.output_dir / "correlation_by_season.csv")
     write_csv(correlation_by_month, args.output_dir / "correlation_by_month_of_year.csv")
     write_csv(wind_bucket_summary, args.output_dir / "wind_level_bucket_summary.csv")
+    write_csv(seasonal_wind_bucket_summary, args.output_dir / "wind_level_bucket_summary_by_season.csv")
+    write_csv(
+        seasonal_global_wind_bucket_summary,
+        args.output_dir / "wind_level_bucket_summary_by_season_global_quintiles.csv",
+    )
     write_csv(wind_bucket_flow_percentiles, args.output_dir / "wind_level_bucket_import_export_percentiles.csv")
     write_csv(low_high_comparison, args.output_dir / "wind_low_high_bucket_interconnector_comparison.csv")
     write_csv(lag_summary, args.output_dir / "lag_correlation_summary.csv")
