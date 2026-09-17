@@ -54,8 +54,8 @@ Links most import-aligned with high pre-curtailment wind on a daily signed-MW ba
 - `correlation_summary.csv` - half-hourly, daily, and monthly correlations for actual and before-curtailment wind.
 - `correlation_by_season.csv` and `correlation_by_month_of_year.csv` - daily correlations by seasonal slices.
 - `wind_level_bucket_summary.csv` - import/export levels and shares by wind quintile.
-- `wind_level_bucket_summary_by_season.csv` - the same wind-quintile summary recalculated within each season.
-- `wind_level_bucket_summary_by_season_global_quintiles.csv` - seasonal cut using the original all-period wind quintiles.
+- `wind_level_bucket_summary_by_season.csv` - the same wind-quintile summary recalculated within each season, plus an all-season baseline.
+- `wind_level_bucket_summary_by_season_global_quintiles.csv` - seasonal cut using the original all-period wind quintiles, plus an all-season baseline.
 - `wind_level_bucket_import_export_percentiles.csv` - conditional import/export percentile distributions by wind quintile.
 - `wind_low_high_bucket_interconnector_comparison.csv` - low-wind vs high-wind comparison table for every interconnector.
 - `lag_correlation_summary.csv` - tested lag correlations for signed-MW position.

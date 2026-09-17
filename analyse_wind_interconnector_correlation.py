@@ -49,6 +49,7 @@ SEASON_BY_MONTH = {
 }
 
 SEASON_ORDER = ["Winter", "Spring", "Summer", "Autumn"]
+SEASONAL_BUCKET_OUTPUT_ORDER = ["All", *SEASON_ORDER]
 
 WIND_METRICS = {
     "wind_actual_mw": "Actual wind output",
@@ -642,7 +643,11 @@ def build_seasonal_wind_bucket_summary(
         rows.append(grouped)
 
     out = pd.concat(rows, ignore_index=True)
-    out["season"] = pd.Categorical(out["season"], categories=SEASON_ORDER, ordered=True)
+    all_seasons = build_wind_bucket_summary(joined, wind, deadband_mw)
+    all_seasons.insert(2, "season", "All")
+    out = pd.concat([all_seasons, out], ignore_index=True, sort=False)
+
+    out["season"] = pd.Categorical(out["season"], categories=SEASONAL_BUCKET_OUTPUT_ORDER, ordered=True)
     out["wind_bucket"] = pd.Categorical(out["wind_bucket"].astype(str), categories=WIND_BUCKET_LABELS, ordered=True)
     out = out.sort_values(["wind_metric", "season", "interconnectorId", "wind_bucket"]).reset_index(drop=True)
     out["season"] = out["season"].astype(str)

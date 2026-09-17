@@ -147,9 +147,11 @@ Wind/interconnector correlation outputs:
 - `wind_level_bucket_summary.csv` - import/export levels and direction shares
   across low-to-high wind quintiles.
 - `wind_level_bucket_summary_by_season.csv` - the same wind-quintile summary
-  recalculated separately for Winter, Spring, Summer, and Autumn.
+  recalculated separately for Winter, Spring, Summer, and Autumn, plus an
+  all-season baseline.
 - `wind_level_bucket_summary_by_season_global_quintiles.csv` - the same
-  seasonal cut, but keeping the original all-period wind quintile definitions.
+  seasonal cut, but keeping the original all-period wind quintile definitions,
+  plus an all-season baseline.
 - `wind_level_bucket_import_export_percentiles.csv` - conditional import/export
   percentile distributions across the same wind quintiles.
 - `wind_low_high_bucket_interconnector_comparison.csv` - low-wind versus
