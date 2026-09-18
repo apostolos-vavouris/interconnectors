@@ -44,6 +44,7 @@ Links most import-aligned with high pre-curtailment wind on a daily signed-MW ba
 - `figures/fleet_daily_scatter_wind_actual_mw.html` and `figures/fleet_daily_scatter_wind_before_curtailment_mw.html` - direct daily relationship against each wind metric.
 - `figures/daily_signed_correlation_heatmap.html` - interconnector-by-interconnector comparison of daily signed-MW correlations.
 - `figures/position_by_before_curtailment_wind_bucket.html` - how each link behaves from low-wind to high-wind conditions.
+- `figures/seasonal_wind_bucket_direction_pdfs/` - per-interconnector import/export level PDFs by seasonal wind quintile.
 
 ## Output tables
 
@@ -57,6 +58,9 @@ Links most import-aligned with high pre-curtailment wind on a daily signed-MW ba
 - `wind_level_bucket_summary_by_season.csv` - the same wind-quintile summary recalculated within each season, plus an all-season baseline.
 - `wind_level_bucket_summary_by_season_global_quintiles.csv` - seasonal cut using the original all-period wind quintiles, plus an all-season baseline.
 - `wind_level_bucket_import_export_percentiles.csv` - conditional import/export percentile distributions by wind quintile.
+- `seasonal_wind_bucket_direction_level_modes.csv` - median, conditional mean, old-summary mean, and binned most-probable import/export levels by seasonal wind quintile.
+- `seasonal_wind_bucket_direction_level_modes_with_summary_means.csv` - explicit comparison copy carrying the old `mean_import_mw` and `mean_export_mw` fields.
+- `seasonal_wind_bucket_direction_pdf_bins.csv` - binned PDF data behind the seasonal wind-quintile level distribution figures.
 - `wind_low_high_bucket_interconnector_comparison.csv` - low-wind vs high-wind comparison table for every interconnector.
 - `lag_correlation_summary.csv` - tested lag correlations for signed-MW position.
 

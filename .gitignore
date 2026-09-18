@@ -1,1 +1,3 @@
 analysis_outputs/wind_interconnector_correlation/interconnector_wind_join_half_hourly_long.csv
+analysis_outputs/wind_interconnector_correlation/figures/seasonal_wind_bucket_direction_pdfs/**/*.html
+analysis_outputs/wind_interconnector_correlation/figures/seasonal_wind_bucket_direction_pdfs/**/plotly.min.js

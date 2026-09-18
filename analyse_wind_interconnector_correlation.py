@@ -72,6 +72,7 @@ WIND_BUCKET_LABELS = [
 
 WIND_BUCKET_FLOW_PERCENTILES = [0, 10, 20, 30, 40, 50, 60, 70, 75, 80, 85, 90, 95, 100]
 WIND_BUCKET_FLOW_PERCENTILE_COLUMNS = [f"P{percentile}" for percentile in WIND_BUCKET_FLOW_PERCENTILES]
+DEFAULT_LEVEL_PDF_BIN_WIDTH_MW = 100.0
 
 
 def parse_args() -> argparse.Namespace:
@@ -127,6 +128,12 @@ def parse_args() -> argparse.Namespace:
         type=float,
         default=1.0,
         help="Absolute MW threshold treated as near-zero for direction shares.",
+    )
+    parser.add_argument(
+        "--level-pdf-bin-width-mw",
+        type=float,
+        default=DEFAULT_LEVEL_PDF_BIN_WIDTH_MW,
+        help="MW bin width used for most-probable import/export level PDF outputs.",
     )
     parser.add_argument(
         "--min-correlation-observations",
@@ -764,6 +771,212 @@ def build_wind_bucket_flow_percentiles(joined: pd.DataFrame, wind: pd.DataFrame,
     ].reset_index(drop=True)
 
 
+def build_seasonal_bucketed_join(joined: pd.DataFrame, wind: pd.DataFrame, wind_col: str) -> pd.DataFrame:
+    seasonal = joined.merge(assign_seasonal_wind_buckets(wind, wind_col), on="startTime", how="left")
+    all_seasons = joined.merge(assign_wind_buckets(wind, wind_col), on="startTime", how="left")
+    all_seasons["season"] = "All"
+    return pd.concat([all_seasons, seasonal], ignore_index=True, sort=False)
+
+
+def binned_level_pdf(values: pd.Series, bin_width_mw: float) -> pd.DataFrame:
+    values = values.dropna().astype(float)
+    if values.empty:
+        return pd.DataFrame(
+            columns=[
+                "bin_lower_mw",
+                "bin_upper_mw",
+                "bin_mid_mw",
+                "bin_count",
+                "bin_probability_pct",
+                "pdf_density_per_mw",
+            ]
+        )
+
+    bin_lower = np.floor(values.to_numpy() / bin_width_mw) * bin_width_mw
+    bins = pd.DataFrame({"bin_lower_mw": bin_lower})
+    out = bins.groupby("bin_lower_mw", as_index=False).size().rename(columns={"size": "bin_count"})
+    out["bin_upper_mw"] = out["bin_lower_mw"] + bin_width_mw
+    out["bin_mid_mw"] = out["bin_lower_mw"] + bin_width_mw / 2.0
+    out["bin_probability_pct"] = out["bin_count"] / len(values) * 100.0
+    out["pdf_density_per_mw"] = out["bin_count"] / len(values) / bin_width_mw
+    return out[
+        [
+            "bin_lower_mw",
+            "bin_upper_mw",
+            "bin_mid_mw",
+            "bin_count",
+            "bin_probability_pct",
+            "pdf_density_per_mw",
+        ]
+    ].sort_values("bin_lower_mw")
+
+
+def build_seasonal_wind_bucket_direction_level_distributions(
+    joined: pd.DataFrame,
+    wind: pd.DataFrame,
+    deadband_mw: float,
+    bin_width_mw: float,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    summary_rows: list[dict[str, object]] = []
+    pdf_rows: list[pd.DataFrame] = []
+
+    for wind_col, wind_label in WIND_METRICS.items():
+        bucketed = build_seasonal_bucketed_join(joined, wind, wind_col)
+        group_cols = ["season", "interconnectorId", "interconnectorName", "wind_bucket"]
+        for keys, group in bucketed.groupby(group_cols, observed=True, sort=False):
+            season, interconnector_id, interconnector_name, wind_bucket = keys
+            wind_bucket_observations = int(len(group))
+            import_half_hours = int((group["signed_mw"] > deadband_mw).sum())
+            export_half_hours = int((group["signed_mw"] < -deadband_mw).sum())
+            near_zero_half_hours = int((group["signed_mw"].abs() <= deadband_mw).sum())
+            mean_import_mw = group["import_mw"].mean()
+            mean_export_mw = group["export_mw"].mean()
+
+            for direction, metric, mask, level_metric in [
+                (
+                    "import",
+                    "import_mw",
+                    group["signed_mw"] > deadband_mw,
+                    "import_mw_positive_magnitude_conditional_on_importing",
+                ),
+                (
+                    "export",
+                    "export_mw",
+                    group["signed_mw"] < -deadband_mw,
+                    "export_mw_positive_magnitude_conditional_on_exporting",
+                ),
+            ]:
+                values = group.loc[mask, metric].dropna().astype(float)
+                direction_observations = int(len(values))
+                bins = binned_level_pdf(values, bin_width_mw)
+                if bins.empty:
+                    mode_bin = None
+                else:
+                    mode_bin = bins.sort_values(["bin_count", "bin_lower_mw"], ascending=[False, True]).iloc[0]
+                    labelled_bins = bins.copy()
+                    labelled_bins.insert(0, "wind_metric", wind_col)
+                    labelled_bins.insert(1, "wind_metric_label", wind_label)
+                    labelled_bins.insert(2, "season", season)
+                    labelled_bins.insert(3, "interconnectorId", interconnector_id)
+                    labelled_bins.insert(4, "interconnectorName", interconnector_name)
+                    labelled_bins.insert(5, "wind_bucket", str(wind_bucket))
+                    labelled_bins.insert(6, "direction", direction)
+                    labelled_bins.insert(7, "level_metric", level_metric)
+                    labelled_bins.insert(8, "bin_width_mw", bin_width_mw)
+                    labelled_bins.insert(9, "direction_observations", direction_observations)
+                    pdf_rows.append(labelled_bins)
+
+                summary_rows.append(
+                    {
+                        "wind_metric": wind_col,
+                        "wind_metric_label": wind_label,
+                        "season": season,
+                        "interconnectorId": interconnector_id,
+                        "interconnectorName": interconnector_name,
+                        "wind_bucket": str(wind_bucket),
+                        "direction": direction,
+                        "level_metric": level_metric,
+                        "bin_width_mw": bin_width_mw,
+                        "wind_bucket_observations": wind_bucket_observations,
+                        "direction_observations": direction_observations,
+                        "direction_share_pct": (
+                            direction_observations / wind_bucket_observations * 100.0
+                            if wind_bucket_observations
+                            else np.nan
+                        ),
+                        "mean_signed_mw": group["signed_mw"].mean(),
+                        "median_signed_mw": group["signed_mw"].median(),
+                        "mean_import_mw": mean_import_mw,
+                        "mean_export_mw": mean_export_mw,
+                        "old_summary_mean_level_mw": mean_import_mw if direction == "import" else mean_export_mw,
+                        "net_gwh": group["net_gwh"].sum(),
+                        "import_half_hours": import_half_hours,
+                        "export_half_hours": export_half_hours,
+                        "near_zero_half_hours": near_zero_half_hours,
+                        "import_share_pct": (
+                            import_half_hours / wind_bucket_observations * 100.0
+                            if wind_bucket_observations
+                            else np.nan
+                        ),
+                        "export_share_pct": (
+                            export_half_hours / wind_bucket_observations * 100.0
+                            if wind_bucket_observations
+                            else np.nan
+                        ),
+                        "near_zero_share_pct": (
+                            near_zero_half_hours / wind_bucket_observations * 100.0
+                            if wind_bucket_observations
+                            else np.nan
+                        ),
+                        "mean_wind_mw": group[wind_col].mean(),
+                        "min_wind_mw": group[wind_col].min(),
+                        "max_wind_mw": group[wind_col].max(),
+                        "mean_level_mw": values.mean() if direction_observations else np.nan,
+                        "median_level_mw": values.median() if direction_observations else np.nan,
+                        "min_level_mw": values.min() if direction_observations else np.nan,
+                        "max_level_mw": values.max() if direction_observations else np.nan,
+                        "mode_bin_lower_mw": mode_bin["bin_lower_mw"] if mode_bin is not None else np.nan,
+                        "mode_bin_upper_mw": mode_bin["bin_upper_mw"] if mode_bin is not None else np.nan,
+                        "most_probable_level_mw": mode_bin["bin_mid_mw"] if mode_bin is not None else np.nan,
+                        "mode_bin_count": mode_bin["bin_count"] if mode_bin is not None else 0,
+                        "mode_bin_probability_pct": (
+                            mode_bin["bin_probability_pct"] if mode_bin is not None else np.nan
+                        ),
+                        "mode_pdf_density_per_mw": mode_bin["pdf_density_per_mw"] if mode_bin is not None else np.nan,
+                    }
+                )
+
+    summary = pd.DataFrame(summary_rows)
+    pdf_bins = pd.concat(pdf_rows, ignore_index=True) if pdf_rows else pd.DataFrame()
+
+    if not summary.empty:
+        direction_sort = {"import": 0, "export": 1}
+        aggregation_sort = {"TOTAL_GB_INTERCONNECTORS": 0}
+        summary["_season_sort"] = summary["season"].map(
+            {season: idx for idx, season in enumerate(SEASONAL_BUCKET_OUTPUT_ORDER)}
+        )
+        summary["_wind_bucket_sort"] = summary["wind_bucket"].map(
+            {bucket: idx for idx, bucket in enumerate(WIND_BUCKET_LABELS)}
+        )
+        summary["_direction_sort"] = summary["direction"].map(direction_sort)
+        summary["_aggregation_sort"] = summary["interconnectorId"].map(aggregation_sort).fillna(1)
+        summary = summary.sort_values(
+            [
+                "wind_metric",
+                "_season_sort",
+                "_aggregation_sort",
+                "interconnectorId",
+                "_wind_bucket_sort",
+                "_direction_sort",
+            ]
+        ).drop(columns=["_season_sort", "_wind_bucket_sort", "_direction_sort", "_aggregation_sort"])
+
+    if not pdf_bins.empty:
+        direction_sort = {"import": 0, "export": 1}
+        aggregation_sort = {"TOTAL_GB_INTERCONNECTORS": 0}
+        pdf_bins["_season_sort"] = pdf_bins["season"].map(
+            {season: idx for idx, season in enumerate(SEASONAL_BUCKET_OUTPUT_ORDER)}
+        )
+        pdf_bins["_wind_bucket_sort"] = pdf_bins["wind_bucket"].map(
+            {bucket: idx for idx, bucket in enumerate(WIND_BUCKET_LABELS)}
+        )
+        pdf_bins["_direction_sort"] = pdf_bins["direction"].map(direction_sort)
+        pdf_bins["_aggregation_sort"] = pdf_bins["interconnectorId"].map(aggregation_sort).fillna(1)
+        pdf_bins = pdf_bins.sort_values(
+            [
+                "wind_metric",
+                "_season_sort",
+                "_aggregation_sort",
+                "interconnectorId",
+                "_wind_bucket_sort",
+                "_direction_sort",
+                "bin_lower_mw",
+            ]
+        ).drop(columns=["_season_sort", "_wind_bucket_sort", "_direction_sort", "_aggregation_sort"])
+
+    return summary.reset_index(drop=True), pdf_bins.reset_index(drop=True)
+
+
 def build_low_high_wind_comparison(bucket_summary: pd.DataFrame) -> pd.DataFrame:
     """Compare each interconnector's behaviour in low- and high-wind quintiles."""
 
@@ -917,6 +1130,124 @@ def plotly_layout(fig: object, title: str, height: int = 520) -> None:
         margin={"l": 70, "r": 40, "t": 80, "b": 70},
         legend={"orientation": "h", "yanchor": "bottom", "y": 1.02, "xanchor": "left", "x": 0},
     )
+
+
+def safe_filename(value: object) -> str:
+    text = str(value).replace(" ", "_").replace("/", "_").replace("\\", "_").replace(":", "_")
+    return "".join(char for char in text if char.isalnum() or char in {"_", "-"}).strip("_")
+
+
+def generate_seasonal_wind_bucket_direction_pdf_figures(output_dir: Path, pdf_bins: pd.DataFrame) -> None:
+    if pdf_bins.empty:
+        return
+
+    try:
+        import plotly.graph_objects as go
+    except Exception as exc:
+        print(f"Plotly is not available ({exc}). Skipping seasonal wind-bucket PDF figures.")
+        return
+
+    try:
+        import matplotlib.pyplot as plt
+    except Exception:
+        plt = None
+
+    figure_dir = output_dir / "figures" / "seasonal_wind_bucket_direction_pdfs"
+    bucket_colors = {
+        "lowest_20pct": "#315f9c",
+        "20_40pct": "#64a2d9",
+        "40_60pct": "#6e9f64",
+        "60_80pct": "#d5a24a",
+        "highest_20pct": "#b54f4f",
+    }
+
+    group_cols = ["wind_metric", "wind_metric_label", "season", "interconnectorId", "interconnectorName", "direction"]
+    for keys, group in pdf_bins.groupby(group_cols, sort=False):
+        wind_metric, wind_label, season, interconnector_id, interconnector_name, direction = keys
+        fig = go.Figure()
+        for bucket in WIND_BUCKET_LABELS:
+            data = group[group["wind_bucket"].eq(bucket)].sort_values("bin_mid_mw")
+            if data.empty:
+                continue
+            fig.add_scatter(
+                x=data["bin_mid_mw"],
+                y=data["bin_probability_pct"],
+                mode="lines+markers",
+                name=bucket,
+                line={"color": bucket_colors.get(bucket), "width": 2},
+                marker={"size": 5},
+                customdata=np.stack(
+                    [
+                        data["bin_lower_mw"].to_numpy(),
+                        data["bin_upper_mw"].to_numpy(),
+                        data["bin_count"].to_numpy(),
+                    ],
+                    axis=-1,
+                ),
+                hovertemplate=(
+                    "Bin: %{customdata[0]:,.0f}-%{customdata[1]:,.0f} MW"
+                    "<br>Share: %{y:.2f}%"
+                    "<br>Half-hours: %{customdata[2]:,.0f}"
+                    "<extra></extra>"
+                ),
+            )
+
+        if not fig.data:
+            continue
+
+        title = (
+            f"{interconnector_id} {season} {direction.title()} Level PDF by "
+            f"{wind_label} Seasonal Quintile"
+        )
+        plotly_layout(fig, title, height=640)
+        fig.update_xaxes(title_text=f"{direction.title()} level (MW)")
+        fig.update_yaxes(title_text="Share of directional half-hours in bin (%)")
+        fig.update_layout(
+            margin={"l": 70, "r": 40, "t": 95, "b": 135},
+            legend={
+                "title": {"text": "Wind quintile"},
+                "orientation": "h",
+                "yanchor": "top",
+                "y": -0.22,
+                "xanchor": "left",
+                "x": 0,
+            },
+            title={"text": title + f"<br><sup>{interconnector_name}</sup>"},
+        )
+
+        html_path = (
+            figure_dir
+            / safe_filename(wind_metric)
+            / safe_filename(direction)
+            / f"{safe_filename(interconnector_id)}_{safe_filename(season)}_{safe_filename(direction)}_pdf.html"
+        )
+        write_plotly_figure(fig, html_path)
+
+        png_path = html_path.with_suffix(".png")
+        if plt is not None and not png_path.exists():
+            png_path.parent.mkdir(parents=True, exist_ok=True)
+            static_fig, ax = plt.subplots(figsize=(9.2, 5.4), dpi=150)
+            for bucket in WIND_BUCKET_LABELS:
+                data = group[group["wind_bucket"].eq(bucket)].sort_values("bin_mid_mw")
+                if data.empty:
+                    continue
+                ax.plot(
+                    data["bin_mid_mw"],
+                    data["bin_probability_pct"],
+                    marker="o",
+                    markersize=2.5,
+                    linewidth=1.6,
+                    color=bucket_colors.get(bucket),
+                    label=bucket,
+                )
+            ax.set_title(f"{interconnector_id} {season} {direction.title()} Level PDF\n{wind_label}")
+            ax.set_xlabel(f"{direction.title()} level (MW)")
+            ax.set_ylabel("Share of directional half-hours in bin (%)")
+            ax.grid(True, color="#dddddd", linewidth=0.6, alpha=0.8)
+            ax.legend(title="Wind quintile", fontsize=8, title_fontsize=8, ncol=2)
+            static_fig.tight_layout()
+            static_fig.savefig(png_path)
+            plt.close(static_fig)
 
 
 def generate_figures(
@@ -1206,6 +1537,7 @@ def write_story(
             "- `figures/fleet_daily_scatter_wind_actual_mw.html` and `figures/fleet_daily_scatter_wind_before_curtailment_mw.html` - direct daily relationship against each wind metric.",
             "- `figures/daily_signed_correlation_heatmap.html` - interconnector-by-interconnector comparison of daily signed-MW correlations.",
             "- `figures/position_by_before_curtailment_wind_bucket.html` - how each link behaves from low-wind to high-wind conditions.",
+            "- `figures/seasonal_wind_bucket_direction_pdfs/` - per-interconnector import/export level PDFs by seasonal wind quintile.",
             "",
             "## Output tables",
             "",
@@ -1216,9 +1548,12 @@ def write_story(
             "- `correlation_summary.csv` - half-hourly, daily, and monthly correlations for actual and before-curtailment wind.",
             "- `correlation_by_season.csv` and `correlation_by_month_of_year.csv` - daily correlations by seasonal slices.",
             "- `wind_level_bucket_summary.csv` - import/export levels and shares by wind quintile.",
-            "- `wind_level_bucket_summary_by_season.csv` - the same wind-quintile summary recalculated within each season.",
-            "- `wind_level_bucket_summary_by_season_global_quintiles.csv` - seasonal cut using the original all-period wind quintiles.",
+            "- `wind_level_bucket_summary_by_season.csv` - the same wind-quintile summary recalculated within each season, plus an all-season baseline.",
+            "- `wind_level_bucket_summary_by_season_global_quintiles.csv` - seasonal cut using the original all-period wind quintiles, plus an all-season baseline.",
             "- `wind_level_bucket_import_export_percentiles.csv` - conditional import/export percentile distributions by wind quintile.",
+            "- `seasonal_wind_bucket_direction_level_modes.csv` - median, conditional mean, old-summary mean, and binned most-probable import/export levels by seasonal wind quintile.",
+            "- `seasonal_wind_bucket_direction_level_modes_with_summary_means.csv` - explicit comparison copy carrying the old `mean_import_mw` and `mean_export_mw` fields.",
+            "- `seasonal_wind_bucket_direction_pdf_bins.csv` - binned PDF data behind the seasonal wind-quintile level distribution figures.",
             "- `wind_low_high_bucket_interconnector_comparison.csv` - low-wind vs high-wind comparison table for every interconnector.",
             "- `lag_correlation_summary.csv` - tested lag correlations for signed-MW position.",
             "",
@@ -1277,6 +1612,12 @@ def main() -> None:
         bucket_scope="global",
     )
     wind_bucket_flow_percentiles = build_wind_bucket_flow_percentiles(joined, wind, args.deadband_mw)
+    seasonal_level_modes, seasonal_level_pdf_bins = build_seasonal_wind_bucket_direction_level_distributions(
+        joined,
+        wind,
+        args.deadband_mw,
+        args.level_pdf_bin_width_mw,
+    )
     low_high_comparison = build_low_high_wind_comparison(wind_bucket_summary)
     lag_summary = build_lag_correlation_table(joined, args.min_correlation_observations)
 
@@ -1296,6 +1637,12 @@ def main() -> None:
         args.output_dir / "wind_level_bucket_summary_by_season_global_quintiles.csv",
     )
     write_csv(wind_bucket_flow_percentiles, args.output_dir / "wind_level_bucket_import_export_percentiles.csv")
+    write_csv(
+        seasonal_level_modes,
+        args.output_dir / "seasonal_wind_bucket_direction_level_modes_with_summary_means.csv",
+    )
+    write_csv(seasonal_level_modes, args.output_dir / "seasonal_wind_bucket_direction_level_modes.csv")
+    write_csv(seasonal_level_pdf_bins, args.output_dir / "seasonal_wind_bucket_direction_pdf_bins.csv")
     write_csv(low_high_comparison, args.output_dir / "wind_low_high_bucket_interconnector_comparison.csv")
     write_csv(lag_summary, args.output_dir / "lag_correlation_summary.csv")
     write_run_config(
@@ -1322,6 +1669,7 @@ def main() -> None:
 
     if not args.no_figures:
         generate_figures(args.output_dir, daily, correlation_summary, wind_bucket_summary)
+        generate_seasonal_wind_bucket_direction_pdf_figures(args.output_dir, seasonal_level_pdf_bins)
 
     print(f"Written wind/interconnector correlation pack to {args.output_dir}")
     print(

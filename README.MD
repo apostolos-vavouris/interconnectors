@@ -91,6 +91,10 @@ To export those wind-correlation HTML figures to PNG, run:
 ..\elexon-iris\.venv\Scripts\python.exe .\export_figures_to_png.py --figures-dir .\analysis_outputs\wind_interconnector_correlation\figures --overwrite
 ```
 
+The seasonal wind-quintile import/export level PDF outputs use 100 MW bins by
+default. To use a different bin width, add for example
+`--level-pdf-bin-width-mw 50` when running `analyse_wind_interconnector_correlation.py`.
+
 By default it uses the latest five-year window available in the CSVs and treats
 positive raw `generation` as GB import. If the source convention is confirmed to
 be the opposite, rerun with:
@@ -154,6 +158,16 @@ Wind/interconnector correlation outputs:
   plus an all-season baseline.
 - `wind_level_bucket_import_export_percentiles.csv` - conditional import/export
   percentile distributions across the same wind quintiles.
+- `seasonal_wind_bucket_direction_level_modes.csv` - median, conditional mean,
+  old-summary mean, and binned most-probable import/export levels by seasonal
+  wind quintile.
+- `seasonal_wind_bucket_direction_level_modes_with_summary_means.csv` -
+  explicit comparison copy carrying the old `mean_import_mw` and
+  `mean_export_mw` fields.
+- `seasonal_wind_bucket_direction_pdf_bins.csv` - binned PDF input data behind
+  the seasonal wind-quintile level distribution figures.
+- `figures/seasonal_wind_bucket_direction_pdfs/` - PNG and HTML PDF plots by
+  wind metric, import/export direction, season, and interconnector.
 - `wind_low_high_bucket_interconnector_comparison.csv` - low-wind versus
   high-wind comparison table for every interconnector and the aggregate fleet.
 - `interconnector_wind_join_half_hourly_wide.csv` - joined wind and signed
