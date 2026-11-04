@@ -42,6 +42,15 @@ $Destination = ".\analysis_outputs\bm_interconnector_history\level_bucket_summar
 Copy-Item -LiteralPath (Join-Path $TempOut "level_bucket_summary.csv") -Destination $Destination -Force
 ```
 
+$Year = 2021
+$Start = "{0}-01-01T00:00Z" -f $Year
+$End = "{0}-12-31T23:30Z" -f $Year
+$TempOut = Join-Path $env:TEMP "bm_interconnector_history_${Year}_operational"
+$Destination = ".\analysis_outputs\bm_interconnector_history\level_bucket_summary_${Year}_operational.csv"
+
+.venv\Scripts\python.exe .\analyse_bm_interconnector_history.py --start $Start --end $End --output-dir $TempOut --no-charts
+Copy-Item -LiteralPath (Join-Path $TempOut "level_bucket_summary.csv") -Destination $Destination -Force
+
 The final file will be:
 
 ```text

@@ -1,0 +1,111 @@
+interconnectorId,interconnectorName,flow_band_mw,observations,duration_hours,duration_share_pct
+INTELEC,Eleclink (INTELEC),export_gt_1500_mw,0,0.0,0.0
+INTELEC,Eleclink (INTELEC),export_1000_1500_mw,277,138.5,1.5812307341020664
+INTELEC,Eleclink (INTELEC),export_500_1000_mw,1142,571.0,6.51900901929444
+INTELEC,Eleclink (INTELEC),export_250_500_mw,905,452.5,5.166114853293755
+INTELEC,Eleclink (INTELEC),export_50_250_mw,1135,567.5,6.479050119876699
+INTELEC,Eleclink (INTELEC),near_zero_abs_le_50_mw,1111,555.5,6.342048179015869
+INTELEC,Eleclink (INTELEC),import_50_250_mw,1549,774.5,8.842333599725997
+INTELEC,Eleclink (INTELEC),import_250_500_mw,2027,1013.5,11.570955588537505
+INTELEC,Eleclink (INTELEC),import_500_1000_mw,9361,4680.5,53.43646534992579
+INTELEC,Eleclink (INTELEC),import_1000_1500_mw,11,5.5,0.0627925562278799
+INTELEC,Eleclink (INTELEC),import_gt_1500_mw,0,0.0,0.0
+INTEW,Ireland(East-West),export_gt_1500_mw,0,0.0,0.0
+INTEW,Ireland(East-West),export_1000_1500_mw,0,0.0,0.0
+INTEW,Ireland(East-West),export_500_1000_mw,4205,2102.5,24.003881721657724
+INTEW,Ireland(East-West),export_250_500_mw,3163,1581.5,18.055714122616738
+INTEW,Ireland(East-West),export_50_250_mw,2871,1435.5,16.388857175476655
+INTEW,Ireland(East-West),near_zero_abs_le_50_mw,5449,2724.5,31.105148989610687
+INTEW,Ireland(East-West),import_50_250_mw,989,494.5,5.645621646306656
+INTEW,Ireland(East-West),import_250_500_mw,637,318.5,3.6362598470144993
+INTEW,Ireland(East-West),import_500_1000_mw,204,102.0,1.1645164973170454
+INTEW,Ireland(East-West),import_1000_1500_mw,0,0.0,0.0
+INTEW,Ireland(East-West),import_gt_1500_mw,0,0.0,0.0
+INTFR,France(IFA),export_gt_1500_mw,343,171.5,1.9579860714693458
+INTFR,France(IFA),export_1000_1500_mw,624,312.0,3.5620504623815505
+INTFR,France(IFA),export_500_1000_mw,1088,544.0,6.210754652357576
+INTFR,France(IFA),export_250_500_mw,704,352.0,4.018723598584313
+INTFR,France(IFA),export_50_250_mw,761,380.5,4.344103208128782
+INTFR,France(IFA),near_zero_abs_le_50_mw,553,276.5,3.156753054001599
+INTFR,France(IFA),import_50_250_mw,1071,535.5,6.113711610914488
+INTFR,France(IFA),import_250_500_mw,1629,814.5,9.29900673592876
+INTFR,France(IFA),import_500_1000_mw,4332,2166.0,24.728850325379607
+INTFR,France(IFA),import_1000_1500_mw,2777,1388.5,15.852266240438407
+INTFR,France(IFA),import_gt_1500_mw,3636,1818.0,20.755794040415573
+INTIFA2,IFA2 (INTIFA2),export_gt_1500_mw,0,0.0,0.0
+INTIFA2,IFA2 (INTIFA2),export_1000_1500_mw,176,88.0,1.0046808996460783
+INTIFA2,IFA2 (INTIFA2),export_500_1000_mw,963,481.5,5.497202877040759
+INTIFA2,IFA2 (INTIFA2),export_250_500_mw,844,422.0,4.817901586939148
+INTIFA2,IFA2 (INTIFA2),export_50_250_mw,999,499.5,5.702705788332001
+INTIFA2,IFA2 (INTIFA2),near_zero_abs_le_50_mw,3321,1660.5,18.957643566617193
+INTIFA2,IFA2 (INTIFA2),import_50_250_mw,1513,756.5,8.636830688434753
+INTIFA2,IFA2 (INTIFA2),import_250_500_mw,1980,990.0,11.30266012101838
+INTIFA2,IFA2 (INTIFA2),import_500_1000_mw,7720,3860.0,44.06895764356662
+INTIFA2,IFA2 (INTIFA2),import_1000_1500_mw,2,1.0,0.011416828405069072
+INTIFA2,IFA2 (INTIFA2),import_gt_1500_mw,0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),export_gt_1500_mw,0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),export_1000_1500_mw,0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),export_500_1000_mw,0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),export_250_500_mw,11155,5577.5,63.677360429272746
+INTIRL,Northern Ireland(Moyle),export_50_250_mw,2123,1061.5,12.11896335198082
+INTIRL,Northern Ireland(Moyle),near_zero_abs_le_50_mw,1071,535.5,6.113711610914488
+INTIRL,Northern Ireland(Moyle),import_50_250_mw,1449,724.5,8.271492179472542
+INTIRL,Northern Ireland(Moyle),import_250_500_mw,1720,860.0,9.818472428359403
+INTIRL,Northern Ireland(Moyle),import_500_1000_mw,0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),import_1000_1500_mw,0,0.0,0.0
+INTIRL,Northern Ireland(Moyle),import_gt_1500_mw,0,0.0,0.0
+INTNED,Netherlands(BritNed),export_gt_1500_mw,0,0.0,0.0
+INTNED,Netherlands(BritNed),export_1000_1500_mw,836,418.0,4.772234273318872
+INTNED,Netherlands(BritNed),export_500_1000_mw,2345,1172.5,13.386231304943486
+INTNED,Netherlands(BritNed),export_250_500_mw,1067,533.5,6.09087795410435
+INTNED,Netherlands(BritNed),export_50_250_mw,867,433.5,4.949195113597442
+INTNED,Netherlands(BritNed),near_zero_abs_le_50_mw,1039,519.5,5.931042356433383
+INTNED,Netherlands(BritNed),import_50_250_mw,1131,565.5,6.45621646306656
+INTNED,Netherlands(BritNed),import_250_500_mw,1648,824.0,9.407466605776914
+INTNED,Netherlands(BritNed),import_500_1000_mw,4447,2223.5,25.385317958671084
+INTNED,Netherlands(BritNed),import_1000_1500_mw,4138,2069.0,23.62141797008791
+INTNED,Netherlands(BritNed),import_gt_1500_mw,0,0.0,0.0
+INTNEM,Belgium (Nemolink),export_gt_1500_mw,0,0.0,0.0
+INTNEM,Belgium (Nemolink),export_1000_1500_mw,263,131.5,1.5013129352665828
+INTNEM,Belgium (Nemolink),export_500_1000_mw,1503,751.5,8.579746546409407
+INTNEM,Belgium (Nemolink),export_250_500_mw,1228,614.0,7.00993264071241
+INTNEM,Belgium (Nemolink),export_50_250_mw,1216,608.0,6.941431670281996
+INTNEM,Belgium (Nemolink),near_zero_abs_le_50_mw,1512,756.0,8.631122274232219
+INTNEM,Belgium (Nemolink),import_50_250_mw,1613,806.5,9.207672108688206
+INTNEM,Belgium (Nemolink),import_250_500_mw,2095,1047.5,11.959127754309852
+INTNEM,Belgium (Nemolink),import_500_1000_mw,7282,3641.0,41.56867222285649
+INTNEM,Belgium (Nemolink),import_1000_1500_mw,806,403.0,4.600981847242836
+INTNEM,Belgium (Nemolink),import_gt_1500_mw,0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),export_gt_1500_mw,0,0.0,0.0
+INTNSL,North Sea Link (INTNSL),export_1000_1500_mw,373,186.5,2.1292384975453817
+INTNSL,North Sea Link (INTNSL),export_500_1000_mw,315,157.5,1.7981504737983787
+INTNSL,North Sea Link (INTNSL),export_250_500_mw,221,110.5,1.2615595387601324
+INTNSL,North Sea Link (INTNSL),export_50_250_mw,216,108.0,1.23301746774746
+INTNSL,North Sea Link (INTNSL),near_zero_abs_le_50_mw,1104,552.0,6.302089279598127
+INTNSL,North Sea Link (INTNSL),import_50_250_mw,363,181.5,2.072154355520037
+INTNSL,North Sea Link (INTNSL),import_250_500_mw,543,271.5,3.099668911976253
+INTNSL,North Sea Link (INTNSL),import_500_1000_mw,1680,840.0,9.59013586025802
+INTNSL,North Sea Link (INTNSL),import_1000_1500_mw,12703,6351.5,72.51398561479621
+INTNSL,North Sea Link (INTNSL),import_gt_1500_mw,0,0.0,0.0
+INTVKL,Denmark (Viking link),export_gt_1500_mw,0,0.0,0.0
+INTVKL,Denmark (Viking link),export_1000_1500_mw,0,0.0,0.0
+INTVKL,Denmark (Viking link),export_500_1000_mw,0,0.0,0.0
+INTVKL,Denmark (Viking link),export_250_500_mw,0,0.0,0.0
+INTVKL,Denmark (Viking link),export_50_250_mw,0,0.0,0.0
+INTVKL,Denmark (Viking link),near_zero_abs_le_50_mw,2,1.0,2.083333333333333
+INTVKL,Denmark (Viking link),import_50_250_mw,2,1.0,2.083333333333333
+INTVKL,Denmark (Viking link),import_250_500_mw,12,6.0,12.5
+INTVKL,Denmark (Viking link),import_500_1000_mw,80,40.0,83.33333333333334
+INTVKL,Denmark (Viking link),import_1000_1500_mw,0,0.0,0.0
+INTVKL,Denmark (Viking link),import_gt_1500_mw,0,0.0,0.0
+TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,export_gt_1500_mw,1550,775.0,8.84703196347032
+TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,export_1000_1500_mw,513,256.5,2.928082191780822
+TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,export_500_1000_mw,568,284.0,3.2420091324200913
+TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,export_250_500_mw,330,165.0,1.8835616438356164
+TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,export_50_250_mw,291,145.5,1.6609589041095891
+TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,near_zero_abs_le_50_mw,130,65.0,0.7420091324200913
+TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,import_50_250_mw,294,147.0,1.678082191780822
+TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,import_250_500_mw,374,187.0,2.134703196347032
+TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,import_500_1000_mw,822,411.0,4.691780821917808
+TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,import_1000_1500_mw,843,421.5,4.811643835616438
+TOTAL_GB_INTERCONNECTORS,GB interconnector fleet total,import_gt_1500_mw,11805,5902.5,67.38013698630137
