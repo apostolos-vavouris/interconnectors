@@ -1,0 +1,22 @@
+key,value
+source_path,C:\Users\Work\Documents\My Work\european_wholesale_electricity_price_data_hourly
+gb_country,United Kingdom
+analysis_start_utc,2015-01-01 00:00:00
+analysis_end_utc,2026-11-02 22:00:00
+comparison_markets_analysed,31
+comparison_markets_excluded,1
+price_unit,EUR/MWh
+spread_definition,GB price - comparison-market price
+price_deadband_eur_mwh,1.0
+lag_convention,positive lag means comparison market leads GB
+lags_hours,"-168,-72,-48,-24,-12,-6,-3,-1,0,1,3,6,12,24,48,72,168"
+rolling_windows_days,"30,90,365"
+recent_years,3
+minimum_overlap_hours,720
+minimum_hours_per_day,18
+pairwise_analysis_enabled,True
+pairwise_lags_hours,"-24,-6,-1,0,1,6,24"
+pairwise_rolling_windows_days,"90,365"
+pairwise_price_change_clusters,6
+eligible_pairwise_market_pairs,527
+source_granularity_warning,one country-level price series; not internal bidding zones

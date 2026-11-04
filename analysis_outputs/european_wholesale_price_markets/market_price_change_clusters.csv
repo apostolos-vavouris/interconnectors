@@ -1,0 +1,34 @@
+market,iso3,price_change_cluster,cluster_heatmap_order
+Ireland,IRL,1,1
+United Kingdom,GBR,1,2
+Portugal,PRT,2,3
+Spain,ESP,2,4
+Estonia,EST,3,5
+Latvia,LVA,3,6
+Lithuania,LTU,3,7
+Moldova,MDA,6,8
+Norway,NOR,4,9
+Finland,FIN,4,10
+Sweden,SWE,4,11
+France,FRA,5,12
+Albania,ALB,5,13
+Italy,ITA,5,14
+Montenegro,MNE,5,15
+Bulgaria,BGR,5,16
+Greece,GRC,5,17
+North Macedonia,MKD,5,18
+Serbia,SRB,5,19
+Slovakia,SVK,5,20
+Croatia,HRV,5,21
+Slovenia,SVN,5,22
+Hungary,HUN,5,23
+Romania,ROU,5,24
+Poland,POL,5,25
+Switzerland,CHE,5,26
+Belgium,BEL,5,27
+Netherlands,NLD,5,28
+Denmark,DNK,5,29
+Czechia,CZE,5,30
+Austria,AUT,5,31
+Germany,DEU,5,32
+Luxembourg,LUX,5,33

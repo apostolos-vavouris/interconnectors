@@ -85,6 +85,82 @@ Outputs are written to:
 analysis_outputs/price_spread_interconnector_correlation/
 ```
 
+To compare the full European hourly wholesale-price dataset with GB, including
+historical trends, seasonal profiles, rolling correlations, lead/lag checks,
+tail events, spread persistence, and descriptive future-interconnector
+screening indicators, run:
+
+```powershell
+..\elexon-iris\.venv\Scripts\python.exe .\analyse_european_wholesale_price_markets.py
+```
+
+The default source folder is:
+
+```text
+%USERPROFILE%\Documents\My Work\european_wholesale_electricity_price_data_hourly
+```
+
+Override it, restrict the period, or select markets with, for example:
+
+```powershell
+..\elexon-iris\.venv\Scripts\python.exe .\analyse_european_wholesale_price_markets.py --data-path "D:\data\hourly_prices" --start 2020-01-01 --end 2025-12-31 --markets "France,Belgium,Netherlands,Norway,Ireland"
+```
+
+Outputs are written to:
+
+```text
+analysis_outputs/european_wholesale_price_markets/
+```
+
+The source files contain one country-level price series per market. They do not
+separate internal bidding zones for multi-zone countries, so use zonal data for
+route-specific feasibility work.
+
+Key outputs from this analysis are:
+
+- `story.md` - generated interpretation, methodological cautions, and output guide.
+- `gb_market_relationship_summary.csv` - full-period price, spread, correlation,
+  regression, and recent-window metrics for each market relative to GB.
+- `annual_market_summary.csv`, `monthly_market_summary.csv`, and
+  `seasonal_market_summary.csv` - historical and seasonal relationship tables.
+- `annual_trend_summary.csv` - complete-calendar-year OLS, robust median, and
+  recent three-year trend checks.
+- `lag_correlation_summary.csv` and `best_lag_summary.csv` - price-level and
+  first-difference lag relationships. Positive lag means the comparison market
+  leads GB.
+- `tail_event_summary.csv`, `spread_band_summary.csv`, and
+  `spread_run_summary.csv` - scarcity coincidence, price-separation bands, and
+  directional persistence.
+- `future_connection_screening_summary.csv` - descriptive indicators and ranks
+  for early-stage comparison, without collapsing them into a single score.
+- `figures/markets/<market>/` - six interactive HTML charts per market, plus
+  cross-market overview figures in `figures/`.
+
+The same command also analyses price spreads between every eligible pair of
+markets, not only between GB and each market. Pairwise outputs include:
+
+- `pairwise_market_spread_summary.csv` - signed and absolute spread
+  distributions, price direction shares, correlations, scarcity coincidence,
+  and spread-run persistence for every pair.
+- `pairwise_market_annual_summary.csv`,
+  `pairwise_market_seasonal_summary.csv`, and
+  `pairwise_market_month_of_year_summary.csv` - historical and seasonal cuts.
+- `pairwise_market_rolling_monthly.csv.gz` - compact month-end snapshots of
+  rolling 90-day and 365-day spread and correlation metrics.
+- `pairwise_market_spread_trend_summary.csv` - complete-year convergence and
+  divergence checks.
+- `pairwise_market_lag_correlation_summary.csv` - hourly price-change lags;
+  positive lag means market B leads market A.
+- `pairwise_*_matrix.csv` and `figures/pairwise_markets/` - presentation-ready
+  matrices and heatmaps for spread, proximity, correlation, tail coincidence,
+  trends, and lag direction.
+- `market_price_change_clusters.csv` - hierarchical market clusters based on
+  hourly price-change correlation.
+
+Use `--no-pairwise` for a faster GB-only run. Pairwise lag hours, rolling
+windows, and cluster count can be changed with `--pairwise-lags-hours`,
+`--pairwise-rolling-windows-days`, and `--pairwise-clusters`.
+
 To export those wind-correlation HTML figures to PNG, run:
 
 ```powershell
